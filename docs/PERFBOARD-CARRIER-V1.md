@@ -1,3 +1,5 @@
+> **SUPERSEDED FOR PHYSICAL BOARD SIZE (2026-11-11):** Jamie has several existing 50 x 70 mm perfboards. Use [PERFBOARD-CARRIER-V2-50X70.md](./PERFBOARD-CARRIER-V2-50X70.md) instead. This v1 plan is retained only as engineering history; do not purchase or cut a 160 x 100 mm board based on it.
+
 # Device Lab sprinkler monitor - perfboard carrier v1 (2026-11-11)
 
 **State: design only - not built, electrically tested, or accepted.** Supplemental monitoring; no connection to any listed sprinkler supervisory, fire alarm, control, or heating circuit. This design preserves the existing 2024 dashboard and the 2026 working firmware.

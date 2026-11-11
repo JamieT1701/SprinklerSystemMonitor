@@ -1,3 +1,5 @@
+> **Later assembly correction (2026-11-11):** The new 50 × 70 mm perfboard build will **not** rely on a resistor attached to the temperature probe. Install exactly one **4.7 kΩ pull-up (R5) between ESP 3V3 and GPIO18/DATA on Board B**. Use a second **4.7 kΩ resistor as pressure-divider R3** instead of the earlier planned 5 kΩ; new divider ratio is **14.7/(10+14.7) = 0.5951417**. Earlier references below reflect the old wiring checkpoint and are retained for historical evidence. Source of truth for the rebuild: [v4 beginner guide](./BEGINNER-BENCH-GUIDE-V4.md) and [live bench website](./index.html). **No hardware change has been bench-verified yet.**
+
 # 2026 Device Lab sprinkler monitor - verified checkpoint (2026-11-10)
 
 **Status:** hardware wiring assembled; user will reconnect PoE on 2026-11-11. New DS18B20 readings, pressure readings, alerting and remote firmware updates have **not** been verified as operational.

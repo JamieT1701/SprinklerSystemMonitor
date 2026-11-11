@@ -1,6 +1,6 @@
 # Sprinkler Monitor - authoritative two-terminal bench design (R6)
 
-Date: 2026-11-11. Replaces the earlier v1/v2/v3/v4 build instructions.
+Date: 2026-11-11. Electrical design R6; mounting information updated after P4 fit confirmation. Replaces the earlier v1/v2/v3/v4 build instructions.
 Design reviewed and arithmetic checked; hardware is not built/validated/accepted by this record.
 
 ## Exactly three external connections
@@ -21,11 +21,19 @@ No additional external power input, sensor block or test socket is required.
 
 Number from left to right, looking at screw heads with wire mouths toward the accessible edge. Label actual parts. Do not infer probe colors from a generic picture. Pressure colors follow the user's historical documentation. Internal wires solder to pads rather than sharing field screw clamps.
 
+## Confirmed enclosure and plate (P4)
+- **P4 is the selected project plate**: Jamie physically checked its fit in the plastic enclosure and reported it fits perfectly. Do **not** substitute speculative P5 or older plate outlines. P4 is approximately **95.2 mm wide x 142.7 mm tall**; its PETG plate is **3 mm thick**, with **four 6 mm integral mounting feet**.
+- P4's four feet contain holes intended for **M3 brass heat-set inserts**. Install heat-set inserts into the bottoms of the feet, only after testing one insert against its printed socket. Actual insert outer diameter and length are not independently measured; check the fit before heating all four. Use a soldering-iron insert tip with the part supported on a heat-safe surface. Do not insert an iron into the enclosure.
+- To mount, turn the plate so the **feet face the case floor**. Align feet with case holes and install screws **from outside the case into the brass inserts**. **M3 x 6 mm plus flat washers** is a starting combination from the owner's on-hand hardware, not a verified final length. Verify actual case wall (~1.2 mm estimate), washer, insert depth, screw engagement, and clearance so screws neither bottom out nor puncture the plate. Hand-tighten; do not crack the plastic box.
+- The four P4 feet hold the **project plate to the enclosure**. They are **NOT** stand-offs for soldered circuit boards. Mount the ESP32/PoE assembly and both perfboards above the plate with their own insulated spacers, screws or zip ties through suitable perforations. Keep solder joints and conductive component undersides isolated from the plate and any metal fasteners.
+- P4's hole pattern provides flexible mounting, **not prelocated exact PCB mounting holes**. Dry-fit the actual controller, ADS1115, terminal blocks, wiring, Ethernet bend and lid before drilling or securing electronic boards. Avoid the divider rail/recess and keep the two 3-wire sensor blocks reachable.
+- No electronic assembly has been physically fit-tested on P4 yet; the enclosure fit report does not verify cable or PoE clearance.
+
 ## Placement
 - Board A (50x70): ADS1115, R1-R4, C1, C2. No field terminal blocks.
 - Board B (50x70): exactly J1, J2 and R5. Labeled +5V/+3V3/GND/DATA/SIG solder-pad groups.
 - Controller: separate insulated supports; factory PoE daughterboard intact; USB/BOOT/RESET/RJ45 accessible.
-- A roughly 170x120 mm baseplate is a dry-fit starting point, not a drilling template. Measure actual board, PoE stack, connector footprint, cable bend and lid clearance. No fixed enclosure minimum is claimed.
+- Use the **confirmed-fitting P4 PETG project plate** (approximately 95.2 x 142.7 mm) instead of the earlier notional 170 x 120 mm baseplate. Dry-fit the real boards, PoE stack, connector footprint, cable bend and lid; plate fit alone does not prove component clearance.
 - Use isolated-pad perfboard, not unmodified stripboard. Short insulated jumpers create deliberate connections; adjacent pads are not automatically connected.
 
 ## Installed parts
@@ -36,6 +44,7 @@ Number from left to right, looking at screw heads with wire mouths toward the ac
 - C1=100nF ceramic between A0 and GND.
 - C2=100nF ceramic across ADS VDD and GND, close to module (added supply bypass; any existing module bypass remains).
 - One EXTRA temporary 10k is used for a bench test, then removed.
+- Mechanical mounting: confirmed-fitting **P4 PETG plate**, four **M3 heat-set inserts** (dimensions to verify), four on-hand **M3 screws** (try M3x6 and washers only after checking engagement), insulated electronic-board spacers, cable strain relief. These are not additional field electrical connectors.
 
 ## Temperature: it does NOT go through the ADS1115
 R5 bridges J2-1 (+3V3) to J2-2 (GPIO18/DATA). Exactly one pull-up on this cable; the probe itself does not contain one. No resistor in series with DATA; no DATA pull-up to +5V or GND.

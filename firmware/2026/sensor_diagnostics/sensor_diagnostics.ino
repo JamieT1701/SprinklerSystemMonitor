@@ -140,15 +140,15 @@ void setup() {
   temperatureSensors.begin();
   temperatureSensors.setResolution(12);
   sampleTemperature();
-  samplePressure();
+  // Pressure A0 remains inactive until onsite divider/voltage verification.
   lastTempSampleMs=lastPressureSampleMs=millis();
 
   Network.onEvent(networkEvent);
   SPI.begin(ETH_SCK,ETH_MISO,ETH_MOSI,ETH_CS);
   bool ethStarted = ETH.begin(ETH_PHY_W5500,1,ETH_CS,ETH_IRQ,ETH_RST,SPI,8);
-  Serial.printf("ETH_INIT=%s DS18B20=%s tempF=%.2f ADCvolts=%.4f\n",
+  Serial.printf("ETH_INIT=%s DS18B20=%s tempF=%.2f pressure=DISABLED\n",
     ethStarted?"OK":"FAILED",tempValid?"OK":"INVALID",
-    tempValid?(tempC*1.8f+32.0f):NAN,pressureNodeV);
+    tempValid?(tempC*1.8f+32.0f):NAN);
 }
 
 String makeBody() {
@@ -171,11 +171,9 @@ String makeBody() {
   }
   s += "freeze_state=" + cold + "\n";
   s += "freeze_notifications=NOT_CONFIGURED\n";
-  s += "pressure_a0_v=" + (pressureVoltageValid?String(pressureNodeV,4):String("INVALID"))+"\n";
-  // Guard A0 open/short; doesn't prove correct divider or gauge calibration.
-  bool plausible=pressureVoltageValid && pressureNodeV>=0.20f && pressureNodeV<=2.95f;
-  s += "pressure_input_state=" + String(!pressureVoltageValid?"ADC_ERROR":plausible?"VOLTAGE_PLAUSIBLE_UNCALIBRATED":"OUT_OF_EXPECTED_RANGE") + "\n";
-  s += "pressure_psi_provisional=" + (plausible?String(provisionalPsi,2):String("INVALID"))+"\n";
+  s += "pressure_a0_v=DISABLED_PENDING_DIVIDER_VERIFICATION\n";
+  s += "pressure_input_state=NOT_TESTED\n";
+  s += "pressure_psi_provisional=NOT_CONFIGURED\n";
   s += "pressure_calibration=UNVERIFIED_DIVIDER_AND_GAUGE\n";
   s += "pressure_notifications=NOT_CONFIGURED\n";
   s += "ota_installed=" + String(otaReady?"yes":"no") + "\n";
@@ -189,8 +187,8 @@ void loop() {
     Serial.printf("TEMP DS18B20=%s F=%.2f\n",tempValid?"OK":"ERROR",tempValid?tempC*1.8f+32.0f:NAN);
   }
   if (now-lastPressureSampleMs>=4000U) {
-    lastPressureSampleMs=now;samplePressure();
-    Serial.printf("A0_V=%.4f psi_provisional=%.2f\n",pressureNodeV,provisionalPsi);
+    lastPressureSampleMs=now;
+    // First field-validation release does not sample ADC A0.
   }
   if (now-lastScanMs>=60000UL) {lastScanMs=now;scanI2C();}
   if (ethIp && !otaReady) {

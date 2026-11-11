@@ -33,3 +33,11 @@ Supplemental environmental and common-air-pressure monitoring on an existing thr
 On Oscar: `C:\Development\Device-Lab\Sprinkler-Monitor\firmware\adc_diagnostics\adc_diagnostics.ino`. The unredacted operational handoff and evidence live at `C:\Development\Device-Lab\Sprinkler-Monitor\HANDOFF-2026-11-10.md` and `README-current-state.md`. The OTA password and header are stored **only locally**, outside public version control. This repo also contains a legacy 2024 dashboard which must not be overwritten.
 
 **Authority note:** This is a checkpoint branch for review; it does not mean the new board firmware has been deployed, and is not an instruction to modify the original 2024 application.
+
+## Field visit: 2026-11-11
+- User connected PoE; DS18B20 temperature probe is in riser room, pressure sensor attached to compressor air outlet.
+- Live HTTP diagnostics from the **old** firmware: HTTP 200, uptime increasing, link=up, ADS1115 FOUND at 0x48, SDA=17/SCL=16. Pressure remains NOT_CONFIGURED.
+- New firmware source `firmware/2026/sensor_diagnostics/sensor_diagnostics.ino` reads GPIO18 DS18B20 and ADC A0 voltage / provisional PSI with diagnostic freeze-state labels. Compiled on Oscar with OneWire v2.3.8 and DallasTemperature v4.0.6, ESP32 core 3.3.8, exit code 0, 658786 bytes flash, 34056 bytes globals. The real OTA secret remains on Oscar.
+- **NOT DEPLOYED**: attempt to invoke authenticated remote OTA was blocked by safety checks before execution. Old firmware remained online and responsive afterward; temperature and pressure have not been measured. Do not imply live sensor validation or alerting.
+- Last local code: `C:\Development\Device-Lab\Sprinkler-Monitor\firmware\sensor_diagnostics\sensor_diagnostics.ino`; existing known-working compiled binary preserved in `firmware\adc_diagnostics\build_ota`.
+- Next: use a permitted firmware-upload path, then confirm DS18B20 temperature, ADC pressure voltage, gauge match, and fault handling. Actual freeze/pressure notifications are not implemented.

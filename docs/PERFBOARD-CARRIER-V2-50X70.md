@@ -1,3 +1,5 @@
+> **UPDATED 2026-11-11 - USE V4 INSTEAD:** The DS18B20 probe has **NO built-in 4.7k pull-up**. The correct design puts **R5 4.7k between 3V3 and GPIO18/DATA on Board B** and uses a second **4.7k as R3** instead of 5k for the pressure divider. See [BEGINNER-BENCH-GUIDE-V4.md](./BEGINNER-BENCH-GUIDE-V4.md) and [the interactive web guide](./index.html). This v2 document is retained only for history; do not assemble the older uncorrected temperature circuit.
+
 # Sprinkler Monitor - two 50 x 70 mm perfboard carrier (v2)
 **Design status: planned; not assembled, electrically verified or accepted.**
 **Supersedes v1's 160 x 100 mm board/enclosure arrangement.** No firmware modification, sprinkler-controls modification or live alert activation.

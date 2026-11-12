@@ -2,17 +2,18 @@
 
 **Date:** 2026-11-12 (Eastern)
 **Authority:** `JamieT1701/SprinklerSystemMonitor`, draft PR #1, branch `docs/device-lab-2026-11-10-checkpoint`.
-**State:** Model source, measured plate reference, layout, two rendered engineering views, geometry tests and a test-print cable saddle prepared. **R2 was NOT run in Autodesk Fusion on Oscar during this session** because its Windows GUI became inaccessible to remote input. **The R1 assembly remains the last Fusion-executed and cloud-saved concept.** No full-system fit or production mechanical release is accepted.
+**State:** **R2 EXECUTED, F3D EXPORTED, CLOUD-SAVED AND NATIVE VIEWPORT VERIFIED** on Oscar on 2026-11-12. Fusion produced nine top-level components, one preserved P4 mesh, and a 767,278-byte editable native F3D archive. Saved in **Jamie's Device Lab → Device Lab CAD → Sprinkler Monitor R2 - Detailed Industrial Concept PROVISIONAL**. Native execution receipt and checksum are versioned in `cad/fusion/DeviceLabR2Detail/native-run-receipt.json`. **Physical fit and print release remain NOT ACCEPTED.**
 
 ## View on a phone
 
 - **[Interactive R2 3D assembly viewer — rotate, zoom, explode, hide lid](r2-viewer.html)** (no account or browser extensions; public non-operational concept).
 - [Verified iPhone-size viewer screenshot](assets/r2-viewer-iphone-viewport-qa.png) and [exploded screenshot](assets/r2-viewer-exploded-iphone-qa.png). These are screenshots from a Chrome mobile-device emulator at 390 × 844 CSS pixels, not a physical iPhone device test.
+- **[ACTUAL Autodesk Fusion R2 isometric viewport screenshot](assets/fusion-r2-NATIVE-isometric.png)** — captured on Oscar directly from the real native Fusion assembly after successful execution and cloud save.
 - [R2 assembly, isometric, source-derived geometry](assets/fusion-r2-assembly-isometric.png)
 - [R2 dimensioned top-down and section study](assets/fusion-r2-layout-top.png)
 - [Previous R1 actual Fusion viewport (legacy height error; see below)](assets/fusion-r1-cad-isometric.png)
 
-The R2 images are rendered by an independent, checked Python/Pillow geometry renderer, **not falsely presented as screenshots of Fusion execution or a photo of printed hardware**. The high-polish image-generation concept from chat is illustrative only and may not match exact sensors/components.
+The actual native Fusion screenshot linked above comes from the model running in Autodesk Fusion on Oscar. The *separate* R2 layout PNGs and browser 3D viewer remain derived from independently checked model data; they are not native Fusion screenshots or photographs of printed hardware. The high-polish image-generation concept from chat is illustrative only and may not match exact sensors/components.
 
 ## Why R2 differs from R1
 
@@ -78,11 +79,9 @@ The R2 CAD still shows *routing envelopes*, not soldered wires or a fully measur
 - `hardware/mount-accessories/R2_P4_10mm_Wire_Tie_Saddle_FIT_TEST_ONLY.stl`: one optional no-drill, nonstructural PETG wire-saddle fit coupon, 26×16×8 mm, two nominal 3.6 mm pass-through holes at 10 mm center spacing. Its mesh was generated and independently checked manifold. **Not** a board mount or externally loaded strain relief. See accessory README.
 - `tests/test_r2_layout.py` and `tests/test_r2_saddle.py` verification suites.
 
-**Fusion R2 not executed:** Oscar's Fusion process continued responsive and the R1 save remained intact, but Windows returned **foreground window handle 0**, failed `SetForegroundWindow`, and screenshot capture failed with an invalid GDI handle. This indicates that the remote command session could no longer interact with the visible unlocked desktop. The attempted Shift+S interaction could not be verified. Accordingly **no claim of R2 F3D export, Autodesk hub save, or viewport screenshot** is made. The script was installed and static syntax checked, but runtime geometry cannot be certified until it runs in Fusion.
+**Native Fusion R2 successfully executed and saved (2026-11-12):** The owner unlocked Oscar. Using the live Fusion UI, `Shift+S` → **Scripts and Add-Ins** → `DeviceLabR2Detail` → **Run** completed. The Fusion-generated `r2_detail_result.json` reported `status: SUCCESS`, nine top-level components, exactly one P4 reference mesh, two independent 3-position terminal blocks, correct P3–P12 Board A header, and 8/7 mm bounding-box Y gaps. The exported F3D `R2_Detailed_Industrial_Concept_20261112_014931.f3d` is 767,278 bytes; the byte-identical Git version is `cad/fusion/DeviceLabR2Detail/R2_PROVISIONAL_Assembly_NATIVE.f3d`, SHA-256 `2b3eb380e6fcd351692ce06c4403cbdfe799a1ebbdfc53a696b56477d1762319`. The Fusion Save dialog selected **Device Lab CAD**, and the window title subsequently displayed **Sprinkler Monitor R2 - Detailed Industrial Concept PROVISIONAL (Jamie's Device Lab)** with no unsaved indicator. A native Fusion isometric viewport image was captured and versioned at `docs/assets/fusion-r2-NATIVE-isometric.png`. See the sanitized `native-run-receipt.json` for repeatable evidence.
 
-### One manual GUI gate to finish R2 Fusion acceptance
-
-On **Oscar**: unlock the Windows desktop if locked. Open the existing Autodesk Fusion session. Press **Shift+S** → **Scripts and Add-Ins** → choose **DeviceLabR2Detail** → **Run**. The script will build a **new** document, leaving the old R1 and approved P4 reference untouched. It writes `%USERPROFILE%\Documents\DeviceLab\Fusion\r2_detail_result.json` and a timestamped local `.f3d` export when successful. Inspect the viewport, particularly the verified P4 source and provisional board locations. Then save the new design in **Jamie's Device Lab → Device Lab CAD**, with the distinct name **Sprinkler Monitor R2 - Detailed Industrial Concept PROVISIONAL**. A subsequent independent remote check must verify the receipt, exported F3D, viewport, cloud save and any required API corrections. No user credential is needed in the script.
+The earlier temporary Windows GUI accessibility failure is **resolved** for this run; R2 no longer requires a manual Fusion execution gate. Remaining gates are **physical measurements, actual board assembly, dry fit, and verification of print/installation dimensions**, not CAD script execution.
 
 ## Physical gates before printing installed mounts or modifying the real case
 

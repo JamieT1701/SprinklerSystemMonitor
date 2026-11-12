@@ -1,0 +1,13 @@
+{
+  "autodeskProduct": "Fusion",
+  "type": "script",
+  "id": "",
+  "author": "Device Lab",
+  "description": {
+    "": "Detailed sprinkler monitor mechanical assembly concept. P4 exact, PCB maps and provisional industrial service envelope."
+  },
+  "version": "1.0.0",
+  "runOnStartup": false,
+  "supportedOS": "windows",
+  "editEnabled": true
+}

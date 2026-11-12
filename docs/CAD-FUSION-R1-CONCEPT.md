@@ -1,5 +1,7 @@
 # Device Lab — Sprinkler Monitor R1 industrial assembly concept
 
+**SUPERSEDED VERTICAL FIT MODEL (2026-11-12 correction):** The R1 script used a 1.1 mm Z translation after flipping the approved P4 mesh feet-down. That inadvertently placed its 9 mm mounting feet as low as -7.9 mm, beneath the modeled case floor at 0..2 mm. The R1 3D file is an archived concept only and **must not be used as a physical Z-clearance or standoff reference**. The corrected R2 mechanical layout lifts the rotated original P4 source face to Z=11 mm, seating the foot bottoms at Z=2 mm and locating an 8 mm separate PCB support from plate Z=11 to board Z=19 mm. R2 is source-checked but not yet Fusion-executed; see [R2 engineering handoff](CAD-FUSION-R2-DETAILED-DESIGN.md). The accepted original P4 STL itself was never modified.
+
 **Date:** 2026-11-12 (Eastern)
 **Status:** REAL FUSION ASSEMBLY CREATED / EXPORTED / CLOUD-SAVED; **CONCEPT ONLY, NOT FIT-VALIDATED OR FABRICATION-READY**
 **Authority:** `JamieT1701/SprinklerSystemMonitor`, draft PR #1, branch `docs/device-lab-2026-11-10-checkpoint`. Do not merge into legacy application as part of enclosure design.

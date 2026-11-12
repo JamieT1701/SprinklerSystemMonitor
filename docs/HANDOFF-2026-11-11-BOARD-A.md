@@ -70,3 +70,15 @@ They are **isolated pads**, not stripboard. None of these coordinates connect el
 
 ## Important status distinctions
 The authoritative wiring is documented; Board A **components are physically soldered**; Board A jumpers and continuity have **not been user-confirmed**; Board B assembly, power testing, calibration and alarms remain open. Never substitute prior conceptual diagrams or obsolete P2 PDF with R3=5k for R6 values.
+
+
+## 2026-11-11 evening update — alternate-hole routing for Board A jumpers
+Owner stopped for the evening **before starting any of the ten underside Board A jumper wires**. This supersedes the default assumption that every insulated wire must be soldered into the exact component/pin hole at both ends. **No new wires, hole assignments, electrical checks, or power-up have been completed or approved.**
+
+**Agreed build technique:** Some very short underside jumper wires are awkward to manipulate. It is acceptable to cut a longer, manageable insulated jumper, insert its stripped end through a *verified unoccupied nearby hole*, bend its exposed copper tail on the underside to contact the **original designated component/header pad**, and solder the copper-to-pad connection. Trim exposed copper appropriately. Avoid relying solely on a large free-standing blob of solder between isolated pads. Keep the conductor mechanically secure, adequately insulated, and inspectable; avoid accidental adjacent-pad bridges or interference with the ADS module/socket, other leads, and mounting hardware. A direct tiny solder bridge may be feasible for unusually close pads, but should not be the default without checking geometry and inspection.
+
+**Most important constraint:** The ten **electrical endpoint pairs and nets** listed above remain **unchanged** (D7-D9, D9-F9, D13-D15, F13-H13, H13-P6, D19-H15, H15-N17, N17-P11, P11-P8, N15-P12). Only the *physical insulated-wire insertion holes / routing* may change. There is **no authorization to relocate existing resistors, capacitors or the P3-P12 header**, and no redesign of Board A circuit.
+
+**On resumption:** Before presenting alternate coordinates as facts, inspect the present top-side hole assignments and available neighboring holes, ensure clearance for each proposed route, and identify exactly (a) the unused *wire insertion hole*, (b) the original *electrical pad* to which the bent tail must attach, and (c) the other endpoint. Present **small groups**, not all ten at once. Use component-side A-R / 1-24 coordinates and explicitly account for mirror orientation of the underside. If a neighboring hole is occupied, ambiguous or cramped, retain the original direct endpoint rather than guessing. Confirm link completion and continuity/absence of shorts before moving to powered tests.
+
+**Resume status:** Board A components soldered; ADS1115 removable female-on-male header at P3-P12; **0/10 jumpers installed as last explicitly stated**; original ten links remain pending; no continuity tests confirmed. Owner requested this decision be preserved **in GitHub**, not a separate conversational handoff.

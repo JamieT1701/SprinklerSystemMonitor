@@ -1,3 +1,5 @@
+> **LATEST PHYSICAL BUILD CHECKPOINT (Friday 2026-11-13):** This handoff is historical and its '0/10 jumpers / Board B not built' statements are obsolete. The owner has since reported Boards A/B assembled with JST connectors and all inter-board connections made. **Read [`HANDOFF-2026-11-13-WIRING-COMPLETE-MONDAY-BRINGUP.md`](HANDOFF-2026-11-13-WIRING-COMPLETE-MONDAY-BRINGUP.md) before resuming Monday 2026-11-16.** The built monitor remains unpowered/not fully continuity-tested or operationally accepted; v5-47k not deployed.
+
 # Device Lab — Sprinkler Pressure Monitor — Physical Build Handoff
 **Checkpoint:** November 11, 2026 (evening)  
 **Authority:** `JamieT1701/SprinklerSystemMonitor`, active branch `docs/device-lab-2026-11-10-checkpoint`, draft PR #1. Do NOT assume `main` is current or merge this branch as part of assembly.

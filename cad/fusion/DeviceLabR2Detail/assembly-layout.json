@@ -1,0 +1,293 @@
+{
+  "revision": "R2-concept",
+  "status": "PROVISIONAL_NOT_FABRICATION_READY",
+  "units": "mm",
+  "evidence": {
+    "P4": "hardware/project-plate-p4/Project_Plate_P4_M3_Heatset.stl",
+    "sha256": "1b2c593862eefe328c76ad1b6fe5e358a4fb71e1e7dc10909f55384ac18ff9f2",
+    "base": "docs/BUILD-GUIDE.md",
+    "bench": "docs/HANDOFF-2026-11-11-BOARD-A.md"
+  },
+  "P4": {
+    "bbox_xyz": [
+      95.1599,
+      142.652,
+      9
+    ],
+    "surface_z": 11,
+    "feet_bottom_z": 2,
+    "plate_bottom_z": 8,
+    "feet_height": 6,
+    "plate_thickness": 3,
+    "feet_centers": [
+      [
+        10,
+        10
+      ],
+      [
+        85.1599,
+        10
+      ],
+      [
+        10,
+        132.6524
+      ],
+      [
+        85.1599,
+        132.6524
+      ]
+    ],
+    "status": "exact preserved mesh; case fit owner-reported"
+  },
+  "enclosure": {
+    "outer_min_xyz": [
+      -4.62,
+      -4.624,
+      0
+    ],
+    "outer_max_xyz": [
+      99.78,
+      147.276,
+      59
+    ],
+    "floor_top_z": 2,
+    "wall_estimate": 1.2,
+    "provenance": "prior exterior paper trace approx 104.4x151.9, height proposed only"
+  },
+  "boards": [
+    {
+      "id": "A",
+      "name": "Board A pressure and ADS1115",
+      "xy": [
+        12,
+        3,
+        82,
+        53
+      ],
+      "z": 19,
+      "thickness": 1.6,
+      "component_height_est": 11.5,
+      "status": "components soldered; no jumpers confirmed"
+    },
+    {
+      "id": "ESP",
+      "name": "Waveshare ESP32-S3-ETH",
+      "xy": [
+        11,
+        61,
+        83.8,
+        82
+      ],
+      "z": 19,
+      "thickness": 1.6,
+      "component_height_est": 14.6,
+      "status": "envelope; PoE stack unverified"
+    },
+    {
+      "id": "B",
+      "name": "Board B field terminals",
+      "xy": [
+        12,
+        89,
+        82,
+        139
+      ],
+      "z": 19,
+      "thickness": 1.6,
+      "component_height_est": 9.2,
+      "status": "not physically assembled"
+    }
+  ],
+  "boardA": {
+    "header": "P3-P12 (A3,A2,A1,A0,ALRT,ADDR,SDA,SCL,GND,VDD)",
+    "resistors": {
+      "R1": 10000,
+      "R2": 10000,
+      "R3": 4700,
+      "R4": 1000
+    },
+    "capacitors_nf": {
+      "C1": 100,
+      "C2": 100
+    }
+  },
+  "boardB": {
+    "terminals": [
+      {
+        "id": "J1",
+        "pins": [
+          "+5V",
+          "GND",
+          "PRESS_SIG"
+        ],
+        "local_xy": [
+          42,
+          4,
+          60,
+          20
+        ]
+      },
+      {
+        "id": "J2",
+        "pins": [
+          "+3V3",
+          "TEMP_DATA",
+          "GND"
+        ],
+        "local_xy": [
+          42,
+          28,
+          60,
+          44
+        ]
+      }
+    ],
+    "pullup_R5_ohms": 4700
+  },
+  "harness": {
+    "ids": [
+      "W01",
+      "W02",
+      "W03",
+      "W04",
+      "W05",
+      "W06",
+      "W07",
+      "W08",
+      "W09"
+    ],
+    "provisional_corridor_xy": [
+      86.5,
+      14,
+      92.5,
+      130
+    ],
+    "route_groups": {
+      "short_ESP_to_B": [
+        "W01",
+        "W02",
+        "W03",
+        "W04"
+      ],
+      "short_ESP_to_A": [
+        "W05",
+        "W06"
+      ],
+      "right_side_B_to_A": [
+        "W07",
+        "W08",
+        "W09"
+      ]
+    },
+    "provisional_corridor_description": "6 mm right perimeter for W07–W09 only; other wires are short branches, not 9-wire bundle"
+  },
+  "mounts": {
+    "support_bottom_z": 11,
+    "support_height": 8,
+    "locations": [
+      [
+        18,
+        7
+      ],
+      [
+        77,
+        7
+      ],
+      [
+        18,
+        48
+      ],
+      [
+        77,
+        48
+      ],
+      [
+        16,
+        65
+      ],
+      [
+        79,
+        65
+      ],
+      [
+        16,
+        78
+      ],
+      [
+        79,
+        78
+      ],
+      [
+        18,
+        93
+      ],
+      [
+        77,
+        93
+      ],
+      [
+        18,
+        133
+      ],
+      [
+        77,
+        133
+      ]
+    ],
+    "status": "provisional; actual P4 tie/hole anchorage unverified"
+  },
+  "external": [
+    {
+      "id": "ETH",
+      "type": "factory RJ45 / PoE"
+    },
+    {
+      "id": "J1",
+      "type": "pressure 3-wire"
+    },
+    {
+      "id": "J2",
+      "type": "temperature 3-wire"
+    }
+  ],
+  "validation_gates": [
+    "case interior dimensions and lid height",
+    "P4 mounts / inserts / case screw length",
+    "board underside and solder clearance",
+    "Board B terminal screwdriver access",
+    "real RJ45 cable bend and PoE module stack",
+    "board support anchorage on P4 holes",
+    "entry gland and seal design",
+    "wire strain relief / stress",
+    "actual populated three-board dry fit"
+  ],
+  "entry_zone_proposals": [
+    {
+      "name": "Ethernet PoE",
+      "edge": "left",
+      "y_range_mm": [
+        62,
+        82
+      ],
+      "physical_hole": "NOT CUT"
+    },
+    {
+      "name": "J1 pressure",
+      "edge": "right",
+      "y_range_mm": [
+        95,
+        107
+      ],
+      "physical_hole": "NOT CUT"
+    },
+    {
+      "name": "J2 temperature",
+      "edge": "right",
+      "y_range_mm": [
+        120,
+        132
+      ],
+      "physical_hole": "NOT CUT"
+    }
+  ]
+}

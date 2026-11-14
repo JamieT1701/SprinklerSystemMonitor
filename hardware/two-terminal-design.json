@@ -1,0 +1,278 @@
+{
+  "revision": "two-terminal-r6",
+  "date": "2026-11-11",
+  "status": "DESIGN_REVIEWED_NOT_PHYSICALLY_VALIDATED",
+  "controller": "Waveshare ESP32-S3-POE-ETH with factory PoE module",
+  "boards": {
+    "A": {
+      "size_mm": [
+        70,
+        50
+      ],
+      "role": "ADS1115 and pressure input circuit"
+    },
+    "B": {
+      "size_mm": [
+        70,
+        50
+      ],
+      "role": "Both sensor terminal blocks and temperature pull-up"
+    }
+  },
+  "field_connections": [
+    {
+      "id": "ETH",
+      "type": "RJ45",
+      "destination": "Existing controller RJ45",
+      "purpose": "PoE power and Ethernet data"
+    },
+    {
+      "id": "J1",
+      "type": "terminal_block",
+      "positions": 3,
+      "board": "B",
+      "sensor": "PRESSURE",
+      "pins": {
+        "1": "+5V",
+        "2": "GND",
+        "3": "PRESS_SIG"
+      }
+    },
+    {
+      "id": "J2",
+      "type": "terminal_block",
+      "positions": 3,
+      "board": "B",
+      "sensor": "TEMPERATURE",
+      "pins": {
+        "1": "+3V3",
+        "2": "TEMP_DATA",
+        "3": "GND"
+      }
+    }
+  ],
+  "resistors": {
+    "R1": {
+      "ohms": 10000,
+      "board": "A",
+      "nodes": [
+        "PRESS_SIG",
+        "DIV"
+      ]
+    },
+    "R2": {
+      "ohms": 10000,
+      "board": "A",
+      "nodes": [
+        "DIV",
+        "MID"
+      ]
+    },
+    "R3": {
+      "ohms": 4700,
+      "board": "A",
+      "nodes": [
+        "MID",
+        "GND"
+      ]
+    },
+    "R4": {
+      "ohms": 1000,
+      "board": "A",
+      "nodes": [
+        "DIV",
+        "A0"
+      ]
+    },
+    "R5": {
+      "ohms": 4700,
+      "board": "B",
+      "nodes": [
+        "+3V3",
+        "TEMP_DATA"
+      ]
+    }
+  },
+  "capacitors": {
+    "C1": {
+      "farads": 1e-07,
+      "board": "A",
+      "nodes": [
+        "A0",
+        "GND"
+      ],
+      "purpose": "Pressure input filter"
+    },
+    "C2": {
+      "farads": 1e-07,
+      "board": "A",
+      "nodes": [
+        "+3V3",
+        "GND"
+      ],
+      "purpose": "ADS1115 supply bypass"
+    }
+  },
+  "harness": [
+    {
+      "id": "W01",
+      "from": "ESP VSYS",
+      "to": "B +5V pad / J1-1",
+      "net": "+5V",
+      "hint": "Pressure power only"
+    },
+    {
+      "id": "W02",
+      "from": "ESP 3V3",
+      "to": "B +3V3 pad / J2-1",
+      "net": "+3V3",
+      "hint": "Temperature and ADS supply"
+    },
+    {
+      "id": "W03",
+      "from": "ESP GND",
+      "to": "B GND pad",
+      "net": "GND",
+      "hint": "Common return"
+    },
+    {
+      "id": "W04",
+      "from": "ESP GPIO18",
+      "to": "B DATA pad / J2-2",
+      "net": "TEMP_DATA",
+      "hint": "Temperature data only"
+    },
+    {
+      "id": "W05",
+      "from": "ESP GPIO17",
+      "to": "A ADS SDA",
+      "net": "SDA",
+      "hint": "I2C data"
+    },
+    {
+      "id": "W06",
+      "from": "ESP GPIO16",
+      "to": "A ADS SCL",
+      "net": "SCL",
+      "hint": "I2C clock"
+    },
+    {
+      "id": "W07",
+      "from": "B +3V3 pad",
+      "to": "A +3V3 pad / ADS VDD",
+      "net": "+3V3",
+      "hint": "Never connect ADS VDD to +5V"
+    },
+    {
+      "id": "W08",
+      "from": "B GND pad",
+      "to": "A GND pad / ADS GND",
+      "net": "GND",
+      "hint": "Also the divider/capacitor return"
+    },
+    {
+      "id": "W09",
+      "from": "B SIG pad / J1-3",
+      "to": "A SIG pad / R1 input",
+      "net": "PRESS_SIG",
+      "hint": "Raw signal goes to R1, not directly to A0"
+    }
+  ],
+  "nets": {
+    "+5V": [
+      "ESP.VSYS",
+      "B.5V",
+      "J1.1"
+    ],
+    "+3V3": [
+      "ESP.3V3",
+      "B.3V3",
+      "J2.1",
+      "R5.1",
+      "A.3V3",
+      "ADS.VDD",
+      "C2.1"
+    ],
+    "GND": [
+      "ESP.GND",
+      "B.GND",
+      "J1.2",
+      "J2.3",
+      "A.GND",
+      "ADS.GND",
+      "ADS.ADDR",
+      "R3.2",
+      "C1.2",
+      "C2.2"
+    ],
+    "TEMP_DATA": [
+      "ESP.GPIO18",
+      "B.DATA",
+      "J2.2",
+      "R5.2"
+    ],
+    "SDA": [
+      "ESP.GPIO17",
+      "ADS.SDA"
+    ],
+    "SCL": [
+      "ESP.GPIO16",
+      "ADS.SCL"
+    ],
+    "PRESS_SIG": [
+      "J1.3",
+      "B.SIG",
+      "A.SIG",
+      "R1.1"
+    ],
+    "DIV": [
+      "R1.2",
+      "R2.1",
+      "R4.1"
+    ],
+    "MID": [
+      "R2.2",
+      "R3.1"
+    ],
+    "A0": [
+      "R4.2",
+      "C1.1",
+      "ADS.A0"
+    ]
+  },
+  "unused": [
+    "ADS.A1",
+    "ADS.A2",
+    "ADS.A3",
+    "ADS.ALERT",
+    "ESP.3V3_EN"
+  ],
+  "assumptions": {
+    "pressure_full_scale_psi": 150,
+    "sensor_zero_v": 0.5,
+    "sensor_full_scale_v": 4.5,
+    "sensor_model_verified": false,
+    "probe_pullup_on_cable": false,
+    "divider_ratio": 0.5951417004048583
+  },
+  "firmware": {
+    "prepared_id": "sprinkler-pressure-diagnostics-v5-47k",
+    "prepared_binary_sha256": "D3F957B5E8270F30B8140F8035E28D7978764D8BC5FAEDED081825FF4A9F36E7",
+    "prepared_compile_exit": 0,
+    "prepared_deployed": false,
+    "last_observed_id": "sprinkler-pressure-diagnostics-v4",
+    "last_observed_a0_v": [
+      0.0003,
+      0.0004
+    ],
+    "last_observed_pressure_valid": false
+  },
+  "source_urls": {
+    "Waveshare board": "https://docs.waveshare.com/ESP32-S3-ETH",
+    "Waveshare schematic": "https://files.waveshare.com/wiki/ESP32-S3-ETH/ESP32-S3-ETH-Schematic.pdf",
+    "Waveshare pin labels": "https://docs.waveshare.com/assets/files/ESP32-S3-ETH-details-15-b9d2e97a5122db37da6be5bac19e29b4.webp",
+    "ADS1115 datasheet": "https://www.ti.com/lit/ds/symlink/ads1115.pdf",
+    "DS18B20 datasheet": "https://www.analog.com/media/en/technical-documentation/data-sheets/ds18b20.pdf",
+    "DS18B20 pull-up confirmation": "https://support.analog.com/en-US/knowledgebase/article/000094969"
+  }
+}

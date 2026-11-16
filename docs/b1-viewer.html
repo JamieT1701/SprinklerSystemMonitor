@@ -144,7 +144,7 @@ footer{margin-top:24px;color:#88a8b6;font-size:12px}
    document.body.setAttribute("data-b1-model-ready","error");
  });
  var deepLink=new URLSearchParams(window.location.search).get("view");
- if(deepLink && Object.prototype.hasOwnProperty.call(variants,deepLink))selectVariant(deepLink);
+ if(deepLink && Object.prototype.hasOwnProperty.call(variants,deepLink)){selectVariant(deepLink);} else {selectVariant("closed");}
  document.getElementById("reset").addEventListener("click",function(){mv.cameraOrbit=variants[selected].orbit;mv.fieldOfView="30deg";});
  document.getElementById("top").addEventListener("click",function(){mv.cameraOrbit="0deg 10deg 105%";});
  document.getElementById("side").addEventListener("click",function(){mv.cameraOrbit="90deg 75deg 105%";});

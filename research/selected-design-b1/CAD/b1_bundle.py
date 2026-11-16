@@ -18,7 +18,7 @@ RENDER_NAMES={
 BINARY_NAMES={
  "B1_assembled.FCStd","B1_exploded.FCStd","B1_complete_reference_assembly.step",
  "B1_exploded_reference_assembly.step","B1_visual_assembly.blend",
- "B1_concept_interactive.glb","B1_dashboard_demo.html",
+ "B1_concept_interactive.glb","B1_lid_off.glb","B1_exploded_assembly.glb","B1_electronics_only.glb","B1_viewer_variants.json","B1_dashboard_demo.html",
  "B1_part_manifest.json","B1_CAD_README.txt","B1_placement_DRC_UNQUALIFIED.txt"}
 files=[]
 for f in ROOT.rglob("*"):
@@ -54,6 +54,9 @@ names=[str(rel) for f,rel in files]
 required=["CAD/outputs/B1_assembled.FCStd",
  "CAD/outputs/B1_visual_assembly.blend",
  "CAD/outputs/B1_concept_interactive.glb",
+ "CAD/outputs/B1_lid_off.glb",
+ "CAD/outputs/B1_exploded_assembly.glb",
+ "CAD/outputs/B1_electronics_only.glb",
  "CAD/outputs/B1_complete_reference_assembly.step",
  "CAD/electronics/B1_placement_NOT_ROUTED.kicad_pcb",
  "CAD/outputs/B1_dashboard_demo.html",

@@ -1,0 +1,35 @@
+{
+  "B1_lid_off.glb": {
+    "components": 99,
+    "nodes": 99,
+    "bytes": 4195920,
+    "included_categories": [
+      "CASE",
+      "ELECTRONICS",
+      "MOUNT",
+      "SILK"
+    ]
+  },
+  "B1_exploded_assembly.glb": {
+    "components": 110,
+    "nodes": 110,
+    "bytes": 5802556,
+    "included_categories": [
+      "CASE",
+      "ELECTRONICS",
+      "LID",
+      "LID_LABEL",
+      "MOUNT",
+      "SILK"
+    ]
+  },
+  "B1_electronics_only.glb": {
+    "components": 88,
+    "nodes": 88,
+    "bytes": 3216328,
+    "included_categories": [
+      "ELECTRONICS",
+      "SILK"
+    ]
+  }
+}

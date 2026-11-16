@@ -37,6 +37,11 @@ All three applications were installed via free user-level Flatpak on Arthur. Fus
 - `outputs/B1_exploded_reference_assembly.step` — exploded neutral STEP.
 - `outputs/B1_visual_assembly.blend` — editable Blender scene with material and studio lights.
 - `outputs/B1_concept_interactive.glb` — portable interactive glTF binary; open in any GLB-capable viewer.
+- `outputs/B1_lid_off.glb` — case open (cover removed) to inspect the carrier and electronic modules.
+- `outputs/B1_exploded_assembly.glb` — lid raised and populated carrier lifted from base for individual assembly viewing.
+- `outputs/B1_electronics_only.glb` — close examination of PCB, sockets, controller, ADC and field terminals with the enclosure removed.
+- **Published web viewer:** https://jamiet1701.github.io/SprinklerSystemMonitor/b1-viewer.html — select Closed, Lid Off, Exploded, or Electronics Only; drag to rotate, scroll/pinch to zoom. All views use the same source Blender model and remain design surrogates.
+- `b1_export_assembly_variants.py` — reproducibly exports all three alternate geometry-based GLBs from the native Blender scene.
 - `outputs/B1_dashboard_demo.html` — standalone **interactive UI demonstration** (no backend, no network traffic, synthetic data and scenarios ONLY). Open locally in a browser.
 - `electronics/B1_placement_NOT_ROUTED.kicad_pcb` — **KiCad PCB layout study**, not a board design.
 - `outputs/meshes/` — FreeCAD-generated STL geometry for all 102 individual model pieces (provided in the packaged ZIP, not necessarily committed individually).

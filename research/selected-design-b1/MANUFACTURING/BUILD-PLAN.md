@@ -41,3 +41,8 @@ Cost tracking for 1/5/25/100 quantities requires: actual supplier tier cost, tax
 ## Site with multiple independently monitored dry valves
 
 Do **not** quote a single compressor-outlet device as coverage of all dry valves. Product BOM remains **per independently qualified single-channel B1 unit**. A property with several system-side taps can require multiple transmitter + B1 + network/power installations, each with its own signed installer/calibration acceptance and maintenance records. A three-channel shared gateway would require separate engineering, independent fault domain study, channel isolation and test coverage; it is **not** the approved B1 release scope. The precise installed device count belongs to the qualified site design, not a universal three-system assumption.
+
+
+### Revision B assembly and field service
+
+Install P1/P2/P3 bulkheads with exact OEM gasket/wall/fastener geometry and validated complementary cordsets before end-of-line electrical and IP tests. No customer opens lid for connector changes. Pair male cable ends to panel female sockets; use manufacturer contact views and verify continuity electrically. Install actual PoE sealed mating shroud/cap, external drip loops and strain relief. Three holes only; AUX visual blank must not penetrate enclosure. The exact connector pieces, matched cables and caps must be part-numbered and supplier quoted. This is concept only until physical validation. See HARDWARE/CONNECTOR-REDESIGN.md.

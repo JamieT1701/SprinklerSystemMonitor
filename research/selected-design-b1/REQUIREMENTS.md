@@ -54,3 +54,8 @@ A read-only review of the owner's recent **private annual fire sprinkler inspect
 Add P0 site acceptance requirement **P-06:** For each required protected system, identify a qualified contractor-approved system-side measurement domain, independent transmitter ID, calibrated range and per-valve threshold record. **One B1 monitor per approved valve-side tap** is the preliminary modular choice; multi-channel shared gateway is deferred. A healthy common-compressor sensor must not allow an unmonitored required valve to appear NORMAL on the site dashboard. See `HARDWARE/MULTI-SYSTEM-SCOPE.md` and synthetic `SOFTWARE/site_rollup.py`.
 
 **Remaining unresolved despite the inspection:** Whether individual valve-side pressure ports are accessible/approved, which compressor/regulator/air-maintenance elements separate pressure domains, whether historical conditions and alarm bands still match present equipment, and what remediation of any inspection observations has actually occurred. Only owner/qualified contractor can verify these.
+
+
+### B1 Rev B service-connector acceptance
+
+X-01 (P0): All three field cables can be replaced from outside closed enclosure. X-02 (P0): Distinct key/size prevents erroneous cross-plug. X-03 (P0): Correct per-connector manufacturer cutouts, mating/anti-corrosion caps, internal patch and harness strain relief validated physically. X-04 (P0): assembled enclosure IP54 target **unverified**; no rating claim until tested. X-05 (P0): 24 V loop remains current-limited/fault protected, safe sensor disconnect/miswire/power-off, real M8/M12 contact numbers verified. X-06 (P1): AUX is undrilled and unpowered, no fourth sensor channel promised. Full plan HARDWARE/CONNECTOR-REDESIGN.md.

@@ -24,18 +24,18 @@ The permanent [interactive B1 review page](https://jamiet1701.github.io/Sprinkle
 ## Open the deliverables
 
 ### For immediate review
-- `outputs/renders/01_b1_closed_product.png` — closed clear-lid product with two illustrative remote sensor cables.
+- `outputs/renders/01_b1_closed_product.png` — closed clear-lid product with three plug-in cords (PoE, pressure, temperature).
 - `outputs/renders/02_b1_service_open.png` — actual FreeCAD-source geometry rendered open.
 - `outputs/renders/03_b1_exploded.png` — lid separated and PCB electronics exposed.
 - `outputs/renders/04_b1_pcb_component_top.png` — detailed electronics-side concept layout.
-- `outputs/renders/05_b1_field_ports.png` — three cable penetration collars along short wall.
+- `outputs/renders/05_b1_field_ports.png` — three external panel-connectable sockets on the short wall.
 - `outputs/renders/06_b1_wall_install_view.png` — opposite viewing direction.
 - `outputs/renders/07_b1_kicad_board_top.png` — KiCad's **native** placement study, 21 footprints, marked unrouted.
 - `outputs/renders/08_b1_dashboard_desktop.png` and `09_b1_dashboard_mobile.png` — responsive dashboard conceptual UI based on **synthetic** data only.
 - `outputs/renders/B1_design_review_contact_sheet.png` — six-view review spread.
 
 ### To edit the physical design
-- `outputs/B1_assembled.FCStd` — native editable FreeCAD assembly, 102 solid components.
+- `outputs/B1_assembled.FCStd` — native editable FreeCAD assembly, 115 solid components.
 - `outputs/B1_exploded.FCStd` — exploded/native FreeCAD scene.
 - `outputs/B1_complete_reference_assembly.step` — neutral solid exchange format for many CAD packages.
 - `outputs/B1_exploded_reference_assembly.step` — exploded neutral STEP.
@@ -48,7 +48,7 @@ The permanent [interactive B1 review page](https://jamiet1701.github.io/Sprinkle
 - `b1_export_assembly_variants.py` — reproducibly exports all three alternate geometry-based GLBs from the native Blender scene.
 - `outputs/B1_dashboard_demo.html` — standalone **interactive UI demonstration** (no backend, no network traffic, synthetic data and scenarios ONLY). Open locally in a browser.
 - `electronics/B1_placement_NOT_ROUTED.kicad_pcb` — **KiCad PCB layout study**, not a board design.
-- `outputs/meshes/` — FreeCAD-generated STL geometry for all 102 individual model pieces (provided in the packaged ZIP, not necessarily committed individually).
+- `outputs/meshes/` — FreeCAD-generated STL geometry for all 115 individual model pieces (provided in the packaged ZIP, not necessarily committed individually).
 - `outputs/drawings/*.svg` — dimensioned mechanical view, block architecture, electrical review and multiple-device topology; editable vector illustrations.
 
 ### Source/reproducibility
@@ -71,9 +71,9 @@ The permanent [interactive B1 review page](https://jamiet1701.github.io/Sprinkle
 | Proposed carrier outline | **160 × 100 × 1.6 mm** | Native FreeCAD and KiCad study agree |
 | Carrier Z lower face | **26 mm above modeled bottom** | Provisional standoff / PoE stacking, fit test required |
 | Proposed M3 carrier holes | X = **±44 mm**, Y = **±70 mm** | Intentional pattern in both CAD & KiCad; **NOT manufacturer-confirmed boss alignment** |
-| PoE cable entrance | X = **−35 mm**, Y near front wall, Z = **35 mm** | Illustrative diameter 20 mm; required gland IP/strain-relief clearances NOT qualified |
-| Remote temperature port | X = **0 mm**, Z = **35 mm**, illustrative 13 mm bore | No exact M12/cable gland part or wall-layout approval |
-| Pressure loop port | X = **+35 mm**, Z = **35 mm**, illustrative 13 mm bore | Same caveat; actual pressure transmitter is **remote**, not a tapped part of the electrical enclosure |
+| PoE cable entrance | X = **−35 mm**, Y near front wall, Z = **35 mm** | Candidate 20.8mm RJ45 bulkhead cutout, Amphenol LTW, cap/PoE/cable fit UNQUALIFIED |
+| Remote temperature port | X = **0 mm**, Z = **35 mm**, candidate 12mm hole | M8 A-coded 3 pin DS18B20 bulkhead, final panel fit/cordset not qualified |
+| Pressure loop port | X = **+35 mm**, Z = **35 mm**, candidate 16mm hole | M12 A-coded 4 pin pressure bulkhead, two poles NC, no actual process tapping on enclosure |
 | Factory ESP module | Waveshare ESP32-S3-PoE-ETH, SKU **28771**, ~21 × 72.8 mm nominal | 2×20 pin socket location and module clearance are **surrogates** until exact board/header checked |
 | Pressure ADC | **ADS1115 @ 3.3 V**, provisional 100 Ω current shunt | Functional concept, not electrically verified circuit |
 
@@ -131,3 +131,7 @@ The FreeCAD script checks solid-shape validity and prints `FREECAD_OK`, KiCad sc
 - [Blender free 3D rendering](https://www.blender.org)
 
 **Design/validation boundary:** Owner selected the future commercial candidate. This package does **not** change the separately maintained existing monitor or fire-protection system and makes **no** certification, product-accuracy, cost or installed-performance claim.
+
+## B1 Rev B plug-in I/O (2026-11-16)
+
+Three distinct external user service ports: **PoE Ethernet P1 (shielded RJ45 bulkhead)**, **remote temperature P2 (M8 A-coded 3)**, and **industrial two-wire 4-20mA pressure P3 (M12 A-coded 4)**. Open the lid only for true factory electronics service, not routine sensor/cable swaps. **AUX FUTURE** on right side wall is a non-drilled, non-connected marking, not a fourth powered sensor port. Connector shells in FreeCAD/Blender are approximate MPN-based envelopes and **not approved drill geometry**. The case's original manufactured wall must accept sealed panel sockets and strain relief; actual RJ45 with cap can require panel thickness below the nominal 3.94mm local CAD wall, so physical OEM STEP/spotface design is a release blocker. See [CONNECTOR-REDESIGN](../HARDWARE/CONNECTOR-REDESIGN.md) for exact candidate parts, NC pins, PoE and environmental gates. IP54 is an unverified *whole-product target* only.

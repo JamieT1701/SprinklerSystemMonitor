@@ -36,9 +36,9 @@ Ethernet + 802.3af --> [Waveshare ESP32-S3-POE-ETH 28771] -----> [TLS/HTTPS upli
 
 | Connection | Pins/role | Status |
 |---|---|---|
-| OEM RJ45 Ethernet/PoE | Factory-compliant 802.3af magnetics/PD | Existing Waveshare board is a selected development module; PoE output 5V current budget remains unverified |
-| **J1** (pressure) | Pin 1: controlled/limited `L+_24V`; pin 2: transmitter `L-_RETURN` to sense stage | 2-wire 4–20mA transmitter **only**; never connect original three-wire voltage sensor here |
-| **J2** (room) | Pin 1 +3V3 after field protection; pin 2 GPIO18 DATA; pin 3 GND | 3-wire DS18B20 with **one** 4.7k pull-up on PCB to 3V3; validate ESD/cable length |
+| P1 PoE / Ethernet | External female RJ45 panel bulkhead to existing factory Waveshare RJ45 via short interior patch lead | Amphenol LTW RCP-5SPFFH-SCM7002 candidate, actual PoE/EMC/ground/strain/cap testing required |
+| P2 TEMP | External female M8 A-coded 3-pin to internal J2, 3.3 V protected / DS18B20 DQ / GND | Binder 76 6518 1111 00003-0200 candidate, male cordset contact numbers TBD |
+| P3 PRESS | External female M12 A-coded 4-pin to internal J1 with protected current-limited 24 V source and sensed return | Binder 76 4332 0011 00004-0200 candidate, 2 NC pins, transducer contact mapping and fault limits TBD |
 | No other outputs | **No dry valve, compressor, heater, FACP or supervised fire-alarm connections** | Mandatory boundary |
 
 The original live R6 system has a **different** three-wire pressure terminal and ADC divider; this B1 design is not interchangeable.
@@ -109,3 +109,9 @@ The executable [host-only prototype classifier](../FIRMWARE/loop_classifier.py) 
 TI's **TPS2662** family is an active **4.5–60V, 25mA–880mA adjustable** eFuse with overvoltage, reverse protection and multiple fault-response variants: https://www.ti.com/product/TPS2662. This is a **credible candidate for a dedicated J1 L+ high-side output stage**, unlike the TPS2660 family which has a 100mA minimum limit. However, the TPS2662 comes in a small **10-pin VSON (3x3mm)**, not a hand-friendly through-hole package. A prospective workshop design should use a bought evaluation board for bench proof or outsource SMT for the tiny device.
 
 **Not designed/accepted:** Exact TPS2662 variant, current-limit programming R, input/output reverse/backfeed behavior, eFuse fault latch/auto-retry configuration, thermals and rail behavior under continuous short. A 35-45mA setpoint is a **candidate engineering study**, not a final device rating; even 35mA x 24V represents up to 0.84W being dissipated by the limiting path if output is shorted. A thermal-shutdown or foldback circuit may provide protective behavior, but it must be proven with a short-duration and sustained worst-case fault matrix, downstream converter brownout and nearby electronics. **No supplier order or physical prototype is authorized by this note.**
+
+## 9. Exterior connector redesign B1 Revision B (2026-11-16)
+
+The owner chose plug-in external service rather than feeding cables through glands into the case: **P1 RJ45 PoE, P2 M8 A-coded 3-pin room sensor, P3 M12 A-coded 4-pin industrial current-loop pressure sensor**. Distinct fittings prevent accidental pressure (+24 V current-limited loop) to 3.3 V digital temperature misconnection. Internal J1/J2 screw terminals remain factory/service only; never need to open the lid for normal sensor swap. The future **AUX** is an undrilled reserve on the right wall without power/wiring. See [CONNECTOR-REDESIGN.md](CONNECTOR-REDESIGN.md).
+
+Mating cable male ends, manufacturer contact numbers, RJ45 full PoE and shield behavior, IP mated/cap details, actual Hammond OEM wall thickness/spotface, cable bend radius, surge/ESD/power-off backfeed and current-loop output short protection are **NOT electrically or physically accepted**. Do not hot-unplug sensors under load until the connector vendor's instructions and fault testing allow it. Target overall IP54 only **after** complete assembly test. NPT process fittings apply to the remote pressure transducer/tap; no plumbing fittings are proposed on the B1 electronic enclosure.

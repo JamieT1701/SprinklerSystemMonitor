@@ -60,3 +60,7 @@ A rendering that looks electrically complete is **never** evidence of a complete
 3. Deep links `?view=lid`, `?view=exploded`, `?view=electronics` each generate `data-b1-model-ready=true` in an actual browser (not merely a valid file URL).
 4. Viewer controls switch models, reset/orbit works, release disclaimers remain, and the current design revision has been documented on PR #7.
 5. Report only verified results. Do not claim that changing source code updates the viewer until the exported GLB and published model URLs are updated.
+
+### Rev B connection changes: visual review policy
+
+Connector redesign lives in source-controlled FreeCAD \`b1_freecad.py\` and \`B1_dimensions.json\`; all four GLBs must be regenerated and published together after review. Confirm the user sees **plug-in PoE / TEMP M8 / PRESS M12** in Closed + Lid Off, physical bulkheads remain attached to case in Exploded, and Electronics Only hides external sockets. AUX marker is a **solid wall**, not a new field connector. Reproduce the connector port geometry test, inspect \`05_b1_field_ports.png\`, then record residual fit/ingress/PoE gates; preview is **not** an approved installation.

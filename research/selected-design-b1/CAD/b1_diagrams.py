@@ -134,7 +134,7 @@ for i,(head,detail) in enumerate([
  ("Manufacturer maximum PCB","167.13 × 106.68 mm (length × width)"),
  ("Carrier study","160 × 100 × 1.6 mm • mounting centres ±70 / ±44 mm"),
  ("Controller board","Waveshare ESP32-S3-POE-ETH, approximate 72.8 × 21 mm"),
- ("Cable entry","3 ports along short side: PoE cable, DS18B20, 4–20 mA loop"),
+ ("Cable entry","3 external sockets: RJ45 PoE / M8 TEMP / M12 PRESS"),
  ("Assembly height","Controller/PoE stack plus lid clearance must be measured"),
  ("CAD integrity","102-part FreeCAD assembly + native STEP exports"),
  ("PCB drawing","21 KiCad footprints • placement only • NOT ROUTED")]):

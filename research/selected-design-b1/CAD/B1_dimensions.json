@@ -1,5 +1,5 @@
 {
-  "design_id": "B1-2026-11-16-A",
+  "design_id": "B1-2026-11-16-B-CONNECTOR",
   "units": "mm",
   "purpose": "manufacturable concept visualization; not a validated or approved fire-protection device",
   "enclosure": {
@@ -94,21 +94,30 @@
       "x_mm": -35,
       "y_mm": -90,
       "z_mm": 35,
-      "cutout_diameter_mm": 20
+      "cutout_diameter_mm": 20.8,
+      "face_diameter_mm": 37.6,
+      "connector": "Amphenol LTW RCP-5SPFFH-SCM7002 RJ45 candidate, Cat5e shielded female/female, compatible IP67 mating/cap required",
+      "equipment_gender": "female RJ45"
     },
     {
       "name": "TEMP",
       "x_mm": 0,
       "y_mm": -90,
       "z_mm": 35,
-      "cutout_diameter_mm": 13
+      "cutout_diameter_mm": 12,
+      "face_diameter_mm": 15,
+      "connector": "Binder 76 6518 1111 00003-0200, M8 A-coded 3-pole female",
+      "equipment_gender": "female M8 3 pole"
     },
     {
       "name": "LOOP_4_20MA",
       "x_mm": 35,
       "y_mm": -90,
       "z_mm": 35,
-      "cutout_diameter_mm": 13
+      "cutout_diameter_mm": 16,
+      "face_diameter_mm": 20,
+      "connector": "Binder 76 4332 0011 00004-0200, M12 A-coded 4-pole female",
+      "equipment_gender": "female M12 4 pole"
     }
   ],
   "source_limitations": [
@@ -116,7 +125,9 @@
     "Module/connector and cable clearances not bench measured",
     "Soldered analog front end not drawn as ERC-validated schematic",
     "No loop current limiter or field ESD design validated; 24V boost requires separate short-safe protection",
-    "No sprinkler system connection or pressure threshold authorized"
+    "No sprinkler system connection or pressure threshold authorized",
+    "All three external connector geometries illustrative. Manufacturer-accurate mating shells, panel thickness tolerance and short-wall clearance require prototype fit testing",
+    "AUX marked on enclosure side is a zero-penetration visual placeholder; not a working connector"
   ],
   "source_links": {
     "enclosure": "https://www.hammfg.com/part/1554T2GYCL",
@@ -124,6 +135,19 @@
     "esp": "https://docs.waveshare.com/ESP32-S3-ETH",
     "boost": "https://www.pololu.com/product/5588/specs",
     "efuse": "https://www.ti.com/product/TPS2662",
-    "adc": "https://www.ti.com/product/ADS1115"
+    "adc": "https://www.ti.com/product/ADS1115",
+    "rj45_bulkhead": "https://www.digikey.com/en/products/detail/amphenol-ltw/RCP-5SPFFH-SCM7002/7619820",
+    "pressure_connector": "https://www.binder-usa.com/us-en/products/automation-technology/m12-a/76-4332-0011-00004-0200-m12-a-female-panel-mount-connector-4-unshielded-single-wires-ip67-ul-m16x15",
+    "temperature_connector": "https://www.binder-connector.com/en/products/automation-technology/m8/76-6518-1111-00003-0200-m8-female-panel-mount-connector-contacts-3-unshielded-single-wires-ip67-ip69k-ul-m12x10-front-fastened"
+  },
+  "reserved_aux": {
+    "wall": "right_long_side",
+    "x_mm": 60,
+    "y_mm": 18,
+    "z_mm": 38,
+    "mounting_area_y_mm": 26,
+    "mounting_area_z_mm": 19,
+    "panel_hole_drilled": false,
+    "electronic_capability": "none; future second temperature candidate"
   }
 }

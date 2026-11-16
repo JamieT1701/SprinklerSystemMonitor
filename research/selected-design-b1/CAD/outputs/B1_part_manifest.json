@@ -1,8 +1,8 @@
 {
-  "design_id": "B1-2026-11-16-A",
+  "design_id": "B1-2026-11-16-B-CONNECTOR",
   "units": "mm",
   "native_FreeCAD": "1.1.4",
-  "part_count": 102,
+  "part_count": 115,
   "parts": [
     {
       "name": "01_Polycarbonate_enclosure_surrogate",
@@ -557,39 +557,117 @@
       "transparency_percent": 0
     },
     {
-      "name": "70_POE_ETH_case_bulkhead",
-      "mesh": "meshes/70_POE_ETH_case_bulkhead.stl",
+      "name": "70_POE_ETH_female_panel_socket",
+      "mesh": "meshes/70_POE_ETH_female_panel_socket.stl",
       "material": "dark",
       "transparency_percent": 0
     },
     {
-      "name": "71_POE_ETH_metal_nut",
-      "mesh": "meshes/71_POE_ETH_metal_nut.stl",
+      "name": "71_POE_ETH_sealing_gasket",
+      "mesh": "meshes/71_POE_ETH_sealing_gasket.stl",
+      "material": "gasket",
+      "transparency_percent": 0
+    },
+    {
+      "name": "72_POE_ETH_internal_locknut",
+      "mesh": "meshes/72_POE_ETH_internal_locknut.stl",
       "material": "metal",
       "transparency_percent": 0
     },
     {
-      "name": "70_TEMP_case_bulkhead",
-      "mesh": "meshes/70_TEMP_case_bulkhead.stl",
+      "name": "73_POE_ETH_panel_rear_barrel",
+      "mesh": "meshes/73_POE_ETH_panel_rear_barrel.stl",
       "material": "dark",
       "transparency_percent": 0
     },
     {
-      "name": "71_TEMP_metal_nut",
-      "mesh": "meshes/71_TEMP_metal_nut.stl",
-      "material": "metal",
-      "transparency_percent": 0
-    },
-    {
-      "name": "70_LOOP_4_20MA_case_bulkhead",
-      "mesh": "meshes/70_LOOP_4_20MA_case_bulkhead.stl",
+      "name": "74_POE_ETH_external_male_cord",
+      "mesh": "meshes/74_POE_ETH_external_male_cord.stl",
       "material": "dark",
       "transparency_percent": 0
     },
     {
-      "name": "71_LOOP_4_20MA_metal_nut",
-      "mesh": "meshes/71_LOOP_4_20MA_metal_nut.stl",
+      "name": "75_POE_ETH_threaded_lock_ring",
+      "mesh": "meshes/75_POE_ETH_threaded_lock_ring.stl",
       "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "70_TEMP_female_panel_socket",
+      "mesh": "meshes/70_TEMP_female_panel_socket.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "71_TEMP_sealing_gasket",
+      "mesh": "meshes/71_TEMP_sealing_gasket.stl",
+      "material": "gasket",
+      "transparency_percent": 0
+    },
+    {
+      "name": "72_TEMP_internal_locknut",
+      "mesh": "meshes/72_TEMP_internal_locknut.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "73_TEMP_panel_rear_barrel",
+      "mesh": "meshes/73_TEMP_panel_rear_barrel.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "74_TEMP_external_male_cord",
+      "mesh": "meshes/74_TEMP_external_male_cord.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "75_TEMP_threaded_lock_ring",
+      "mesh": "meshes/75_TEMP_threaded_lock_ring.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "70_LOOP_4_20MA_female_panel_socket",
+      "mesh": "meshes/70_LOOP_4_20MA_female_panel_socket.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "71_LOOP_4_20MA_sealing_gasket",
+      "mesh": "meshes/71_LOOP_4_20MA_sealing_gasket.stl",
+      "material": "gasket",
+      "transparency_percent": 0
+    },
+    {
+      "name": "72_LOOP_4_20MA_internal_locknut",
+      "mesh": "meshes/72_LOOP_4_20MA_internal_locknut.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "73_LOOP_4_20MA_panel_rear_barrel",
+      "mesh": "meshes/73_LOOP_4_20MA_panel_rear_barrel.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "74_LOOP_4_20MA_external_male_cord",
+      "mesh": "meshes/74_LOOP_4_20MA_external_male_cord.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "75_LOOP_4_20MA_threaded_lock_ring",
+      "mesh": "meshes/75_LOOP_4_20MA_threaded_lock_ring.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "76_AUX_RESERVED_UNDRILLED_WALL_MARKER",
+      "mesh": "meshes/76_AUX_RESERVED_UNDRILLED_WALL_MARKER.stl",
+      "material": "dark",
       "transparency_percent": 0
     },
     {
@@ -622,6 +700,8 @@
     "Module/connector and cable clearances not bench measured",
     "Soldered analog front end not drawn as ERC-validated schematic",
     "No loop current limiter or field ESD design validated; 24V boost requires separate short-safe protection",
-    "No sprinkler system connection or pressure threshold authorized"
+    "No sprinkler system connection or pressure threshold authorized",
+    "All three external connector geometries illustrative. Manufacturer-accurate mating shells, panel thickness tolerance and short-wall clearance require prototype fit testing",
+    "AUX marked on enclosure side is a zero-penetration visual placeholder; not a working connector"
   ]
 }

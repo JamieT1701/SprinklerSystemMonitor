@@ -40,7 +40,7 @@
 <text x="755" y="544" font-family="Inter,Arial,sans-serif" font-size="17" fill="#96ADBE" font-weight="600" text-anchor="start">Controller board</text>
 <text x="755" y="571" font-family="Inter,Arial,sans-serif" font-size="17" fill="#E6F1F4" font-weight="400" text-anchor="start">Waveshare ESP32-S3-POE-ETH, approximate 72.8 × 21 mm</text>
 <text x="755" y="607" font-family="Inter,Arial,sans-serif" font-size="17" fill="#96ADBE" font-weight="600" text-anchor="start">Cable entry</text>
-<text x="755" y="634" font-family="Inter,Arial,sans-serif" font-size="17" fill="#E6F1F4" font-weight="400" text-anchor="start">3 ports along short side: PoE cable, DS18B20, 4–20 mA loop</text>
+<text x="755" y="634" font-family="Inter,Arial,sans-serif" font-size="17" fill="#E6F1F4" font-weight="400" text-anchor="start">3 external sockets: RJ45 PoE / M8 TEMP / M12 PRESS</text>
 <text x="755" y="670" font-family="Inter,Arial,sans-serif" font-size="17" fill="#96ADBE" font-weight="600" text-anchor="start">Assembly height</text>
 <text x="755" y="697" font-family="Inter,Arial,sans-serif" font-size="17" fill="#E6F1F4" font-weight="400" text-anchor="start">Controller/PoE stack plus lid clearance must be measured</text>
 <text x="755" y="733" font-family="Inter,Arial,sans-serif" font-size="17" fill="#96ADBE" font-weight="600" text-anchor="start">CAD integrity</text>

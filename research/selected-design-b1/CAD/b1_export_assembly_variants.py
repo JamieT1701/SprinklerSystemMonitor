@@ -17,10 +17,11 @@ record={}
 def category(o):
     n=o.name
     if n.startswith(("Photo backdrop", "Cover line")): return "STAGE"
-    if n.startswith(("Presentation pressure sensor cord","Presentation DS18B20 cable")): return "SENSOR_CABLES"
+    if n.startswith(("Presentation pressure sensor cord","Presentation DS18B20 cable","Presentation PoE Ethernet cord")): return "SENSOR_CABLES"
     if n.startswith(("Exterior decal","Cover title","Cover subtitle","Cover policy","Cover warning")):return "LID_LABEL"
+    if n.startswith(("Front_PoE","Front_Temp","Front_Press","Side_Aux_Bracket")):return "CASE"
     if n.startswith(("02_","03_","04_")):return "LID"
-    if n.startswith(("01_","70_","71_")):return "CASE"
+    if n.startswith(("01_","70_","71_","72_","73_","74_","75_","76_","77_","78_","79_")):return "CASE"
     if n.startswith(("80_","81_","82_","83_")):return "SENSORS"
     if n.startswith(("10_",)):return "MOUNT"
     if n.startswith(("20_","21_","22_","30_","31_","32_","33_","34_","40_","41_","42_","50_","51_","52_","53_","54_","55_","56_","57_","60_","61_")):return "ELECTRONICS"
@@ -66,7 +67,7 @@ for filename,include,delta in config:
         assert "02_Clear_polycarbonate_lid" in observed
         assert "20_Main_B1_carrier_PCB_NOT_ROUTED" in observed
     if "electronics_only" in filename:
-        assert not any(s.startswith(("01_","70_","71_")) for s in observed)
+        assert not any(s.startswith(("01_","70_","71_","72_","73_","74_","75_","76_","Front_","Side_Aux")) for s in observed)
     record[filename]={"components":count,"nodes":len(observed),"bytes":len(raw),"included_categories":sorted(include)}
     print("B1_VARIANT_OK",filename,"objects",count,"nodes",len(observed),"bytes",len(raw),flush=True)
 (out/"B1_viewer_variants.json").write_text(json.dumps(record,indent=2)+"\n",encoding="utf-8")

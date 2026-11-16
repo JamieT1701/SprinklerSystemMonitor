@@ -1,8 +1,8 @@
 {
   "B1_lid_off.glb": {
-    "components": 99,
-    "nodes": 99,
-    "bytes": 4195920,
+    "components": 116,
+    "nodes": 116,
+    "bytes": 5896932,
     "included_categories": [
       "CASE",
       "ELECTRONICS",
@@ -11,9 +11,9 @@
     ]
   },
   "B1_exploded_assembly.glb": {
-    "components": 110,
-    "nodes": 110,
-    "bytes": 5802556,
+    "components": 127,
+    "nodes": 127,
+    "bytes": 7503160,
     "included_categories": [
       "CASE",
       "ELECTRONICS",

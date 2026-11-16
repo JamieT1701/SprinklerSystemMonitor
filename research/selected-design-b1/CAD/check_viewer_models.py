@@ -50,6 +50,17 @@ def main() -> None:
         for label, pref in PREFIXES.items():
             observed = any(name.startswith(pref) for name in names)
             assert observed == flags[label], (filename, label, flags[label], observed)
+        if filename != "B1_electronics_only.glb":
+            required_ports=("70_POE_ETH_female_panel_socket",
+                            "70_TEMP_female_panel_socket",
+                            "70_LOOP_4_20MA_female_panel_socket",
+                            "76_AUX_RESERVED_UNDRILLED_WALL_MARKER")
+            assert all(name in names for name in required_ports), (filename,"missing plug-in ports")
+        else:
+            assert not any(n.startswith(tuple(str(i)+"_" for i in range(70,80)))
+                           for n in names), (filename, "case connector leakage")
+        if filename == "B1_concept_interactive.glb":
+            assert any("Presentation PoE Ethernet cord" in n for n in names)
         if filename != "B1_concept_interactive.glb":
             assert record[filename]["bytes"] == path.stat().st_size, (filename, "manifest stale")
         print("VIEWER_MODEL_PASS", filename, "nodes", len(names), "sha256", hashval)

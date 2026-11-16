@@ -37,3 +37,8 @@ python3 -m unittest discover -s research/selected-design-b1/VERIFICATION -p 'tes
 ## Multi-device site health tests (synthetic only)
 
 Add acceptance for explicit configured expected devices and alert identity: one missing device => site DEGRADED, one offline/faulted => site DEGRADED, any critical pressure alert => site CRITICAL with specific device ID, one UNVERIFIED => never site NORMAL, additional unrecognized device => configuration warning, and only a complete verified set may report site NORMAL. This behavior is host-tested by `VERIFICATION/test_site_rollup.py`, **not** demonstrated on multiple physical sprinklers.
+
+
+### Revision B external port test matrix
+
+P1 RJ45: PoE startup, full controller/loop power, link continuity, loss-of-link dead-man, grounding/shield/EMC, sealed mating cable and dust cap. P2 M8: correct 3-wire DS18B20 mapping, CRC, invalid/open, wet/short and power-off injection. P3 M12: true two-wire 4-20mA cable continuity, two NC contacts, limited 24 V short/reversal/overcurrent, failed sender and sensor absence. Physical: gasket/cap/connector wall clearance, 120 mm front-flange spacing, cable bend and strain, sealed assembly IP54 splash/dust proof. AUX: no hole, powered cable, or live output. **All physical items currently untested.**

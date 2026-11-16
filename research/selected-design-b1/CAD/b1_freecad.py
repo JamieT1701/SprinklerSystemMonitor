@@ -145,19 +145,62 @@ add("57_eFuse_programming_resistor",box(3,1.6,0.7,33,-35,27.7),
 # Field connector blocks on PCB, pressure 2-pos and temperature 3-pos.
 add("60_J1_PRESSURE_LOOP_2PIN",box(23,12,10,29,-63,29),"H_Field_terminals","terminal")
 add("61_J2_TEMPERATURE_3PIN",box(25,12,10,-8,-63,29),"H_Field_terminals","blue")
-# Three case wall penetrations: RJ45 gland and two M12 bulkhead ports are surrogate.
+# Revision B: user-serviceable plug connectors OUTSIDE a closed enclosure.
+# External connector envelopes follow candidate families, NOT certified vendor STEP.
+# NOTE no NPT plumbing fittings penetrate the electronics enclosure.
+# Front short-wall X positions -35 / 0 / +35 mm, Z=35mm.
 for port in ports:
  x,z=port["x_mm"],port["z_mm"]
- od=10 if "POE" in port["name"] else 8.5
- collar=cyl(od,17,x,-105,z,V(0,1,0))
- core=cyl(4.8 if "POE" not in port["name"] else 6.4,17.2,
-          x,-105.1,z,V(0,1,0))
- add("70_"+port["name"]+"_case_bulkhead",
-     collar.cut(core),"I_Case_ports","dark")
- add("71_"+port["name"]+"_metal_nut",
-     cyl(od+1.5,2.5,x,-100,z,V(0,1,0)).cut(
-     cyl(od-2,2.6,x,-100.1,z,V(0,1,0))),
-     "I_Case_ports","metal")
+ port_name=port["name"]
+ r=port["face_diameter_mm"]/2
+ mounting_r=port["cutout_diameter_mm"]/2
+ # Outer panel socket: a recognizable external female interface.
+ body=cyl(r,16,x,-106,z,V(0,1,0))
+ if port_name=="POE_ETH":
+  # Recessed rectangular 8P8C socket on circular shielded RJ45 bulkhead.
+  body=body.cut(box(12.5,5,7.2,x,-105,z))
+ else:
+  # Four M12 or three M8 recessed female contact wells, as appropriate.
+  coords=((-3.1,-3.1),(3.1,-3.1),(-3.1,3.1),(3.1,3.1)) if port_name=="LOOP_4_20MA" else ((0,3.25),(-3,-2.25),(3,-2.25))
+  for dx,dz in coords:
+   body=body.cut(cyl(0.9,3.3,x+dx,-106.1,z+dz,V(0,1,0)))
+ add("70_"+port_name+"_female_panel_socket",body,"I_Case_ports","dark")
+ # Perimeter gasket visually squeezed at the enclosure outside wall;
+ # real field gasket seal AND OEM wall thickness need qualified fit.
+ gasket=cyl(r+0.4,1.5,x,-91.5,z,V(0,1,0)).cut(
+     cyl(max(mounting_r-0.3,1.5),1.7,x,-91.6,z,V(0,1,0)))
+ add("71_"+port_name+"_sealing_gasket",gasket,"I_Case_ports","gasket")
+ # Inner retention collar/nut. External ports connect to prewired internal leads.
+ nut=cyl(mounting_r+2.8,3.5,x,-87.3,z,V(0,1,0)).cut(
+     cyl(max(mounting_r-0.6,1.0),3.6,x,-87.35,z,V(0,1,0)))
+ add("72_"+port_name+"_internal_locknut",nut,"I_Case_ports","metal")
+ # Rear bulkhead barrel (concept only).
+ barrel=cyl(mounting_r-0.5,10,x,-88,z,V(0,1,0)).cut(
+     cyl(max(mounting_r-2.5,1),10.2,x,-88.1,z,V(0,1,0)))
+ add("73_"+port_name+"_panel_rear_barrel",barrel,"I_Case_ports","dark")
+ # Each external cord is REMOVABLE without opening the lid.
+ plug_r=13.7 if port_name=="POE_ETH" else (9.0 if port_name=="LOOP_4_20MA" else 6.7)
+ plug=cyl(plug_r,18,x,-125,z,V(0,1,0))
+ add("74_"+port_name+"_external_male_cord",plug,"I_Case_ports","dark")
+ coupling=cyl(plug_r+1.7,5,x,-112,z,V(0,1,0))
+ add("75_"+port_name+"_threaded_lock_ring",coupling,"I_Case_ports","metal")
+# Design-for-variation marker on right long wall; this is a solid surface,
+# deliberately NOT a drilled/powered fourth connector.
+aux=P["reserved_aux"]
+aux_plate=box(0.6,aux["mounting_area_y_mm"],aux["mounting_area_z_mm"],
+              aux["x_mm"]+0.25,aux["y_mm"],aux["z_mm"]-aux["mounting_area_z_mm"]/2)
+add("76_AUX_RESERVED_UNDRILLED_WALL_MARKER",aux_plate,"I_Case_ports","dark")
+# Verify three flange clearance envelopes and box side margins before CAD output.
+front_ports=sorted(ports,key=lambda port:port["x_mm"])
+for left,right in zip(front_ports,front_ports[1:]):
+ gap=right["x_mm"]-left["x_mm"]-(left["face_diameter_mm"]+right["face_diameter_mm"])/2
+ if gap<4:raise RuntimeError("Connector face envelopes collide: "+left["name"]+" vs "+right["name"])
+for port in front_ports:
+ if abs(port["x_mm"])+port["face_diameter_mm"]/2>W/2-5:
+  raise RuntimeError("Connector flange too close to box outer side: "+port["name"])
+# The modeled front wall (approx 3.9mm) can exceed some protected RJ45
+# connector-panel maximums (e.g. 3.0 mm when capped).
+# NO spotface is drawn here, pending exact Hammond wall/boss STEP and gland seal review.
 # Remote illustrative, not mechanically part of the enclosure: pressure sender and DS18B20.
 sx,sy=151,-13
 add("80_Pressure_transmitter_body_illustrative",

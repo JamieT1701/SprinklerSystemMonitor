@@ -37,3 +37,8 @@
 TI **TPS2662** eFuse family now identified as a possible 24V high-side limiter because its documented current-limit range begins at **25mA**. Its VSON package and short-circuit thermal behavior make it an **unqualified B1 candidate**, not an approved/verified 35mA field supply. See `HARDWARE/FRONTEND-DESIGN.md` §8. The first PCB cannot be released until an actual reviewed schematic, limit tolerance and sustained short test exist.
 
 **B1-12 (private inspection-informed, reversible):** One **standalone** B1 current-loop pressure unit is a reusable building block. For a multi-dry-system site, prefer a separate professionally approved pressure measurement point and independent B1 per required valve-side domain rather than three analog channels sharing one PCB. Software may show **multiple devices on one site**, where a missing/invalid/offline/unverified device prevents site NORMAL. Do **not** publish private inspection details or interpret observed historical trip test pressures as alarm settings. Refer to `HARDWARE/MULTI-SYSTEM-SCOPE.md`; no wiring/quantity approval yet.
+
+
+### B1-13 plug-in field service (owner-directed 2026-11-16)
+
+Retain 3 populated external ports: industrial weather-resisting RJ45 PoE feedthrough P1, M8 3-pin DS18B20 P2, M12 4-pin current-loop pressure P3. Retain internal terminals as factory-only. Reserve non-drilled AUX wall footprint for possible second temperature port, **not powered expansion**. Product ingress initially targets IP54 after testing, not IP67. Source and physical tests in HARDWARE/CONNECTOR-REDESIGN.md.

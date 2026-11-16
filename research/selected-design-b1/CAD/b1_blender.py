@@ -139,16 +139,30 @@ def cable(name,pts,radius,material):
  return o
 CABLES=[
  cable("Presentation pressure sensor cord (not scale cable length)",
-       [(35,-110,35),(70,-155,32),(136,-95,60),(151,-14,82)],1.7,
+       [(35,-125,35),(70,-160,32),(136,-95,60),(151,-14,82)],1.7,
        mat("Pressure cable industrial black",(.036,.043,.05))),
  cable("Presentation DS18B20 cable (not scale cable length)",
-       [(0,-110,35),(-40,-145,28),(-111,-108,45),(-154,0,58)],1.55,
-       mat("Temperature cable dark gray",(.11,.17,.20)))
+       [(0,-125,35),(-40,-145,28),(-111,-108,45),(-154,0,58)],1.55,
+       mat("Temperature cable dark gray",(.11,.17,.20))),
+ cable("Presentation PoE Ethernet cord (not scale cable length)",
+       [(-35,-125,35),(-57,-165,25),(-112,-187,20),(-170,-205,22)],2.6,
+       mat("Ethernet cable jacket blue",(.02,.14,.3)))
 ]
+# Exterior field interface labels sit above each external female socket.
+FRONT_LABELS=[]
+for label_name,textval,x in (("Front_PoE","PoE",-35),
+                              ("Front_Temp","TEMP",0),
+                              ("Front_Press","PRESS",35)):
+ FRONT_LABELS.append(label(label_name,textval,(x,-90.3,57),3.1,
+                           print_white,rot=(math.pi/2,0,0)))
+# Printed side-wall legend for undrilled expansion reservation (NOT an active port).
+FRONT_LABELS.append(label("Side_Aux_Bracket","AUX FUTURE",
+                    (60.8,18,47),2.3,print_light,rot=(0,math.pi/2,math.pi/2)))
+
 # Reset must restore original label/silkscreen coordinates as well as mesh parts.
 # Previous script only restored mesh transforms, leaking exploded-view offsets
 # into the final .blend and GLB (floating lid decal and PCB silk text).
-STATIC_COORDS={ob.name:ob.location.copy() for ob in LABELS+SILK}
+STATIC_COORDS={ob.name:ob.location.copy() for ob in LABELS+SILK+FRONT_LABELS}
 # Standalone matte stage helps cast realistic shadows; not part of CAD package.
 stage=mat("Studio floor",(0.052,.071,.089),rough=.72)
 FLOOR=box("Photo backdrop floor",(0,0,-18),(680,540,6),stage,bevel=3)
@@ -179,7 +193,7 @@ def camera(name,xyz,look,scale):
 def reset():
  for ob in PARTS.values():
   ob.location=(0,0,0);ob.hide_render=False
- for ob in LABELS+SILK:
+ for ob in LABELS+SILK+FRONT_LABELS:
   ob.location=STATIC_COORDS[ob.name].copy()
   ob.hide_render=False
  for ob in CABLES: ob.hide_render=False

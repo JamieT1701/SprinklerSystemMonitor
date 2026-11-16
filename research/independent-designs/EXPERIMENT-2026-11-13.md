@@ -56,3 +56,18 @@ Score evidence, not apparent complexity or model brand. Penalize unsupported acc
 - **Claude restarted 2026-11-16 14:50 America/New_York**, verified CLI running authenticated `--model opus --effort max --tools '' --disable-slash-commands --no-session-persistence`, persistent local artifacts under `/home/jamiet1701/.local/share/device-lab-advisor-competition/claude/`. As of 15:06, still active, **no response or exit code**. Do not interpret active PID as successful inference; do not relaunch or score before reviewing original output and receipt.
 - **Recovery mechanism:** one-time assistant automation scheduled for approximately 15:25 America/New_York to recheck verified Arthur output and continue GitHub archival only if completed. Not a guarantee that a model completes or a persistent inference service. Original unverified Claude run and Gemini authentication blocker from November 13 are historical, not the latest state.
 - **Comparison gate:** no final scoring, independent review or winner selection until Claude and Gemini verified proposal+receipt are frozen on distinct branches. Keep both draft PRs unmerged. No physical prototype, firmware, sprinkler, customer or procurement changes authorized by this competition.
+
+
+## 2026-11-16 correction — third web Gemini Carbon entry
+
+**Owner correction:** Gemini 4 Carbon was used via the paid Google Workspace Gemini web app. The previous two-entry comparison inventory omitted the completed Carbon web run; the earlier Antigravity **Gemini 3.8 Flash High** CLI run remains real and separately archived. There are now **three candidate reports**:
+
+| Advisor | GitHub evidence | Fidelity and model provenance |
+|---|---|---|
+| Claude Opus 5.5 (max effort CLI) | [draft PR #5](https://github.com/JamieT1701/SprinklerSystemMonitor/pull/5), commit `c0421d8` | Verified served model ID in provider response; actual success; model public-facing response preserved verbatim |
+| Gemini 3.8 Flash High (Antigravity CLI) | [draft PR #4](https://github.com/JamieT1701/SprinklerSystemMonitor/pull/4), commit `b1aa7e7` | Requested Flash High CLI; actual success; native response preserved verbatim; served ID not supplied |
+| Gemini 4 Carbon (paid Workspace web app) | [draft PR #6](https://github.com/JamieT1701/SprinklerSystemMonitor/pull/6), commit `e6773dea` | User confirms Carbon and browser picker showed Carbon when read; full browser-rendered output region archived, **not a byte-identical native export or runtime receipt**; exact served version and original submitted prompt bytes unverified |
+
+The web Carbon proposal came from a completed standalone Gemini chat with a clean-room Round 1 prompt. Its response was captured with an authorized read-only browser tab tool and persisted under `research/independent-designs/gemini-carbon/` on `research/independent-gemini-carbon-20261116`. No existing competitor answer was passed into the web chat. The UI evidence supports user-reported Carbon, but does not establish a versioned provider execution receipt; comparisons must label the capture limitation.
+
+**Revised gate:** Score three entries using the unchanged rubric. Prior two-entry comparative instructions are superseded. No additional model calls, merging, product orders, field/firmware changes, or commercial action implied. Issue #3 records the correction.

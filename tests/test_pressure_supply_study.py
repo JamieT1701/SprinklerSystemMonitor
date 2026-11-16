@@ -48,6 +48,43 @@ class PressureSupplyStudyTest(unittest.TestCase):
                     places=7,
                 )
 
+    def test_owner_confirmed_reference_stability_window(self):
+        # Model the C++ bounded two-minute sample window.
+        baseline = 1.0765
+        field_samples = [1.0743, 1.0743, 1.0810]
+        span = max(field_samples) - min(field_samples)
+        tolerance = baseline * 0.05
+        self.assertLess(span, tolerance)
+        self.assertLess(abs(sum(field_samples) / len(field_samples) - baseline), tolerance)
+        # Three samples are insufficient to label the 30-sample window complete.
+        self.assertLess(len(field_samples), 30)
+
+    def test_out_of_reference_and_signal_fault_are_not_stable(self):
+        baseline = 1.0765
+        tolerance = baseline * 0.05
+        # Illustrative deviations are review states, not configured alarms.
+        for reading in (0.98, 1.18):
+            self.assertGreater(abs(reading - baseline), tolerance)
+        self.assertLess(0.0033, 0.2)  # simulated disconnected pressure probe
+
+    def test_source_has_manual_reference_and_no_auto_relearn(self):
+        source_path = (
+            Path(__file__).resolve().parents[1]
+            / "firmware"
+            / "2026"
+            / "pressure_diagnostics_supply_study"
+            / "pressure_diagnostics_supply_study.ino"
+        )
+        source = source_path.read_text(encoding="utf-8")
+        self.assertIn("PRESSURE_BASELINE_A0_V = 1.0765f", source)
+        self.assertIn("PRESSURE_TREND_WINDOW_SAMPLES = 30", source)
+        self.assertIn('return "OBSERVING"', source)
+        self.assertIn('return "STABLE"', source)
+        self.assertIn('return "SENSOR_FAULT"', source)
+        self.assertIn('return "OUTSIDE_INITIAL_REFERENCE_REVIEW"', source)
+        self.assertIn("pressure_trend_thresholds=EXPERIMENTAL_NOT_ALERTS", source)
+        self.assertNotIn("PRESSURE_BASELINE_A0_V =", source[source.index("void loop()"):])
+
     def test_source_marks_study_as_provisional_and_alerts_disabled(self):
         source_path = (
             Path(__file__).resolve().parents[1]

@@ -66,26 +66,27 @@ footer{margin-top:24px;color:#88a8b6;font-size:12px}
  <button type="button" data-assembly-mode="exploded" aria-pressed="false">Exploded Assembly</button>
  <button type="button" data-assembly-mode="electronics" aria-pressed="false">Electronics Only</button>
 </nav>
+<p class="mode-desc" style="color:var(--muted)">Live design preview: the same viewer URL follows the current B1 engineering branch as reviewed model exports change. Reload to check for new revisions. Models remain engineering concepts until separately verified.</p>
 <p class="mode-desc" id="assembly-description" aria-live="polite">Choose Lid Off to see inside, Exploded Assembly to separate the parts, or Electronics Only for a PCB close-up.</p>
 <div class="viewerframe">
  <div class="banner">B1 / SPRINKLER MONITOR · SUPPLEMENTARY TELEMETRY</div>
  <model-viewer id="b1-model"
-    src="https://raw.githubusercontent.com/JamieT1701/SprinklerSystemMonitor/67b1c21d9d1244b21375ea8d9760878a894d45a6/research/selected-design-b1/CAD/outputs/B1_concept_interactive.glb"
-    poster="https://raw.githubusercontent.com/JamieT1701/SprinklerSystemMonitor/67b1c21d9d1244b21375ea8d9760878a894d45a6/research/selected-design-b1/CAD/outputs/renders/01_b1_closed_product.png"
+    src="https://raw.githubusercontent.com/JamieT1701/SprinklerSystemMonitor/design/claude-b1-engineering-20261116/research/selected-design-b1/CAD/outputs/B1_concept_interactive.glb"
+    poster="https://raw.githubusercontent.com/JamieT1701/SprinklerSystemMonitor/design/claude-b1-engineering-20261116/research/selected-design-b1/CAD/outputs/renders/01_b1_closed_product.png"
     alt="Interactive 3D model of the proposed B1 riser pressure and temperature monitor, including an enclosure, electronics and illustrative sensors."
     camera-controls auto-rotate auto-rotate-delay="3200" rotation-per-second="12deg"
     camera-orbit="35deg 67deg 105%" field-of-view="30deg"
     shadow-intensity="0.6" exposure="1.2"
     interaction-prompt="auto" touch-action="pan-y">
  </model-viewer>
- <div id="model-status" class="status" role="status" aria-live="polite">Loading 3D assembly (3.7 MB)…</div>
+ <div id="model-status" class="status" role="status" aria-live="polite">Loading the current B1 design…</div>
 </div>
 <nav class="tools" aria-label="3D viewer controls">
  <button type="button" id="reset" title="Reset camera">Reset view</button>
  <button type="button" id="top">Top view</button>
  <button type="button" id="side">Side view</button>
  <button type="button" id="rotate">Pause rotation</button>
- <a class="action primary" id="download-current" href="https://raw.githubusercontent.com/JamieT1701/SprinklerSystemMonitor/67b1c21d9d1244b21375ea8d9760878a894d45a6/research/selected-design-b1/CAD/outputs/B1_concept_interactive.glb" download="B1_concept_interactive.glb">Download .GLB</a>
+ <a class="action primary" id="download-current" href="https://raw.githubusercontent.com/JamieT1701/SprinklerSystemMonitor/design/claude-b1-engineering-20261116/research/selected-design-b1/CAD/outputs/B1_concept_interactive.glb" download="B1_concept_interactive.glb">Download .GLB</a>
  <a class="action" href="https://github.com/JamieT1701/SprinklerSystemMonitor/raw/refs/heads/design/claude-b1-engineering-20261116/research/selected-design-b1/CAD/outputs/B1_FULL_DESIGN_CONCEPT_2026-11-16.zip">Full CAD package</a>
 </nav>
 <section class="notes">
@@ -110,7 +111,7 @@ footer{margin-top:24px;color:#88a8b6;font-size:12px}
  "use strict";
  var mv=document.getElementById("b1-model");
  var status=document.getElementById("model-status");
- var root="https://raw.githubusercontent.com/JamieT1701/SprinklerSystemMonitor/67b1c21d9d1244b21375ea8d9760878a894d45a6/research/selected-design-b1/CAD/outputs/";
+ var root="https://raw.githubusercontent.com/JamieT1701/SprinklerSystemMonitor/design/claude-b1-engineering-20261116/research/selected-design-b1/CAD/outputs/";
  var variants={
    closed:{file:"B1_concept_interactive.glb",title:"Closed",detail:"Closed clear-lid enclosure and remote sensor models. Select Lid Off or Electronics Only to view the interior.",orbit:"35deg 67deg 105%"},
    lid:{file:"B1_lid_off.glb",title:"Lid Off",detail:"Lid, gasket and cover label removed to expose the entire carrier assembly inside the open enclosure.",orbit:"35deg 43deg 92%"},
@@ -118,12 +119,13 @@ footer{margin-top:24px;color:#88a8b6;font-size:12px}
    electronics:{file:"B1_electronics_only.glb",title:"Electronics Only",detail:"Enclosure removed. Inspect the ESP32, PoE board, ADC, precision shunt, power modules and terminals.",orbit:"35deg 45deg 86%"}
  };
  var selected="closed";
+ var currentPageVersion=Date.now().toString(36); // refreshes GitHub raw cache on new page load
  var dl=document.getElementById("download-current");
  var buttons=document.querySelectorAll("[data-assembly-mode]");
  function selectVariant(mode){
    if(!Object.prototype.hasOwnProperty.call(variants,mode))return;
    selected=mode;
-   var v=variants[mode],url=root+v.file;
+   var v=variants[mode],url=root+v.file+"?viewer="+currentPageVersion;
    buttons.forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-assembly-mode")===mode?"true":"false");});
    document.getElementById("assembly-description").textContent=v.detail;
    dl.href=url;dl.download=v.file;

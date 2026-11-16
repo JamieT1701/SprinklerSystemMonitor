@@ -1,17 +1,12 @@
-# Gemini independent design submission — access checkpoint
+# Gemini independent design submission — Round 1 completed
 
-**Status (2026-11-13): NOT RUN.** No Gemini model output exists. Do not infer a result from the presence of this branch.
+**Status 2026-11-16:** Actual independent model run completed successfully. Original public-facing answer stored verbatim in `round1-independent-proposal.md`. Safe runtime receipt stored in `round1-run-receipt.json`.
 
-**Identical experiment input:** `research/independent-designs/ROUND1-PROMPT.md` on `research/independent-competition-20261113`, SHA256 `8b46082d7f3cb78569879aedc6144021f0a5dd9c3bed769c8351773b67f5032c`.
-**Working branch:** `research/independent-gemini-20261113`.
-**Expected source:** Gemini CLI using highest legitimately available reasoning-capable Pro tier; record actual version/model ID/thinking setting and usage in a runtime receipt.
+- CLI: Google Antigravity CLI 1.5.9; model selector **gemini-3.8-flash-high**. Gemini Pro not available in authenticated CLI model list; model-specific High setting selected. Actual served model ID absent from run JSON.
+- Frozen prompt SHA256: `8b46082d7f3cb78569879aedc6144021f0a5dd9c3bed769c8351773b67f5032c` (12,484 UTF-8 bytes); exact prompt argument checksum separately verified.
+- Response SHA256: `38ae82b1452c5f0653bf12b35da058c20a1748fb0bdabc34753925754fe08a63` (38583 bytes).
+- Isolated workspace: `~/device-lab-gemini-blind`, no access to existing prototype/repo, other submissions or source code; sandbox and slash-command expansion restrictions; instruction explicitly forbade tool calls.
+- Model output has **not** been scored, peer-reviewed or accepted for PCB manufacturing or commercial use. Do not open other competitor's submission before it is frozen.
+- Issue: https://github.com/JamieT1701/SprinklerSystemMonitor/issues/3
 
-## Access validation
-- Arthur: Gemini CLI `0.68.0` executed via `npx -y @google/gemini-cli`. No Gemini CLI OAuth credential configuration or `GEMINI_API_KEY` was available in the current execution environment.
-- A minimal test invocation requesting the word `OK` with `-m gemini-2.5-pro` exited with **41**: `Please set an Auth method ...`. **No Gemini inference occurred**.
-- Oscar: no installed Gemini CLI or preconfigured `.gemini` directory. This does not prove that the owner lacks a Google account; it only reflects the available CLI environment.
-- No API tokens were copied from unrelated Google/GitHub services and no unauthorised paid inference endpoints were activated.
-
-**Unlock condition:** Owner authorizes/signs in to Gemini CLI (Google OAuth) on Arthur, or supplies an authorized model provider connection with transparent cost and model selection. The coordinator then runs the frozen identical Round 1 prompt and commits raw results here, independently of Claude. **Do not replace with simulated Gemini output or another model.**
-
-**Competition index:** [Issue #3](https://github.com/JamieT1701/SprinklerSystemMonitor/issues/3). Do not inspect other advisor outputs before your independent model run is frozen.
+This replaces the prior 2026-11-13 Gemini CLI authentication-blocked status, resolved using supported Antigravity CLI and user Google sign-in.

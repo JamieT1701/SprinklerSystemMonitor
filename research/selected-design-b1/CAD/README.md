@@ -17,6 +17,10 @@ The product images and editable CAD represent a proposed **supplementary** monit
 
 All three applications were installed via free user-level Flatpak on Arthur. Fusion Personal remains separate and was **not used**.
 
+## Living 3D viewer (retained for future B1 revisions)
+
+The permanent [interactive B1 review page](https://jamiet1701.github.io/SprinklerSystemMonitor/b1-viewer.html) now resolves all four GLB modes from the **active B1 engineering branch**, rather than freezing an old commit. When a reviewed revision regenerates and commits those GLBs, reloading the same viewer URL displays its new version. **The CAD-to-GLB export is an explicit QA/publishing step, not an unattended background process.** See [VIEWER-LIFECYCLE.md](VIEWER-LIFECYCLE.md) and run `python3 check_viewer_models.py` after exports. Before retiring or merging the B1 branch, re-point the viewer assets to the new durable source branch so the public URL remains usable.
+
 ## Open the deliverables
 
 ### For immediate review

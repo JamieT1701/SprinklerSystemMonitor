@@ -12,7 +12,7 @@ for obj in bpy.data.objects:
     obj.select_set(False)
     if obj.type not in {"MESH","CURVE","FONT"}:
         continue
-    if obj.name.startswith(("Photo backdrop", "Cover line", "Presentation pressure sensor cord", "Presentation DS18B20 cable")):
+    if obj.name.startswith(("Photo backdrop", "Cover line")):
         continue
     if obj.hide_render:
         continue

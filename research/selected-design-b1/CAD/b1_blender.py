@@ -145,6 +145,10 @@ CABLES=[
        [(0,-110,35),(-40,-145,28),(-111,-108,45),(-154,0,58)],1.55,
        mat("Temperature cable dark gray",(.11,.17,.20)))
 ]
+# Reset must restore original label/silkscreen coordinates as well as mesh parts.
+# Previous script only restored mesh transforms, leaking exploded-view offsets
+# into the final .blend and GLB (floating lid decal and PCB silk text).
+STATIC_COORDS={ob.name:ob.location.copy() for ob in LABELS+SILK}
 # Standalone matte stage helps cast realistic shadows; not part of CAD package.
 stage=mat("Studio floor",(0.052,.071,.089),rough=.72)
 FLOOR=box("Photo backdrop floor",(0,0,-18),(680,540,6),stage,bevel=3)
@@ -175,7 +179,10 @@ def camera(name,xyz,look,scale):
 def reset():
  for ob in PARTS.values():
   ob.location=(0,0,0);ob.hide_render=False
- for ob in LABELS+SILK+CABLES:ob.hide_render=False
+ for ob in LABELS+SILK:
+  ob.location=STATIC_COORDS[ob.name].copy()
+  ob.hide_render=False
+ for ob in CABLES: ob.hide_render=False
  FLOOR.hide_render=False
 def invisible(prefixes,yes=True):
  for name,obj in PARTS.items():

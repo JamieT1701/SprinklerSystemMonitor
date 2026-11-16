@@ -1,0 +1,20 @@
+{
+  "competition": "Sprinkler monitor blind engineering design competition Issue #3",
+  "advisor": "gemini-carbon",
+  "user_reported_model": "Gemini 4 Carbon",
+  "observed_web_model_picker_at_capture": "Carbon",
+  "actual_served_model_id": "not provided in browser view",
+  "interface": "Google Gemini web app (paid Workspace account)",
+  "execution_status": "completed response visible in browser and owner reports Carbon run; no vendor runtime receipt",
+  "capture_source": "connected Browser read-only get_tab_context of an already-open user-authenticated Gemini conversation",
+  "captured_date": "2026-11-16",
+  "source_conversation_title": "Dry-Pipe Sprinkler Monitor Proposal",
+  "response_capture_file": "round1-browser-rendered-response.txt",
+  "response_capture_characters": 54919,
+  "response_capture_format": "Browser accessibility/page-rendered text (DOM tables and HTML entities preserved), NOT exact raw model Markdown or a vendor output export",
+  "prompt_basis": "Owner manually pasted the frozen Round 1 prompt from research/independent-competition-20261113/research/independent-designs/ROUND1-PROMPT.md; browser displays full prompt beginning and ending, but exact bytes/hashes of browser submitted input cannot be independently asserted",
+  "original_frozen_prompt_sha256": "8b46082d7f3cb78569879aedc6144021f0a5dd9c3bed769c8351773b67f5032c",
+  "blind_isolation_note": "The browser conversation displays only the clean-room prompt and an independent response; user was instructed not to share prototype or peer outputs. This is not cryptographic proof of isolation.",
+  "public_repo_privacy": "User email, account session identifiers, cookies and private Gemini URL deliberately excluded",
+  "comparison_gate": "Can enter provisional comparative evaluation, labeled with capture-fidelity/model-verification limitations; do not confuse with Gemini Flash High CLI draft PR #4"
+}

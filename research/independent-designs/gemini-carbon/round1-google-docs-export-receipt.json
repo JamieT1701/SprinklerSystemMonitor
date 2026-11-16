@@ -1,0 +1,22 @@
+{
+  "archive_type": "source-faithful Google Docs Markdown export of Gemini Carbon Round 1 proposal",
+  "captured_at": "2026-11-16",
+  "source_title": "Dry-Pipe Sprinkler Monitor Proposal",
+  "source_type": "native Google Docs file exported as text/markdown through linked Google Drive account",
+  "source_document_revision": "AHj4eMQp0sR35Xo7MfvpFZhNUuOjWpueU0Xl-dBhReik_CIdD44FvanxHXOQiHeXVSU06A6C8XQU93vpZFsOM39YsXVFDl-nBI4jJarMatg",
+  "source_export_utf8_bytes": 67509,
+  "source_export_sha256": "539492a0a40d18f3099f1f45c28379043aae261aa377dbfa1b8f120c64ed8dd5",
+  "source_export_structure": "Contains a title, private Gemini chat URL, exported user prompt, and complete response; source file left unchanged in Google Drive.",
+  "archived_file": "round1-google-docs-export.md",
+  "extracted_section": "From '# **Response: Clean-Room Engineering Proposal:' to the end of exported Markdown; retained as exact substring including original whitespace, tables, and escapes. No rewriting or editorial normalization.",
+  "archived_utf8_bytes": 54772,
+  "archived_characters": 54546,
+  "archived_sha256": "2e2086e4d021c22c6732b930c22d3a4f4cde6347f0e81fb0bfaa6bfa350bee3f",
+  "archive_verified": "Independent remote clone of GitHub branch, wc byte count and sha256sum match source-derived expected values.",
+  "omitted_before_archived_section": "Private Gemini conversation URL and original prompt preamble. Canonical original prompt available separately in coordinator branch.",
+  "google_docs_export_fidelity": "Preserves Google Docs-exported Markdown content of the response exactly. Google Docs conversion may alter the model's original Markdown syntax/formatting; native provider raw response/usage metadata were not available.",
+  "model_provenance": "Owner states Gemini 4 Carbon; Gemini web UI displayed Carbon when connected browser was read. Served model version and usage not independently exposed.",
+  "comparison_use": "Prefer the complete source-faithful Markdown over the earlier DOM/browser-rendered capture; maintain earlier capture as provenance. No third-party code or product claims validated.",
+  "secrets": "No authentication tokens, user account email, private chat URL, or Google Docs URL stored in public GitHub.",
+  "safety": "Research only, no live sprinkler system modification or product authorization"
+}

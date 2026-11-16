@@ -1,0 +1,1 @@
+B1 DIMENSIONAL DESIGN SURROGATE ONLY. Not manufacturer-exact molded STEP, not real circuit, not qualified for drilling, electrical fabrication or sprinkler installation.\nEditable parametric source: ../b1_freecad.py + ../B1_dimensions.json.\n

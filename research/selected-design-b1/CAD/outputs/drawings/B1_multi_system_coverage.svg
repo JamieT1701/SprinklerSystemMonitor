@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="860" viewBox="0 0 1700 860">
+<rect width="1700" height="860" fill="#0B1321"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7.2" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9z" fill="#66DAC2"/></marker></defs>
+<text x="54" y="67" font-family="Inter,Arial,sans-serif" font-size="35" fill="#E6F1F4" font-weight="700" text-anchor="start">B1 • MULTIPLE DRY SYSTEMS</text>
+<text x="54" y="107" font-family="Inter,Arial,sans-serif" font-size="17" fill="#96ADBE" font-weight="400" text-anchor="start">One reusable single-channel device per approved independent measurement domain — no shared-failure multi-channel PCB</text>
+<path d="M 54 130 L 1646 130" stroke="#96ADBE" stroke-width="1" fill="none" opacity="0.23"/>
+<rect x="73" y="237" width="466" height="174" rx="17" fill="#121E2E" stroke="#66DAC2" stroke-width="2"/>
+<rect x="73" y="237" width="7" height="174" rx="3.5" fill="#66DAC2"/>
+<text x="96" y="273" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">System 1 • approved tap</text>
+<text x="96" y="303" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Independent 4–20 mA transmitter</text>
+<text x="96" y="328" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">B1 local invalid/offline detection</text>
+<text x="96" y="353" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Valve/air maintenance topology verified</text>
+<rect x="73" y="518" width="466" height="125" rx="17" fill="#121E2E" stroke="#66DAC2" stroke-width="2"/>
+<rect x="73" y="518" width="7" height="125" rx="3.5" fill="#66DAC2"/>
+<text x="96" y="554" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">B1 device 1</text>
+<text x="96" y="584" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Factory PoE + remote DS18B20</text>
+<text x="96" y="609" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Distinct device + calibration identity</text>
+<path d="M306 411 V515" stroke="#66DAC2" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M306 643 V706" stroke="#70A9FF" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="617" y="237" width="466" height="174" rx="17" fill="#121E2E" stroke="#70A9FF" stroke-width="2"/>
+<rect x="617" y="237" width="7" height="174" rx="3.5" fill="#70A9FF"/>
+<text x="640" y="273" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">System 2 • approved tap</text>
+<text x="640" y="303" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Independent 4–20 mA transmitter</text>
+<text x="640" y="328" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">B1 local invalid/offline detection</text>
+<text x="640" y="353" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Valve/air maintenance topology verified</text>
+<rect x="617" y="518" width="466" height="125" rx="17" fill="#121E2E" stroke="#66DAC2" stroke-width="2"/>
+<rect x="617" y="518" width="7" height="125" rx="3.5" fill="#66DAC2"/>
+<text x="640" y="554" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">B1 device 2</text>
+<text x="640" y="584" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Factory PoE + remote DS18B20</text>
+<text x="640" y="609" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Distinct device + calibration identity</text>
+<path d="M850 411 V515" stroke="#66DAC2" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M850 643 V706" stroke="#70A9FF" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="1161" y="237" width="466" height="174" rx="17" fill="#121E2E" stroke="#70A9FF" stroke-width="2"/>
+<rect x="1161" y="237" width="7" height="174" rx="3.5" fill="#70A9FF"/>
+<text x="1184" y="273" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">System 3 • approved tap</text>
+<text x="1184" y="303" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Independent 4–20 mA transmitter</text>
+<text x="1184" y="328" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">B1 local invalid/offline detection</text>
+<text x="1184" y="353" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Valve/air maintenance topology verified</text>
+<rect x="1161" y="518" width="466" height="125" rx="17" fill="#121E2E" stroke="#66DAC2" stroke-width="2"/>
+<rect x="1161" y="518" width="7" height="125" rx="3.5" fill="#66DAC2"/>
+<text x="1184" y="554" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">B1 device 3</text>
+<text x="1184" y="584" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Factory PoE + remote DS18B20</text>
+<text x="1184" y="609" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Distinct device + calibration identity</text>
+<path d="M1394 411 V515" stroke="#66DAC2" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M1394 643 V706" stroke="#70A9FF" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="467" y="712" width="768" height="80" rx="18" fill="#1C2A3A" stroke="#F6C768" stroke-width="2"/>
+<text x="851" y="748" font-family="Inter,Arial,sans-serif" font-size="20" fill="#F6C768" font-weight="700" text-anchor="middle">SITE ROLLUP  •  NEVER GREEN IF ONE DEVICE IS MISSING</text>
+<text x="851" y="776" font-family="Inter,Arial,sans-serif" font-size="15" fill="#E6F1F4" font-weight="500" text-anchor="middle">Software interface only — qualified site design decides actual device count</text>
+<path d="M 54 787 L 1646 787" stroke="#96ADBE" stroke-width="1" fill="none" opacity="0.3"/>
+<text x="54" y="818" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Common compressor outlet alone cannot prove pressure independently on every downstream dry-system valve</text>
+<text x="1645" y="818" font-family="Inter,Arial,sans-serif" font-size="14" fill="#F6C768" font-weight="600" text-anchor="end">B1 / CONCEPT RELEASE — NOT FOR FABRICATION</text>
+</svg>

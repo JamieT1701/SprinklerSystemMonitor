@@ -1,0 +1,129 @@
+{
+  "design_id": "B1-2026-11-16-A",
+  "units": "mm",
+  "purpose": "manufacturable concept visualization; not a validated or approved fire-protection device",
+  "enclosure": {
+    "manufacturer": "Hammond",
+    "part": "1554T2GYCL",
+    "material": "polycarbonate RAL7035 case clear lid",
+    "external_width_mm": 120,
+    "external_length_mm": 180,
+    "external_height_mm": 90.5,
+    "base_height_mm": 75,
+    "lid_height_mm": 15.5,
+    "inner_width_nominal_mm": 108.06,
+    "inner_length_nominal_mm": 172.13,
+    "manufacturer_max_pcb_width_mm": 106.68,
+    "manufacturer_max_pcb_length_mm": 167.13,
+    "geometric_surrogate": true
+  },
+  "carrier_pcb": {
+    "width_mm": 100,
+    "length_mm": 160,
+    "thickness_mm": 1.6,
+    "z_bottom_mm": 26,
+    "mount_hole_diameter_mm": 3.4,
+    "mount_holes_xy_mm": [
+      [
+        -44,
+        -70
+      ],
+      [
+        -44,
+        70
+      ],
+      [
+        44,
+        -70
+      ],
+      [
+        44,
+        70
+      ]
+    ],
+    "netlist_status": "not yet routed or safety-validated"
+  },
+  "controller": {
+    "manufacturer": "Waveshare",
+    "sku": "28771",
+    "assembly": "ESP32-S3-POE-ETH",
+    "board_width_mm_approx": 21,
+    "board_length_mm_approx": 72.8,
+    "center_xy_mm": [
+      -27,
+      0
+    ],
+    "mount_z_mm": 48,
+    "module_clearances_unverified": true
+  },
+  "modules": {
+    "poe": [
+      -27,
+      12,
+      31
+    ],
+    "adc": [
+      25,
+      30,
+      29
+    ],
+    "boost": [
+      25,
+      -8,
+      30
+    ],
+    "efuse": [
+      25,
+      -35,
+      29
+    ],
+    "pressure_terminal": [
+      25,
+      -64,
+      30
+    ],
+    "temperature_terminal": [
+      -5,
+      -64,
+      30
+    ]
+  },
+  "ports": [
+    {
+      "name": "POE_ETH",
+      "x_mm": -35,
+      "y_mm": -90,
+      "z_mm": 35,
+      "cutout_diameter_mm": 20
+    },
+    {
+      "name": "TEMP",
+      "x_mm": 0,
+      "y_mm": -90,
+      "z_mm": 35,
+      "cutout_diameter_mm": 13
+    },
+    {
+      "name": "LOOP_4_20MA",
+      "x_mm": 35,
+      "y_mm": -90,
+      "z_mm": 35,
+      "cutout_diameter_mm": 13
+    }
+  ],
+  "source_limitations": [
+    "Nominal enclosure envelope surrogate, not actual Hammond OEM solid STEP; lid/gasket/corner bosses dimensioned for appearance only",
+    "Module/connector and cable clearances not bench measured",
+    "Soldered analog front end not drawn as ERC-validated schematic",
+    "No loop current limiter or field ESD design validated; 24V boost requires separate short-safe protection",
+    "No sprinkler system connection or pressure threshold authorized"
+  ],
+  "source_links": {
+    "enclosure": "https://www.hammfg.com/part/1554T2GYCL",
+    "enclosure_drawing": "https://www.hammfg.com/files/parts/pdf/1554T2GY.pdf",
+    "esp": "https://docs.waveshare.com/ESP32-S3-ETH",
+    "boost": "https://www.pololu.com/product/5588/specs",
+    "efuse": "https://www.ti.com/product/TPS2662",
+    "adc": "https://www.ti.com/product/ADS1115"
+  }
+}

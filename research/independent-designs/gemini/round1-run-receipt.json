@@ -1,0 +1,43 @@
+{
+  "experiment": "2026-11-13 blind engineering design competition round 1",
+  "provider": "Google Antigravity CLI",
+  "advisor": "gemini",
+  "cli_version": "1.5.9",
+  "requested_model": "gemini-3.8-flash-high",
+  "reported_model_in_result": null,
+  "actual_model_verification": "Requested CLI model gemini-3.8-flash-high; no served model-id field was returned in provider JSON; do not claim verified model beyond CLI selection.",
+  "reasoning_setting": "high (encoded in CLI model selection; --effort=max was not accepted for this model)",
+  "pro_model_available": false,
+  "cli_invocation": [
+    "agy",
+    "--model",
+    "gemini-3.8-flash-high",
+    "--sandbox",
+    "--disable-slash-commands",
+    "--output-format",
+    "json",
+    "--print=<frozen full prompt>"
+  ],
+  "working_dir": "~/device-lab-gemini-blind (empty project workspace; no repository shared)",
+  "prompt_sha256": "8b46082d7f3cb78569879aedc6144021f0a5dd9c3bed769c8351773b67f5032c",
+  "prompt_byte_count": 12484,
+  "model_argument_sha256": "8b46082d7f3cb78569879aedc6144021f0a5dd9c3bed769c8351773b67f5032c",
+  "model_argument_verified_byte_identical": true,
+  "started_at_local": "2026-11-16T15:02:32-05:00",
+  "completed_at_local": "2026-11-16T15:04:51-05:00",
+  "exit_code": 0,
+  "result_status": "SUCCESS",
+  "duration_seconds": 137.813360578,
+  "num_turns": 1,
+  "usage": {
+    "input_tokens": 11024,
+    "output_tokens": 15174,
+    "thinking_tokens": 5477,
+    "cache_read_tokens": 0,
+    "total_tokens": 26198
+  },
+  "proposal_sha256": "38ae82b1452c5f0653bf12b35da058c20a1748fb0bdabc34753925754fe08a63",
+  "proposal_utf8_bytes": 38583,
+  "unverified_output_note": "The proposal is a model-generated unreviewed engineering concept, not independently tested hardware, validated costs, certified compliance, or operational monitoring.",
+  "excluded_metadata": "Raw provider JSON/session/conversation identifiers and credentials are not included in GitHub."
+}

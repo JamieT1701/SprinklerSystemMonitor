@@ -30,6 +30,14 @@ constexpr float PRESSURE_RANGE_PSI = 150.0f;
 // This is a dated MANUAL field reading, not an actively monitored supply input.
 constexpr float PRESSURE_SUPPLY_LAST_MANUALLY_MEASURED_V = 4.751f;
 constexpr float PRESSURE_SENSOR_NOMINAL_SUPPLY_V = 5.0f;
+// Initial normal reference from Nov 16 installed readings (1.0743, 1.0743, 1.0810 V).
+// Owner confirmed system stable, compressor off, and valve not tripped.
+// This is a fixed observational reference, NOT an engineered alarm threshold.
+// Do not automatically learn/relearn reference when pressure changes.
+constexpr float PRESSURE_BASELINE_A0_V = 1.0765f;
+constexpr float PRESSURE_REFERENCE_TOLERANCE_FRACTION = 0.05f; // exploratory diagnostic only
+constexpr uint8_t PRESSURE_TREND_WINDOW_SAMPLES = 30; // approx 120 s at 4 s/sample
+
 
 
 OneWire oneWire(TEMP_DATA);
@@ -47,6 +55,40 @@ static float tempC = NAN;
 static float pressureNodeV = NAN;
 static float provisionalPsi = NAN;
 static float psiIfRatiometric = NAN;
+static float pressureRecentA0[PRESSURE_TREND_WINDOW_SAMPLES] = {};
+static uint8_t pressureRecentCount = 0;
+static uint8_t pressureRecentPos = 0;
+
+void recordPressureTrendSample(bool valid, float a0) {
+  // A missing/implausible sensor is not a stable zero pressure observation.
+  if (!valid || !isfinite(a0) || a0 < 0.20f || a0 > 2.95f) {
+    pressureRecentCount = 0;
+    pressureRecentPos = 0;
+    return;
+  }
+  pressureRecentA0[pressureRecentPos] = a0;
+  pressureRecentPos = (pressureRecentPos + 1) % PRESSURE_TREND_WINDOW_SAMPLES;
+  if (pressureRecentCount < PRESSURE_TREND_WINDOW_SAMPLES) ++pressureRecentCount;
+}
+
+String pressureTrendState() {
+  if (!pressureVoltageValid || !isfinite(pressureNodeV) ||
+      pressureNodeV < 0.20f || pressureNodeV > 2.95f) return "SENSOR_FAULT";
+  if (pressureRecentCount < PRESSURE_TREND_WINDOW_SAMPLES) return "OBSERVING";
+  float minV = pressureRecentA0[0], maxV = pressureRecentA0[0], sum = 0.0f;
+  for (uint8_t i=0; i<PRESSURE_TREND_WINDOW_SAMPLES; ++i) {
+    const float v = pressureRecentA0[i];
+    if (v < minV) minV = v;
+    if (v > maxV) maxV = v;
+    sum += v;
+  }
+  const float averageV = sum / PRESSURE_TREND_WINDOW_SAMPLES;
+  const float toleranceV = PRESSURE_BASELINE_A0_V * PRESSURE_REFERENCE_TOLERANCE_FRACTION;
+  if (fabsf(averageV - PRESSURE_BASELINE_A0_V) <= toleranceV &&
+      (maxV - minV) <= toleranceV) return "STABLE";
+  return "OUTSIDE_INITIAL_REFERENCE_REVIEW";
+}
+
 static uint32_t lastTempOkMs = 0;
 static uint32_t lastTempSampleMs = 0;
 static uint32_t lastPressureSampleMs = 0;
@@ -101,11 +143,13 @@ void samplePressure() {
     // Alternative HYPOTHESIS only: output scales as 10-90% of sensor supply.
     psiIfRatiometric = ((sensorV / PRESSURE_SUPPLY_LAST_MANUALLY_MEASURED_V) - 0.10f)
       * (PRESSURE_RANGE_PSI / 0.80f);
+    recordPressureTrendSample(true, volts);
   } else {
     pressureVoltageValid=false;
     pressureNodeV=NAN;
     provisionalPsi=NAN;
     psiIfRatiometric=NAN;
+    recordPressureTrendSample(false, NAN);
   }
 }
 
@@ -201,6 +245,11 @@ String makeBody() {
   s += "pressure_supply_v_last_measured=" + String(PRESSURE_SUPPLY_LAST_MANUALLY_MEASURED_V,3) + "\n";
   s += "pressure_supply_measurement_live=no\n";
   s += "pressure_supply_ratiometric_model=UNVERIFIED\n";
+  s += "pressure_baseline_a0_v=" + String(PRESSURE_BASELINE_A0_V,4) + "\n";
+  s += "pressure_baseline_source=OWNER_CONFIRMED_STABLE_2026_11_16\n";
+  s += "pressure_trend_window_samples=" + String(pressureRecentCount) + "\n";
+  s += "pressure_trend_state=" + pressureTrendState() + "\n";
+  s += "pressure_trend_thresholds=EXPERIMENTAL_NOT_ALERTS\n";
   s += "pressure_sensor_listing=Walfront_B0748CV4G1_150psi_candidate\n";
   s += "pressure_electrical_check=PENDING_MULTIMETER_A0_TO_GND\n";
   s += "pressure_calibration=UNVERIFIED_RATIOMETRIC_MODEL_AND_GAUGE\n";

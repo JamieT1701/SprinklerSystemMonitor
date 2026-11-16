@@ -46,3 +46,11 @@
 ## Acceptance distinction
 
 A passing software test in this branch validates **synthetic classification arithmetic only**. It cannot demonstrate sensor accuracy, safe connection to any pressure system, electronics fault tolerance, 24h operation, alarm delivery or legal compliance.
+
+## 2026-11-16 private inspection input — public-safe summary
+
+A read-only review of the owner's recent **private annual fire sprinkler inspection** confirms that multiple dry systems were **individually tested**, despite their reported shared compressor. Exact valve models, test air pressures, trip pressures and deficiency data are restricted to the owner's private inspection record and are **not reproduced here**. The report **does not establish** that the common compressor port represents the protected system-side air pressure at each valve; nor does it authorize historical trip points as alert settings.
+
+Add P0 site acceptance requirement **P-06:** For each required protected system, identify a qualified contractor-approved system-side measurement domain, independent transmitter ID, calibrated range and per-valve threshold record. **One B1 monitor per approved valve-side tap** is the preliminary modular choice; multi-channel shared gateway is deferred. A healthy common-compressor sensor must not allow an unmonitored required valve to appear NORMAL on the site dashboard. See `HARDWARE/MULTI-SYSTEM-SCOPE.md` and synthetic `SOFTWARE/site_rollup.py`.
+
+**Remaining unresolved despite the inspection:** Whether individual valve-side pressure ports are accessible/approved, which compressor/regulator/air-maintenance elements separate pressure domains, whether historical conditions and alarm bands still match present equipment, and what remediation of any inspection observations has actually occurred. Only owner/qualified contractor can verify these.

@@ -33,3 +33,7 @@ Host-side regression on Arthur:
 ```sh
 python3 -m unittest discover -s research/selected-design-b1/VERIFICATION -p 'test_*.py' -v
 ```
+
+## Multi-device site health tests (synthetic only)
+
+Add acceptance for explicit configured expected devices and alert identity: one missing device => site DEGRADED, one offline/faulted => site DEGRADED, any critical pressure alert => site CRITICAL with specific device ID, one UNVERIFIED => never site NORMAL, additional unrecognized device => configuration warning, and only a complete verified set may report site NORMAL. This behavior is host-tested by `VERIFICATION/test_site_rollup.py`, **not** demonstrated on multiple physical sprinklers.

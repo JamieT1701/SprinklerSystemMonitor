@@ -63,3 +63,7 @@
 ## Status
 
 There is **no** hosted B1 service or alert delivery. Testing in this branch is local deterministic model-only. The original R6 remains separately governed.
+
+## Multiple dry systems at one property
+
+The common compressor can serve multiple dry valves and cannot by itself guarantee identical system-side air pressures. One B1 device per **professionally approved** measurement domain is the leading serviceable hardware strategy. Site rollup requires an explicitly configured expected-device set; never hardcode device count from this owner's site into product defaults. Missing, faulted, stale or UNVERIFIED **individual** devices block site NORMAL; preserve each alarm's source identity, status and timestamp. Implementation is a **host-only demonstration** `SOFTWARE/site_rollup.py` with synthetic tests, not a deployed multi-device server, notification engine or automatic fire system supervision.

@@ -37,3 +37,7 @@ Claude's Round 1 100-unit **$275–455** materials+labor allowance is **not a qu
 Cost tracking for 1/5/25/100 quantities requires: actual supplier tier cost, taxes, shipping, substitute part QA, PCB assembly, pressure sender and cable, enclosure, AC/PoE supply, 5V/24V converter and protection, hardware fixture amortization, hands-on assembly minutes, burn-in capacity, yield/rework, compliance pretests, warranty and annual service. A single-person workshop cannot imply 15–30-minute finished product labor until measured during a real batch.
 
 **Commercial gate:** do not advertise "fire alarm", "NFPA compliant", "UL listed" or "prevents trips" without substantiation and legal/AHJ/regulatory review. Professional field install and existing fire-system requirements remain mandatory.
+
+## Site with multiple independently monitored dry valves
+
+Do **not** quote a single compressor-outlet device as coverage of all dry valves. Product BOM remains **per independently qualified single-channel B1 unit**. A property with several system-side taps can require multiple transmitter + B1 + network/power installations, each with its own signed installer/calibration acceptance and maintenance records. A three-channel shared gateway would require separate engineering, independent fault domain study, channel isolation and test coverage; it is **not** the approved B1 release scope. The precise installed device count belongs to the qualified site design, not a universal three-system assumption.

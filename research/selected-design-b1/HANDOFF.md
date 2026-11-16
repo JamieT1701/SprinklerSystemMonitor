@@ -7,7 +7,7 @@
 
 - Separate draft engineering branch from the **coordinator's latest Round 1 comparison** (never overwrote Claude/Gemini submissions).
 - Source-only decisions, requirements, analog channel/field interface contract, sourced **candidate** BOM, reproducible shunt/power/divider computations, host-only 4–20mA fault and cloud anti-stale state models, multi-system bench test matrix, shop QA plan.
-- **42 Python standard-library synthetic tests passing** on Arthur (`jamie-home-dev`), with exact command in README; no secrets or outside services used.
+- **53 Python standard-library synthetic tests passing** on Arthur (`jamie-home-dev`), with exact command in README; no secrets or outside services used.
 - Manufacturer datasheet/official source evidence linked (Waveshare PoE board, TI ADS1115 limits, Pololu 24V booster, Beckhoff NE43, WIKA comparator part).
 
 ## Deliberately not claimed or done
@@ -18,7 +18,7 @@
 
 ## Highest-priority next non-destructive engineering actions
 
-1. **Site design input (qualified contractor gate):** Identify actual valve/AMD, approved process-side pressure tap, manufacturer air band and max temperature/pressure exposure; choose qualified 4–20mA sensor range and exact MPN **without** assuming compressor-outlet reading represents the dry-pipe system.
+1. **Site design input (qualified contractor gate):** The private recent annual inspection independently documents multiple dry systems and historical test pressures (sensitive details withheld from public GitHub). Recover system-specific make/model from **private record**, then contractor-confirm valve/AMD topology, approved process-side pressure tap for each monitored domain, manufacturer air band and max temperature/pressure exposure; choose qualified 4–20mA sensor range and exact MPN **without** assuming shared compressor-outlet reading represents every dry-pipe valve.
 2. **Electrical design, independent reviewer:** Build and calculate a **hardware continuous-short-safe 24V loop-current limiter** with low-side 100Ω sense, source/terminal diagnostic dividers, appropriately rated ESD/reverse/miswire clamps and ADC power-off safeguards. Select exact sourceable protective devices and evaluate fault heating/boost supply sag. A Pololu U3V9F24 booster is **only a bench candidate**, never a field-current limiter. TI TPS2662 is a promising **unqualified** 25mA-minimum programmable eFuse family candidate; exact variant, VSON assembly and safe indefinite short response need independent design/test.
 3. **Actual module current/pin budget:** With proper isolation and approval, measure Waveshare PoE 5V output at startup, Ethernet active and worst loop current; check pinouts, module mounting and connector height for commercial carrier. Do not disturb working site unit.
 4. **Native EDA after above:** Use KiCad 9 or compatible EDA environment. Arthur currently does **not** have `kicad-cli` installed; do not claim ERC/DRC. Create complete hierarchical electrical schematic, run ERC, independent review, then PCB with measured enclosure/connector geometry and DRC. Confirm full qualified BOM and second-source parts.
@@ -27,3 +27,7 @@
 7. **Earnings and commercial gate:** Matched supplier MPN quotes at 1/5/25/100, shop time study, exact legal/regulatory installation/fire-protection classifications/insurance, owner-approved spending and release.
 
 **First material owner input if needed:** The actual dry-valve/air-maintenance equipment model and installer/inspection report; one question at a time. Contractor/AHJ approval must precede an approved pressure tap or alert threshold. Research may continue on independent bench source without changing sprinkler infrastructure.
+
+## Privacy-safe new finding
+
+Private owner inspection (not committed) shows multiple individual dry-system trip tests. The preferred B1 product remains **single-channel per approved tap**; one site may require multiple B1 devices with common dashboard rollup. Newly added `HARDWARE/MULTI-SYSTEM-SCOPE.md`, `SOFTWARE/site_rollup.py` and its host-only tests preserve individual fault identity. Do not disclose the actual private report or valve/trip/deficiency details in public GitHub. A later invoice located in owner mail concerns the prior routine inspection, **not independently verified remediation**.

@@ -20,7 +20,8 @@ Advance [Issue #3's independent review](../independent-designs/COMPARISON.md) in
 - `FIRMWARE/loop_classifier.py`: host-only reference classification for recorded current/voltage samples; **not deployable firmware or fire protection controls**.
 - `VERIFICATION/test_*.py`: synthetic regression tests only; no electronics or real sensor verified.
 - `VERIFICATION/FAULT-MATRIX.md`: bench, system, security and installation release gates.
-- `SOFTWARE/ALERT-CONTRACT.md`: one-site, backend/alerts and anti-stale expectations.
+- `SOFTWARE/ALERT-CONTRACT.md`: backend/alerts and anti-stale expectations.
+- `HARDWARE/MULTI-SYSTEM-SCOPE.md` and `SOFTWARE/site_rollup.py`: confidential-source-safe multi-valve installation options and synthetic site rollup (one B1 channel per approved tap remains the preferred unit architecture).
 - `MANUFACTURING/BUILD-PLAN.md`: single-workshop build strategy, fixture, traceability.
 - `HANDOFF.md`: status and next blocked/unblocked steps.
 
@@ -31,7 +32,7 @@ The physical R6 currently uses an existing **Waveshare ESP32-S3-POE-ETH + ADS111
 ## Engineering release position
 
 As of this checkpoint:
-- **Executed:** 42 Python host-side tests pass (software arithmetic and synthetic loop fault classifications only).
+- **Executed:** 53 Python host-side tests pass (software arithmetic and synthetic loop fault classifications only).
 - **Not created:** genuine native KiCad schematic/PCB, reviewed parts/footprints, ERC/DRC, SPICE/power simulation, fab exports, assembly drawings, actual test fixture, flashable ESP-IDF, cloud alert service, a working B1 sensor, supplier-quoted BOM or regulatory signoffs.
 - **Critical blockers:** qualified sprinkler tap and valve data; correct pressure-transmitter MPN/range/process rating; protected **24V current-limited loop-source circuit**, analog/miswire/ESD/ADC front end, measured PoE power and exact connector fit. See `HARDWARE/FRONTEND-DESIGN.md`.
 
@@ -48,3 +49,7 @@ python3 -m unittest discover -s research/selected-design-b1/VERIFICATION -p 'tes
 These are bench-model tests, **not** proof of true pressure sensor faults, exact ADC behavior, electrical survivability or provider delivery.
 
 [Round 1 scoring](../independent-designs/COMPARISON.md) · [technical audit](../independent-designs/TECHNICAL-AUDIT.md) · [contest Issue #3](https://github.com/JamieT1701/SprinklerSystemMonitor/issues/3)
+
+## New inspection-informed scope (privacy protected)
+
+The owner's privately held current annual inspection records **multiple individually tested dry systems**. A shared compressor reading does not prove the air pressure at each valve. B1 remains a single-channel modular product; a multi-system site may need one professionally approved independent sensor per valve-side air domain. No exact valve models, tested trip points, inspection deficiencies, price quotes, facility address or confidential report were copied to public GitHub. See `HARDWARE/MULTI-SYSTEM-SCOPE.md`.

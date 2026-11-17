@@ -1,0 +1,8 @@
+**/ota_secret.h
+**/ota-password.txt
+**/*secret*.env
+**/build/
+**/build_ota/
+**/*.bin
+**/compile*.log
+**/upload*.log

@@ -1,0 +1,20 @@
+{
+  "status": "MANIFOLD_BINARY_STL_CREATED",
+  "validation": "GEOMETRY_VERIFIED_ONLY - physical fit not verified",
+  "filename": "R2_P4_10mm_Wire_Tie_Saddle_FIT_TEST_ONLY.stl",
+  "bytes": 3773684,
+  "triangles": 75472,
+  "quads": 37736,
+  "edge_manifold_errors": 0,
+  "size_mm": [
+    26.0,
+    16.0,
+    8.0
+  ],
+  "resolution_mm": 0.2,
+  "through_hole_diameter_nominal_mm": 3.6,
+  "hole_center_pitch_mm": 10.0,
+  "source_assumption": "P4 grid-hole spacing 10mm from prior P3 design; visually align against P4 before use",
+  "use": "Low-stress wire management only; bench fit-test. NOT for mounting boards or sprinkler safety controls.",
+  "sha256": "ca859769725c5f5b9a0b744ea04e42602b3fbed83b090d42d2b3ef2fbb771b41"
+}

@@ -1,0 +1,13 @@
+{
+  "autodeskProduct": "Fusion",
+  "type": "script",
+  "id": "",
+  "author": "Device Lab",
+  "description": {
+    "": "Provisional R1 industrial sprinkler-monitor assembly; imports accepted P4 mesh and editable PCB/enclosure placement blocks."
+  },
+  "version": "1.0.0",
+  "runOnStartup": false,
+  "supportedOS": "windows",
+  "editEnabled": true
+}

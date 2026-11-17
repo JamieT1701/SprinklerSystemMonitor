@@ -1,0 +1,13 @@
+{
+  "autodeskProduct": "Fusion",
+  "type": "script",
+  "id": "",
+  "author": "Device Lab",
+  "description": {
+    "": "Import exact verified P4 STL into an unsaved Fusion reference design and export F3D, without geometry changes."
+  },
+  "version": "1.0.0",
+  "runOnStartup": false,
+  "supportedOS": "windows",
+  "editEnabled": true
+}

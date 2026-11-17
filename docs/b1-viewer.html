@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Rotate, zoom and inspect the editable B1 sprinkler monitor engineering concept in your browser.">
+<title>B1 Sprinkler Monitor | Interactive 3D Viewer</title>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.4.0/model-viewer.min.js"></script>
+<style>
+:root{color-scheme:dark;--bg:#091420;--surface:#122435;--line:#2b4556;--ink:#f0f7f8;--muted:#9bb7c3;--teal:#68e0c8;--amber:#f5c97b}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+body{background:radial-gradient(ellipse at 20% 0%,#233f51,transparent 52%),var(--bg)}
+a{color:var(--teal)}button,a{touch-action:manipulation}
+.wrap{max-width:1480px;margin:auto;padding:24px 28px 42px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding:0 0 20px}
+.brand{display:flex;align-items:center;gap:16px}.logo{display:grid;place-items:center;width:58px;height:58px;background:var(--teal);color:#10302a;border-radius:14px;font-size:25px;font-weight:900}
+.brand strong{display:block;font-size:22px;letter-spacing:.035em}.brand small{display:block;font-size:12px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
+.tag{border:1px solid #97743a;background:#352c1f;border-radius:99px;padding:9px 13px;color:var(--amber);font-size:12px;letter-spacing:.04em;font-weight:800}
+.intro{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin:22px 0 18px}
+h1{font-size:32px;line-height:1.17;letter-spacing:-.035em;margin:0 0 8px}p{margin:0;color:var(--muted);font-size:15px}
+.viewerframe{position:relative;overflow:hidden;border:1px solid #34586a;border-radius:17px;background:radial-gradient(ellipse at center,#466777 0%,#203342 42%,#101e2d 85%);min-height:480px;box-shadow:0 18px 45px #0005}
+model-viewer{display:block;width:100%;height:min(66vw,670px);min-height:460px;--poster-color:transparent;outline-offset:-4px}
+.banner{position:absolute;left:20px;top:18px;z-index:2;color:#cff6ed;font-size:12px;font-weight:740;letter-spacing:.05em;pointer-events:none}
+.status{position:absolute;left:20px;bottom:19px;right:20px;color:#e5f7f6;font-weight:700;text-shadow:0 1px 6px #0009;font-size:14px;z-index:2;pointer-events:none}
+.tools{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+button,.action{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;font:700 14px system-ui,sans-serif;border:1px solid #547483;color:var(--ink);background:#1b3343;border-radius:10px;padding:12px 16px;cursor:pointer;text-decoration:none}
+button:hover,.action:hover{background:#2a5061}
+button:focus-visible,a:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.action.primary{background:#206e62;border-color:#3aa896}.action.primary:hover{background:#2c897a}
+.notes{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;margin-top:14px}
+.panel{padding:20px 23px;border:1px solid var(--line);background:var(--surface);border-radius:14px}
+h2{font-size:17px;margin:0 0 9px}.panel p{font-size:14px;line-height:1.65}
+.panel code{color:#d4f7f0;font:12px ui-monospace,monospace}
+footer{margin-top:24px;color:#88a8b6;font-size:12px}
+@media(max-width:800px){.wrap{padding:12px}.intro,header{align-items:flex-start;flex-direction:column}.notes{grid-template-columns:1fr}.tag{display:inline-block}h1{font-size:26px}model-viewer{height:62vh;min-height:430px}.viewerframe{min-height:430px}}
+
+.modes{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:20px 0 13px}
+.modes .prompt{font-size:14px;font-weight:700;color:var(--muted);margin-right:9px}
+.modes button{font-weight:800;padding:12px 16px}
+.modes button[aria-pressed="true"]{background:#276a5e;border-color:#68e0c8;color:white}
+.mode-desc{color:#b7d2da;font-size:14px;line-height:1.5;margin:0 0 14px}
+.components{border:1px solid var(--line);background:var(--surface);padding:18px 23px;border-radius:14px;margin-top:16px}
+.components h2{margin:0 0 14px;font-size:17px}
+.components dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0}
+.components dt{font-size:13px;font-weight:780;color:#c7f6eb}
+.components dd{margin:4px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
+@media(max-width:800px){.components dl{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.components dl{grid-template-columns:1fr}.modes .prompt{width:100%}.modes button{flex:1 0 43%}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand"><div class="logo" aria-hidden="true">B1</div><div><strong>RISER MONITOR</strong><small>Device Lab — 3D engineering viewer</small></div></div>
+  <div class="tag">RENDERED CONCEPT · NOT FABRICATION READY</div>
+</header>
+<section class="intro">
+ <div><h1>Explore the entire B1 assembly</h1><p>Drag to rotate. Scroll or pinch to zoom. Right-drag or two-finger drag to pan.</p></div>
+ <p>Editable source: FreeCAD · Blender · KiCad</p>
+</section>
+<nav class="modes" aria-label="Select B1 assembly view">
+ <span class="prompt">Inspect the assembly:</span>
+ <button type="button" data-assembly-mode="closed" aria-pressed="true">Closed</button>
+ <button type="button" data-assembly-mode="lid" aria-pressed="false">Lid Off</button>
+ <button type="button" data-assembly-mode="exploded" aria-pressed="false">Exploded Assembly</button>
+ <button type="button" data-assembly-mode="electronics" aria-pressed="false">Electronics Only</button>
+</nav>
+<p class="mode-desc" style="color:var(--muted)">Live design preview: the same viewer URL follows the current B1 engineering branch as reviewed model exports change. Reload to check for new revisions. Models remain engineering concepts until separately verified.</p>
+<p class="mode-desc" id="assembly-description" aria-live="polite">Choose Lid Off to see inside, Exploded Assembly to separate the parts, or Electronics Only for a PCB close-up.</p>
+<div class="viewerframe">
+ <div class="banner">B1 / SPRINKLER MONITOR · SUPPLEMENTARY TELEMETRY</div>
+ <model-viewer id="b1-model"
+    src="https://raw.githubusercontent.com/JamieT1701/SprinklerSystemMonitor/design/claude-b1-engineering-20261116/research/selected-design-b1/CAD/outputs/B1_concept_interactive.glb"
+    poster="https://raw.githubusercontent.com/JamieT1701/SprinklerSystemMonitor/design/claude-b1-engineering-20261116/research/selected-design-b1/CAD/outputs/renders/01_b1_closed_product.png"
+    alt="Interactive 3D model of the proposed B1 riser pressure and temperature monitor, including an enclosure, electronics and illustrative sensors."
+    camera-controls auto-rotate auto-rotate-delay="3200" rotation-per-second="12deg"
+    camera-orbit="35deg 67deg 105%" field-of-view="30deg"
+    shadow-intensity="0.6" exposure="1.2"
+    interaction-prompt="auto" touch-action="pan-y">
+ </model-viewer>
+ <div id="model-status" class="status" role="status" aria-live="polite">Loading the current B1 design…</div>
+</div>
+<nav class="tools" aria-label="3D viewer controls">
+ <button type="button" id="reset" title="Reset camera">Reset view</button>
+ <button type="button" id="top">Top view</button>
+ <button type="button" id="side">Side view</button>
+ <button type="button" id="rotate">Pause rotation</button>
+ <a class="action primary" id="download-current" href="https://raw.githubusercontent.com/JamieT1701/SprinklerSystemMonitor/design/claude-b1-engineering-20261116/research/selected-design-b1/CAD/outputs/B1_concept_interactive.glb" download="B1_concept_interactive.glb">Download .GLB</a>
+ <a class="action" href="https://github.com/JamieT1701/SprinklerSystemMonitor/raw/refs/heads/design/claude-b1-engineering-20261116/research/selected-design-b1/CAD/outputs/B1_FULL_DESIGN_CONCEPT_2026-11-16.zip">Full CAD package</a>
+</nav>
+<section class="notes">
+ <div class="panel"><h2>What you're viewing</h2><p>A modeled B1 enclosure, internal electronics, an industrial pressure-transmitter representation and a remote temperature probe. This is the <strong style="color:#e9f5f5">complete appearance/fit concept</strong>, not a verified manufactured assembly. Manufacturer-exact mounting bosses, circuit protection and final connectors still require engineering sign-off.</p></div>
+ <div class="panel"><h2>Need more detail?</h2><p>Open the <a href="https://github.com/JamieT1701/SprinklerSystemMonitor/blob/design/claude-b1-engineering-20261116/research/selected-design-b1/CAD/outputs/renders/B1_design_review_contact_sheet.png">six-view rendered sheet</a> or <a href="https://github.com/JamieT1701/SprinklerSystemMonitor/pull/7">engineering PR #7</a>. The model is read-only here, but the full CAD package contains editable <code>.FCStd</code>, <code>.blend</code>, STEP and KiCad sources.</p></div>
+</section>
+<section class="components" aria-label="Internal component guide">
+ <h2>Internal assemblies — reference models</h2>
+ <dl>
+ <div><dt>ESP32-S3 / Ethernet</dt><dd>Waveshare controller, W5500 and factory PoE module and pin header supports.</dd></div>
+ <div><dt>Pressure measurement</dt><dd>ADS1115 ADC, provisional reference voltage, 100 Ω current-sense shunt and field diagnostics.</dd></div>
+ <div><dt>24 V loop power</dt><dd>Boost module and proposed current limiter; not electrically safety-tested or fabrication-ready.</dd></div>
+ <div><dt>J1 pressure input</dt><dd>Industrial 2-wire 4–20 mA transmitter. Incompatible with existing R6 voltage-output sensor.</dd></div>
+ <div><dt>J2 temperature input</dt><dd>Remote DS18B20 probe with 3.3 V digital line, 4.7 kΩ pull-up and field cable.</dd></div>
+ <div><dt>Mechanical assembly</dt><dd>Cover, simplified gasket, carrier, standoffs, fasteners and three external ports.</dd></div>
+ </dl>
+</section>
+<footer>This visualization is not a life-safety device or a released circuit. Nothing on this page communicates with a real sprinkler system.</footer>
+</div>
+<script>
+(function(){
+ "use strict";
+ var mv=document.getElementById("b1-model");
+ var status=document.getElementById("model-status");
+ var root="https://raw.githubusercontent.com/JamieT1701/SprinklerSystemMonitor/design/claude-b1-engineering-20261116/research/selected-design-b1/CAD/outputs/";
+ var variants={
+   closed:{file:"B1_concept_interactive.glb",title:"Closed",detail:"Closed clear-lid enclosure and remote sensor models. Select Lid Off or Electronics Only to view the interior.",orbit:"35deg 67deg 105%"},
+   lid:{file:"B1_lid_off.glb",title:"Lid Off",detail:"Lid, gasket and cover label removed to expose the entire carrier assembly inside the open enclosure.",orbit:"35deg 43deg 92%"},
+   exploded:{file:"B1_exploded_assembly.glb",title:"Exploded Assembly",detail:"Lifted populated carrier and separated cover, standoffs and base. Spin the model to examine each subassembly.",orbit:"40deg 67deg 130%"},
+   electronics:{file:"B1_electronics_only.glb",title:"Electronics Only",detail:"Enclosure removed. Inspect the ESP32, PoE board, ADC, precision shunt, power modules and terminals.",orbit:"35deg 45deg 86%"}
+ };
+ var selected="closed";
+ var currentPageVersion=Date.now().toString(36); // refreshes GitHub raw cache on new page load
+ var dl=document.getElementById("download-current");
+ var buttons=document.querySelectorAll("[data-assembly-mode]");
+ function selectVariant(mode){
+   if(!Object.prototype.hasOwnProperty.call(variants,mode))return;
+   selected=mode;
+   var v=variants[mode],url=root+v.file+"?viewer="+currentPageVersion;
+   buttons.forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-assembly-mode")===mode?"true":"false");});
+   document.getElementById("assembly-description").textContent=v.detail;
+   dl.href=url;dl.download=v.file;
+   document.body.setAttribute("data-b1-view",mode);
+   document.body.setAttribute("data-b1-model-ready","loading");
+   status.textContent="Loading "+v.title+" assembly…";
+   mv.cameraOrbit=v.orbit;mv.fieldOfView="30deg";mv.src=url;
+ }
+ buttons.forEach(function(b){b.addEventListener("click",function(){selectVariant(b.getAttribute("data-assembly-mode"));});});
+ mv.addEventListener("load",function(){
+   status.textContent=variants[selected].title+" model loaded — drag to rotate, scroll/pinch to zoom";
+   document.body.setAttribute("data-b1-model-ready","true");
+ });
+ mv.addEventListener("error",function(){
+   status.textContent="Model could not load. Try another view or Download .GLB.";
+   document.body.setAttribute("data-b1-model-ready","error");
+ });
+ var deepLink=new URLSearchParams(window.location.search).get("view");
+ if(deepLink && Object.prototype.hasOwnProperty.call(variants,deepLink)){selectVariant(deepLink);} else {selectVariant("closed");}
+ document.getElementById("reset").addEventListener("click",function(){mv.cameraOrbit=variants[selected].orbit;mv.fieldOfView="30deg";});
+ document.getElementById("top").addEventListener("click",function(){mv.cameraOrbit="0deg 10deg 105%";});
+ document.getElementById("side").addEventListener("click",function(){mv.cameraOrbit="90deg 75deg 105%";});
+ document.getElementById("rotate").addEventListener("click",function(){
+   var now=mv.hasAttribute("auto-rotate");
+   if(now){mv.removeAttribute("auto-rotate");this.textContent="Resume rotation";}
+   else{mv.setAttribute("auto-rotate","");this.textContent="Pause rotation";}
+ });
+})();
+</script>
+</body></html>

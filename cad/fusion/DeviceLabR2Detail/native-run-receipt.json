@@ -1,0 +1,35 @@
+{
+  "status": "FUSION_NATIVE_EXECUTION_VERIFIED",
+  "executed_at_local": "2026-11-12T01:49:28.420806",
+  "source_branch": "docs/device-lab-2026-11-10-checkpoint",
+  "script": "cad/fusion/DeviceLabR2Detail/DeviceLabR2Detail.py",
+  "fusion_artifact": "cad/fusion/DeviceLabR2Detail/R2_PROVISIONAL_Assembly_NATIVE.f3d",
+  "fusion_artifact_bytes": 767278,
+  "fusion_artifact_sha256": "2b3eb380e6fcd351692ce06c4403cbdfe799a1ebbdfc53a696b56477d1762319",
+  "approved_p4_sha256": "1b2c593862eefe328c76ad1b6fe5e358a4fb71e1e7dc10909f55384ac18ff9f2",
+  "p4_source_unchanged": true,
+  "p4_native_mesh_bodies": 1,
+  "top_level_components": 9,
+  "board_y_gaps_mm": [
+    8,
+    7
+  ],
+  "boardA_header": "P3-P12",
+  "field_3position_terminal_blocks": 2,
+  "cloud_hub": "Jamie's Device Lab",
+  "cloud_project": "Device Lab CAD",
+  "cloud_document_title": "Sprinkler Monitor R2 - Detailed Industrial Concept PROVISIONAL",
+  "cloud_save_evidence": "Fusion UI save dialog selected project Device Lab CAD; title bar changed to new saved name without Unsaved indicator; manually screenshot-verified",
+  "native_viewport_image": "docs/assets/fusion-r2-NATIVE-isometric.png",
+  "physical_fit_verified": false,
+  "mounting_holes_release_approved": false,
+  "remaining_gates": [
+    "actual enclosure and lid Z clearance",
+    "RJ45 plugged cable bend",
+    "PoE full stack height",
+    "J1/J2 screwdriver clearance",
+    "real PCB mounting/insulated standoff anchor positions",
+    "field gland location and sealing",
+    "physical print/dry-fit"
+  ]
+}

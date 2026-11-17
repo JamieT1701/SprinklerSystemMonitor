@@ -39,3 +39,7 @@ Exactly sourced **ProSense SPTD25-20-0100H 0-100psig** is now the preferred **be
 ### Stock update (2026-11-16)
 
 AutomationDirect now explicitly lists SPTD25-20-0100H **backordered, projected earliest 2026-12-30**, while alternative LPPT25-20-0100H is marked **295 available**, source links in HARDWARE/PRESSURE-SENSOR-SELECTION.md. This changes procurement timing, not the completed B1 host circuit verification. SPTD is a bench-design baseline only; do not assume quick availability or substitute LPPT without independent connector pinout and calibration approval.
+
+## 2026-11-16 — first native KiCad power loop schematic checkpoint
+
+**Status:** KiCad 10 real field-power **subset**, fully source-controlled under CAD/electronics/B1_24V_FIELD_POWER_REVIEW.kicad_sch. Project-local B1_Bench.kicad_sym + sym-lib-table + .kicad_pro eliminate symbol errors. True native **ERC zero error/zero warning**, using an explicitly unverified external 5V bench-source assumption on J1. Exported 13 connected nets and 2 NC sensor contacts match source contract; TPS26625 pin1 IN, pin5 RTN/pad11 RTN, pin6 GND separate, pin10 OUT; P3 pin1 protected 24V, pin2 sensed return, pins3/4 NC. **87 host/schematic tests pass**. This is not a complete ADC/ESD/field signal circuit, PoE power verification, short-safe validated output, or routed board. 8 existing previous board DRC clearance violations remain. Review [HARDWARE/EFUSE-SCHEMATIC-REVIEW.md](HARDWARE/EFUSE-SCHEMATIC-REVIEW.md). **Do not fabricate/deploy/order**.

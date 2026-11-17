@@ -31,7 +31,7 @@ for f in ROOT.rglob("*"):
  if f.name=="b1_blender_preview.py" or f.name.startswith("PREVIEW_"):
   continue
  if "outputs" not in parts:
-  if f.suffix in SOURCE_EXT or f.suffix==".kicad_pcb":
+  if (f.suffix in SOURCE_EXT or f.suffix in {".kicad_pcb",".kicad_sch",".kicad_sym",".kicad_pro",".xml",".rpt"} or f.name=="sym-lib-table"):
    files.append((f,rel))
  elif "meshes" in parts and f.suffix==".stl":
   files.append((f,rel))
@@ -59,6 +59,11 @@ required=["CAD/outputs/B1_assembled.FCStd",
  "CAD/outputs/B1_electronics_only.glb",
  "CAD/outputs/B1_complete_reference_assembly.step",
  "CAD/electronics/B1_placement_NOT_ROUTED.kicad_pcb",
+ "CAD/electronics/B1_24V_FIELD_POWER_REVIEW.kicad_sch",
+ "CAD/electronics/B1_Bench.kicad_sym",
+ "CAD/electronics/B1_24V_FIELD_POWER_REVIEW_NETLIST.xml",
+ "CAD/electronics/B1_24V_FIELD_POWER_REVIEW_ERC.rpt",
+ "CAD/outputs/drawings/B1_24V_FIELD_POWER_REVIEW.svg",
  "CAD/outputs/B1_dashboard_demo.html",
  "CAD/outputs/renders/B1_design_review_contact_sheet.png",
  "CAD/outputs/B1_placement_DRC_UNQUALIFIED.txt"]

@@ -60,3 +60,7 @@ CAD model now represents 116 valid FreeCAD solids with three exterior removable 
 ### B1 remote transmitter CAD update
 
 The remote illustrative pressure sender geometry follows ProSense SPTD25-20-0100H **manufacturer dimensional envelope**: OD 18.9mm, total length 66.9mm, 1/4 MNPT and M12 electrical connector. Geometric depiction is approximate (not OEM original STEP). The new sensor identity, pin1/pin2 M12 functions and 0-100psig gain are captured as a provisional bench configuration. Existing sensor-count tests and new vendor-specific current-loop fault tests are synthetic only; no real pressure, PoE, or cable bench testing occurred.
+
+### Native KiCad bench-power subset acceptance — 2026-11-16
+
+A real KiCad 10 `B1_24V_FIELD_POWER_REVIEW.kicad_sch` now exists in `CAD/electronics/`, with local source library and project. **Actual electrical rule check returns 0 errors and 0 warnings**; code explicitly treats external 5V bench supply as upstream, not as verified PoE power. Actual XML netlist export and direct named-net validation succeed (18 symbols, 13 connected nets, two no-connected M12 contacts), with **87 synthetic/EDA-source regression tests passing** total. **This is not a finished analog/ESD circuit or fabricated hardware validation; all ADC input protections, wet cable faults, PoE power rating and short-heating are untested**. Existing 8 clearance violations on `B1_placement_NOT_ROUTED.kicad_pcb` remain a hard PCB blocker. Full review: [EFUSE-SCHEMATIC-REVIEW](../HARDWARE/EFUSE-SCHEMATIC-REVIEW.md).

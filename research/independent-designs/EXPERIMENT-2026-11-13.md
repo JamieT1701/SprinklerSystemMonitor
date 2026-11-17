@@ -1,5 +1,8 @@
 # Independent sprinkler monitor product engineering comparison — experiment register
 
+> **FINAL ROUND 1 STATUS (2026-11-17): COMPLETE AND FROZEN.** Three original independently produced model submissions have been preserved in separate unmerged draft PRs [#4](https://github.com/JamieT1701/SprinklerSystemMonitor/pull/4), [#5](https://github.com/JamieT1701/SprinklerSystemMonitor/pull/5), [#6](https://github.com/JamieT1701/SprinklerSystemMonitor/pull/6); source fidelity and limits are recorded. The unchanged six-category rubric was applied in [COMPARISON.md](./COMPARISON.md), with critical design defects in [TECHNICAL-AUDIT.md](./TECHNICAL-AUDIT.md). **Claude Opus 5.5** was selected as a **future engineering direction (82/100)**, not fabrication or field approval. Round 1 coordinator Issue #3 was closed as completed on Nov 17; follow-on B1 research remains in Issue #2 and draft PR #7. **Earlier entries below saying “Claude pending” or “comparison gate not met” are chronological history and no longer current.** Do not rewrite raw model proposals or delete their source branches.
+
+
 **Date:** 2026-11-13 (owner requested design competition)
 **Coordinator:** ChatGPT, using owner-authorized GitHub and Desktop Commander only.
 **Experiment issue:** https://github.com/JamieT1701/SprinklerSystemMonitor/issues/3

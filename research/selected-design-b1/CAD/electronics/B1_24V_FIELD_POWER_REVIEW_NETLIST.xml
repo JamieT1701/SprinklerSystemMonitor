@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/home/jamiet1701/.local/share/device-lab-advisor-competition/engineering-b1/research/selected-design-b1/CAD/electronics/B1_24V_FIELD_POWER_REVIEW.kicad_sch</source>
+    <date>2026-11-16T19:17:25</date>
+    <tool>Eeschema 10.0.8</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>B1 24V pressure-loop power path - UNQUALIFIED</title>
+        <company>Device Lab bench design; not field use</company>
+        <rev>B1-SCH-01</rev>
+        <date>2026-11-16</date>
+        <source>B1_24V_FIELD_POWER_REVIEW.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>10nF_50V_DVDT</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="CAPACITOR" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>04f43647-2c2d-5a64-80a5-cbd10baf1eba</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C2">
+      <value>1uF_50V_BOOST_INPUT</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="CAPACITOR" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>363f3f1a-55e9-5cce-b1c1-cf104534cefd</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="C3">
+      <value>1uF_50V_FIELD_OUTPUT</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="CAPACITOR" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bd0d582e-6a1d-56a7-b417-82227222d9d3</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J1">
+      <value>BENCH_5V_SOURCE_ASSUMED_NOT_VALIDATED</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="EXTERNAL_BENCH_SUPPLY" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0a0abd41-83aa-51fc-8215-f4acc192cecf</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="J2">
+      <value>RAW_INTERNAL_MONITOR_NO_ADC_CLAMP</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="INTERNAL_MONITOR_6PIN" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8d195baf-6027-5d1f-8e79-b0b472a28a3e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="P3">
+      <value>M12_A4_Female_SPTD25_1+_2RETURN</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="P3_M12_4F" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>792a9475-e92b-5ee3-8ece-6693522bae6b</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R1">
+      <value>715k_1pct_UV_TOP</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="RESISTOR" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e48f6e39-ad75-515d-b0e3-84d931eae932</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R2">
+      <value>20k_1pct_UV_MID</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="RESISTOR" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>33da6616-31e4-5c56-9a6b-deeebf94ef86</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R3">
+      <value>30.1k_1pct_OV_BOTTOM</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="RESISTOR" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>38ac0143-c0a3-591a-8cbf-8aadba77504a</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R4">
+      <value>165k_1pct_THEORY_40mA</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="RESISTOR" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2dc9100d-9d2f-5b3a-a493-421b3dae6591</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R5">
+      <value>100R_0.1pct_0.25W_SHUNT</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="RESISTOR" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2ae5503d-70d7-5b47-ad8b-4460d23995b1</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R6">
+      <value>100k_FLT_PULLUP</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="RESISTOR" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e3ea13be-f36a-5478-a87a-2716bdc5cbe7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="R7">
+      <value>10k_ENABLE_PULLUP</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="RESISTOR" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>df04798b-4a57-510c-bf17-c78a154a0c9e</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP1">
+      <value>FIELD_24V</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="TESTPOINT" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5d9bf243-782d-570f-aaab-e22062a9826c</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP2">
+      <value>RAW_SHUNT_0_TO_FAULT</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="TESTPOINT" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f9823c12-5533-5ccc-8930-4784dbe5d997</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="TP3">
+      <value>EFUSE_RTN_NOT_GND</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="TESTPOINT" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e8b86a86-3f98-5f71-b134-78255012ff8d</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U1">
+      <value>Pololu_5588_NOT_SHORT_PROOF</value>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="U3V9F24_MODULE" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5f200ea7-d5e7-5768-b661-41684c08f750</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+    <comp ref="U2">
+      <value>TPS26625DRCR_AUTO_RETRY</value>
+      <datasheet>https://www.ti.com/lit/ds/symlink/tps2662.pdf</datasheet>
+      <fields>
+        <field name="Footprint"/>
+        <field name="Datasheet">https://www.ti.com/lit/ds/symlink/tps2662.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="B1_Bench" part="TPS26625DRCR" description=""/>
+      <property name="Sheetname" value="Root"/>
+      <property name="Sheetfile" value="B1_24V_FIELD_POWER_REVIEW.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4c2a84b1-47e3-5499-9ea9-65a29c7c3cb7</tstamps>
+      <units>
+        <unit name="A">
+          <pins>
+            <pin num="1"/>
+            <pin num="2"/>
+            <pin num="3"/>
+            <pin num="4"/>
+            <pin num="5"/>
+            <pin num="11"/>
+            <pin num="10"/>
+            <pin num="9"/>
+            <pin num="8"/>
+            <pin num="7"/>
+            <pin num="6"/>
+          </pins>
+        </unit>
+      </units>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="B1_Bench" part="CAPACITOR">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CAPACITOR</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="B1_Bench" part="EXTERNAL_BENCH_SUPPLY">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">EXTERNAL_BENCH_SUPPLY</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="ASSUMED_5V_SOURCE" type="power_out"/>
+        <pin num="2" name="ASSUMED_RETURN" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="B1_Bench" part="INTERNAL_MONITOR_6PIN">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">INTERNAL_MONITOR_6PIN</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="CURRENT_SHUNT_RAW" type="passive"/>
+        <pin num="2" name="GROUND" type="passive"/>
+        <pin num="3" name="VBOOST_DIAG_RAW" type="passive"/>
+        <pin num="4" name="FIELD_DIAG_RAW" type="passive"/>
+        <pin num="5" name="3V3_LOGIC" type="passive"/>
+        <pin num="6" name="FLT_RAW" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="B1_Bench" part="P3_M12_4F">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">P3_M12_4F</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="P3_1_LOOP_PLUS" type="passive"/>
+        <pin num="2" name="P3_2_I_RETURN" type="passive"/>
+        <pin num="3" name="P3_3_NC" type="passive"/>
+        <pin num="4" name="P3_4_NC" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="B1_Bench" part="RESISTOR">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">RESISTOR</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="B1_Bench" part="TESTPOINT">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">TESTPOINT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="B1_Bench" part="TPS26625DRCR">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TPS26625DRCR</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="IN" type="power_in"/>
+        <pin num="2" name="UVLO" type="input"/>
+        <pin num="3" name="OVP" type="input"/>
+        <pin num="4" name="SHDN" type="input"/>
+        <pin num="5" name="RTN" type="passive"/>
+        <pin num="6" name="GND" type="power_in"/>
+        <pin num="7" name="ILIM" type="passive"/>
+        <pin num="8" name="dVdT" type="passive"/>
+        <pin num="9" name="FLT" type="open_collector"/>
+        <pin num="10" name="OUT" type="power_out"/>
+        <pin num="11" name="PAD=RTN" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="B1_Bench" part="U3V9F24_MODULE">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">U3V9F24_MODULE</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN_5V" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="VOUT_24V" type="power_out"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="B1_Bench">
+      <uri>${KIPRJMOD}/B1_Bench.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/BOOST_24V" class="Default">
+      <node ref="C2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J2" pin="3" pinfunction="VBOOST_DIAG_RAW_3" pintype="passive"/>
+      <node ref="R1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="VOUT_24V_3" pintype="power_out"/>
+      <node ref="U2" pin="1" pinfunction="IN_1" pintype="power_in"/>
+    </net>
+    <net code="2" name="/DVDT_NODE" class="Default">
+      <node ref="C1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U2" pin="8" pinfunction="dVdT_8" pintype="passive"/>
+    </net>
+    <net code="3" name="/EFUSE_FAULT_N" class="Default">
+      <node ref="J2" pin="6" pinfunction="FLT_RAW_6" pintype="passive"/>
+      <node ref="R6" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U2" pin="9" pinfunction="FLT_9" pintype="open_collector"/>
+    </net>
+    <net code="4" name="/ENABLE_3V3" class="Default">
+      <node ref="R7" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="SHDN_4" pintype="input"/>
+    </net>
+    <net code="5" name="/FIELD_PROTECTED_LPLUS" class="Default">
+      <node ref="C3" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J2" pin="4" pinfunction="FIELD_DIAG_RAW_4" pintype="passive"/>
+      <node ref="P3" pin="1" pinfunction="P3_1_LOOP_PLUS_1" pintype="passive"/>
+      <node ref="TP1" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U2" pin="10" pinfunction="OUT_10" pintype="power_out"/>
+    </net>
+    <net code="6" name="/GND_LOGIC" class="Default">
+      <node ref="C2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="C3" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="ASSUMED_RETURN_2" pintype="power_out"/>
+      <node ref="J2" pin="2" pinfunction="GROUND_2" pintype="passive"/>
+      <node ref="R5" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="GND_2" pintype="power_in"/>
+      <node ref="U2" pin="6" pinfunction="GND_6" pintype="power_in"/>
+    </net>
+    <net code="7" name="/ILIM_NODE" class="Default">
+      <node ref="R4" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U2" pin="7" pinfunction="ILIM_7" pintype="passive"/>
+    </net>
+    <net code="8" name="/LOGIC_3V3" class="Default">
+      <node ref="J2" pin="5" pinfunction="3V3_LOGIC_5" pintype="passive"/>
+      <node ref="R6" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="R7" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="9" name="/OVP_NODE" class="Default">
+      <node ref="R2" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R3" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="OVP_3" pintype="input"/>
+    </net>
+    <net code="10" name="/PSE_5V_UNVERIFIED" class="Default">
+      <node ref="J1" pin="1" pinfunction="ASSUMED_5V_SOURCE_1" pintype="power_out"/>
+      <node ref="U1" pin="1" pinfunction="VIN_5V_1" pintype="power_in"/>
+    </net>
+    <net code="11" name="/RTN_EFUSE_ISOLATED" class="Default">
+      <node ref="C1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R3" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R4" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="TP3" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U2" pin="11" pinfunction="PAD=RTN_11" pintype="passive"/>
+      <node ref="U2" pin="5" pinfunction="RTN_5" pintype="passive"/>
+    </net>
+    <net code="12" name="/SENSOR_I_RETURN" class="Default">
+      <node ref="J2" pin="1" pinfunction="CURRENT_SHUNT_RAW_1" pintype="passive"/>
+      <node ref="P3" pin="2" pinfunction="P3_2_I_RETURN_2" pintype="passive"/>
+      <node ref="R5" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="TP2" pin="1" pinfunction="1_1" pintype="passive"/>
+    </net>
+    <net code="13" name="/UVLO_NODE" class="Default">
+      <node ref="R1" pin="2" pinfunction="2_2" pintype="passive"/>
+      <node ref="R2" pin="1" pinfunction="1_1" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="UVLO_2" pintype="input"/>
+    </net>
+    <net code="14" name="unconnected-(P3-P3_3_NC-Pad3)" class="Default">
+      <node ref="P3" pin="3" pinfunction="P3_3_NC_3" pintype="passive+no_connect"/>
+    </net>
+    <net code="15" name="unconnected-(P3-P3_4_NC-Pad4)" class="Default">
+      <node ref="P3" pin="4" pinfunction="P3_4_NC_4" pintype="passive+no_connect"/>
+    </net>
+  </nets>
+</export>

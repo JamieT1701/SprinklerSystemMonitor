@@ -1,0 +1,447 @@
+{
+  "project": "B1_24V_FIELD_POWER_REVIEW",
+  "status": "SCHEMATIC_REVIEW_ONLY_NOT_FABRICATION_APPROVED",
+  "components": {
+    "J1": {
+      "value": "BENCH_5V_SOURCE_ASSUMED_NOT_VALIDATED",
+      "lib_id": "EXTERNAL_BENCH_SUPPLY",
+      "pins": {
+        "1": {
+          "signal": "ASSUMED_5V_SOURCE",
+          "net": "PSE_5V_UNVERIFIED",
+          "type": "power_out"
+        },
+        "2": {
+          "signal": "ASSUMED_RETURN",
+          "net": "GND_LOGIC",
+          "type": "power_out"
+        }
+      }
+    },
+    "U1": {
+      "value": "Pololu_5588_NOT_SHORT_PROOF",
+      "lib_id": "U3V9F24_MODULE",
+      "pins": {
+        "1": {
+          "signal": "VIN_5V",
+          "net": "PSE_5V_UNVERIFIED",
+          "type": "power_in"
+        },
+        "2": {
+          "signal": "GND",
+          "net": "GND_LOGIC",
+          "type": "power_in"
+        },
+        "3": {
+          "signal": "VOUT_24V",
+          "net": "BOOST_24V",
+          "type": "power_out"
+        }
+      }
+    },
+    "U2": {
+      "value": "TPS26625DRCR_AUTO_RETRY",
+      "lib_id": "TPS26625DRCR",
+      "pins": {
+        "1": {
+          "signal": "IN",
+          "net": "BOOST_24V",
+          "type": "power_in"
+        },
+        "2": {
+          "signal": "UVLO",
+          "net": "UVLO_NODE",
+          "type": "input"
+        },
+        "3": {
+          "signal": "OVP",
+          "net": "OVP_NODE",
+          "type": "input"
+        },
+        "4": {
+          "signal": "SHDN",
+          "net": "ENABLE_3V3",
+          "type": "input"
+        },
+        "5": {
+          "signal": "RTN",
+          "net": "RTN_EFUSE_ISOLATED",
+          "type": "passive"
+        },
+        "6": {
+          "signal": "GND",
+          "net": "GND_LOGIC",
+          "type": "power_in"
+        },
+        "7": {
+          "signal": "ILIM",
+          "net": "ILIM_NODE",
+          "type": "passive"
+        },
+        "8": {
+          "signal": "dVdT",
+          "net": "DVDT_NODE",
+          "type": "passive"
+        },
+        "9": {
+          "signal": "FLT",
+          "net": "EFUSE_FAULT_N",
+          "type": "open_collector"
+        },
+        "10": {
+          "signal": "OUT",
+          "net": "FIELD_PROTECTED_LPLUS",
+          "type": "power_out"
+        },
+        "11": {
+          "signal": "PAD=RTN",
+          "net": "RTN_EFUSE_ISOLATED",
+          "type": "passive"
+        }
+      }
+    },
+    "P3": {
+      "value": "M12_A4_Female_SPTD25_1+_2RETURN",
+      "lib_id": "P3_M12_4F",
+      "pins": {
+        "1": {
+          "signal": "P3_1_LOOP_PLUS",
+          "net": "FIELD_PROTECTED_LPLUS",
+          "type": "passive"
+        },
+        "2": {
+          "signal": "P3_2_I_RETURN",
+          "net": "SENSOR_I_RETURN",
+          "type": "passive"
+        },
+        "3": {
+          "signal": "P3_3_NC",
+          "net": "NC",
+          "type": "passive"
+        },
+        "4": {
+          "signal": "P3_4_NC",
+          "net": "NC",
+          "type": "passive"
+        }
+      }
+    },
+    "R1": {
+      "value": "715k_1pct_UV_TOP",
+      "lib_id": "RESISTOR",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "BOOST_24V",
+          "type": "passive"
+        },
+        "2": {
+          "signal": "2",
+          "net": "UVLO_NODE",
+          "type": "passive"
+        }
+      }
+    },
+    "R2": {
+      "value": "20k_1pct_UV_MID",
+      "lib_id": "RESISTOR",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "UVLO_NODE",
+          "type": "passive"
+        },
+        "2": {
+          "signal": "2",
+          "net": "OVP_NODE",
+          "type": "passive"
+        }
+      }
+    },
+    "R3": {
+      "value": "30.1k_1pct_OV_BOTTOM",
+      "lib_id": "RESISTOR",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "OVP_NODE",
+          "type": "passive"
+        },
+        "2": {
+          "signal": "2",
+          "net": "RTN_EFUSE_ISOLATED",
+          "type": "passive"
+        }
+      }
+    },
+    "R4": {
+      "value": "165k_1pct_THEORY_40mA",
+      "lib_id": "RESISTOR",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "ILIM_NODE",
+          "type": "passive"
+        },
+        "2": {
+          "signal": "2",
+          "net": "RTN_EFUSE_ISOLATED",
+          "type": "passive"
+        }
+      }
+    },
+    "C1": {
+      "value": "10nF_50V_DVDT",
+      "lib_id": "CAPACITOR",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "DVDT_NODE",
+          "type": "passive"
+        },
+        "2": {
+          "signal": "2",
+          "net": "RTN_EFUSE_ISOLATED",
+          "type": "passive"
+        }
+      }
+    },
+    "C2": {
+      "value": "1uF_50V_BOOST_INPUT",
+      "lib_id": "CAPACITOR",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "BOOST_24V",
+          "type": "passive"
+        },
+        "2": {
+          "signal": "2",
+          "net": "GND_LOGIC",
+          "type": "passive"
+        }
+      }
+    },
+    "C3": {
+      "value": "1uF_50V_FIELD_OUTPUT",
+      "lib_id": "CAPACITOR",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "FIELD_PROTECTED_LPLUS",
+          "type": "passive"
+        },
+        "2": {
+          "signal": "2",
+          "net": "GND_LOGIC",
+          "type": "passive"
+        }
+      }
+    },
+    "R5": {
+      "value": "100R_0.1pct_0.25W_SHUNT",
+      "lib_id": "RESISTOR",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "SENSOR_I_RETURN",
+          "type": "passive"
+        },
+        "2": {
+          "signal": "2",
+          "net": "GND_LOGIC",
+          "type": "passive"
+        }
+      }
+    },
+    "R6": {
+      "value": "100k_FLT_PULLUP",
+      "lib_id": "RESISTOR",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "LOGIC_3V3",
+          "type": "passive"
+        },
+        "2": {
+          "signal": "2",
+          "net": "EFUSE_FAULT_N",
+          "type": "passive"
+        }
+      }
+    },
+    "R7": {
+      "value": "10k_ENABLE_PULLUP",
+      "lib_id": "RESISTOR",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "LOGIC_3V3",
+          "type": "passive"
+        },
+        "2": {
+          "signal": "2",
+          "net": "ENABLE_3V3",
+          "type": "passive"
+        }
+      }
+    },
+    "J2": {
+      "value": "RAW_INTERNAL_MONITOR_NO_ADC_CLAMP",
+      "lib_id": "INTERNAL_MONITOR_6PIN",
+      "pins": {
+        "1": {
+          "signal": "CURRENT_SHUNT_RAW",
+          "net": "SENSOR_I_RETURN",
+          "type": "passive"
+        },
+        "2": {
+          "signal": "GROUND",
+          "net": "GND_LOGIC",
+          "type": "passive"
+        },
+        "3": {
+          "signal": "VBOOST_DIAG_RAW",
+          "net": "BOOST_24V",
+          "type": "passive"
+        },
+        "4": {
+          "signal": "FIELD_DIAG_RAW",
+          "net": "FIELD_PROTECTED_LPLUS",
+          "type": "passive"
+        },
+        "5": {
+          "signal": "3V3_LOGIC",
+          "net": "LOGIC_3V3",
+          "type": "passive"
+        },
+        "6": {
+          "signal": "FLT_RAW",
+          "net": "EFUSE_FAULT_N",
+          "type": "passive"
+        }
+      }
+    },
+    "TP1": {
+      "value": "FIELD_24V",
+      "lib_id": "TESTPOINT",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "FIELD_PROTECTED_LPLUS",
+          "type": "passive"
+        }
+      }
+    },
+    "TP2": {
+      "value": "RAW_SHUNT_0_TO_FAULT",
+      "lib_id": "TESTPOINT",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "SENSOR_I_RETURN",
+          "type": "passive"
+        }
+      }
+    },
+    "TP3": {
+      "value": "EFUSE_RTN_NOT_GND",
+      "lib_id": "TESTPOINT",
+      "pins": {
+        "1": {
+          "signal": "1",
+          "net": "RTN_EFUSE_ISOLATED",
+          "type": "passive"
+        }
+      }
+    }
+  },
+  "nets": {
+    "PSE_5V_UNVERIFIED": [
+      "J1.1",
+      "U1.1"
+    ],
+    "GND_LOGIC": [
+      "J1.2",
+      "U1.2",
+      "U2.6",
+      "C2.2",
+      "C3.2",
+      "R5.2",
+      "J2.2"
+    ],
+    "BOOST_24V": [
+      "U1.3",
+      "U2.1",
+      "R1.1",
+      "C2.1",
+      "J2.3"
+    ],
+    "UVLO_NODE": [
+      "U2.2",
+      "R1.2",
+      "R2.1"
+    ],
+    "OVP_NODE": [
+      "U2.3",
+      "R2.2",
+      "R3.1"
+    ],
+    "ENABLE_3V3": [
+      "U2.4",
+      "R7.2"
+    ],
+    "RTN_EFUSE_ISOLATED": [
+      "U2.5",
+      "U2.11",
+      "R3.2",
+      "R4.2",
+      "C1.2",
+      "TP3.1"
+    ],
+    "ILIM_NODE": [
+      "U2.7",
+      "R4.1"
+    ],
+    "DVDT_NODE": [
+      "U2.8",
+      "C1.1"
+    ],
+    "EFUSE_FAULT_N": [
+      "U2.9",
+      "R6.2",
+      "J2.6"
+    ],
+    "FIELD_PROTECTED_LPLUS": [
+      "U2.10",
+      "P3.1",
+      "C3.1",
+      "J2.4",
+      "TP1.1"
+    ],
+    "SENSOR_I_RETURN": [
+      "P3.2",
+      "R5.1",
+      "J2.1",
+      "TP2.1"
+    ],
+    "LOGIC_3V3": [
+      "R6.1",
+      "R7.1",
+      "J2.5"
+    ]
+  },
+  "risk_gates": [
+    "24V backup/PoE budget unverified; Pololu 5588 is not short-circuit tolerant",
+    "eFuse 165k\u03a9 current limit is a calculated target only; 40mA tolerance and thermal auto-retry not measured",
+    "Separate RTN and GND modeled; not a proven PCB return/reverse-fault strategy",
+    "No TVS/cable ESD/connector wet ingress, powered-off ADC input clamp or power-rail backfeed isolation",
+    "J2 is RAW MONITORING boundary; do NOT attach ADS1115 to 24V raw inputs or directly to 4V shunt on short",
+    "P3 contact numbering verified against ProSense datasheet, physical cable continuity yet to measure",
+    "No actual system connection, PCB routing, DFM, IEC/IP testing or fabrication released",
+    "PoE power/logic EN pullup behavior and fault pin tolerance unverified",
+    "C3 and device output/thermal startup under short require measurement",
+    "No site-side pressure tap/range approved",
+    "J1 source-pin directions are external bench-power assumptions only, NOT proof of PoE capacity"
+  ]
+}

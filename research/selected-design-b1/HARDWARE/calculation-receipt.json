@@ -1,0 +1,110 @@
+{
+  "assumptions": {
+    "adc_analog_input_recommended_max_V": 3.3,
+    "adc_vdd_V": 3.3,
+    "ads1115_pga_full_scale_V": 4.096,
+    "analog_divider_bottom_Ohm": 22000.0,
+    "analog_divider_top_Ohm": 270000.0,
+    "cable_drop_assumption_V": 0.5,
+    "example_current_limit_mA": 26,
+    "five_volt_boost_efficiency_assumption": 0.8,
+    "limiter_drop_assumption_V": 3,
+    "loop_supply_nominal_V": 24,
+    "low_loop_supply_test_V": 18,
+    "precision_shunt_Ohm": 100.0,
+    "precision_shunt_tolerance": "target 0.1%, temperature coefficient <=25ppm/C; MPN TBD",
+    "pressure_span_psig": "provisional 0..150; contractor/sensor MPN required",
+    "terminal_divider": "nominal only; ADC loading, resistor tolerances, ESD/clamps excluded",
+    "transmitter_minimum_voltage_assumption_V": 8
+  },
+  "blockers": [
+    "No measured 5V VSYS or PoE available-current envelope for a production module",
+    "No validated 24V converter/power-path or safe indefinite field short-current limiter",
+    "No input miswire/transient/ESD circuit verification for 24V direct on a field terminal",
+    "No exact approved 4-20mA transmitter range/MPN/process port/temperature/proof pressure",
+    "No analog ADC-loading/calibration/temperature error budget verified by bench",
+    "No precise connector positions, creepage, board footprint or KiCad schematic/board"
+  ],
+  "divider_ratio": 0.0753424658,
+  "divider_samples_V": {
+    "0": 0.0,
+    "18": 1.35616,
+    "24": 1.80822,
+    "30": 2.26027,
+    "36": 2.71233,
+    "40": 3.0137,
+    "44": 3.31507
+  },
+  "examples": {
+    "extra_5V_input_A_at_80pct_efficiency": 0.156,
+    "headroom_above_8V_transmitter_requirement_V": 4.5,
+    "pressure_54psig_0to150psig_loop_current_mA": 9.76,
+    "pressure_54psig_adc_V": 0.976,
+    "required_24V_loop_output_W_at_26mA": 0.624,
+    "shunt_dissipation_W_at_26mA": 0.0676,
+    "transmitter_voltage_at_18V_supply_before_8V_need_V": 12.5
+  },
+  "shunt_cases": [
+    {
+      "current_mA": 0,
+      "nominal_positive_adc_codes": 0,
+      "sense_V": 0.0,
+      "shunt_power_mW": 0.0
+    },
+    {
+      "current_mA": 3.6,
+      "nominal_positive_adc_codes": 2880,
+      "sense_V": 0.36,
+      "shunt_power_mW": 1.296
+    },
+    {
+      "current_mA": 4,
+      "nominal_positive_adc_codes": 3200,
+      "sense_V": 0.4,
+      "shunt_power_mW": 1.6
+    },
+    {
+      "current_mA": 9.76,
+      "nominal_positive_adc_codes": 7808,
+      "sense_V": 0.976,
+      "shunt_power_mW": 9.5258
+    },
+    {
+      "current_mA": 12,
+      "nominal_positive_adc_codes": 9600,
+      "sense_V": 1.2,
+      "shunt_power_mW": 14.4
+    },
+    {
+      "current_mA": 20,
+      "nominal_positive_adc_codes": 16000,
+      "sense_V": 2.0,
+      "shunt_power_mW": 40.0
+    },
+    {
+      "current_mA": 20.5,
+      "nominal_positive_adc_codes": 16400,
+      "sense_V": 2.05,
+      "shunt_power_mW": 42.025
+    },
+    {
+      "current_mA": 21,
+      "nominal_positive_adc_codes": 16800,
+      "sense_V": 2.1,
+      "shunt_power_mW": 44.1
+    },
+    {
+      "current_mA": 26,
+      "nominal_positive_adc_codes": 20800,
+      "sense_V": 2.6,
+      "shunt_power_mW": 67.6
+    }
+  ],
+  "sources": [
+    "https://www.ti.com/product/ADS1115",
+    "https://www.waveshare.com/wiki/ESP32-S3-ETH",
+    "https://www.pololu.com/product/5588/specs",
+    "https://infosys.beckhoff.com/content/1033/ioanalogmanual/3904850187.html"
+  ],
+  "stage": "B1 bench candidate calculations only; no KiCad/ERC/DRC/hardware tests"
+}

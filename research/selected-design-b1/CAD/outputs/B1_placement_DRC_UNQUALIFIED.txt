@@ -1,0 +1,50 @@
+** Drc report for B1_placement_NOT_ROUTED.kicad_pcb **
+** Created on 2026-11-16T17:41:29 **
+** Report includes: Errors, Warnings, Exclusions **
+
+** Found 8 DRC violations **
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)
+    Local override; error
+    @(123.0000 mm, 166.1000 mm): Pad 1 [<no net>] of U2 on F.Cu
+    @(123.5000 mm, 166.1000 mm): Pad 2 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)
+    Local override; error
+    @(124.0000 mm, 166.1000 mm): Pad 3 [<no net>] of U2 on F.Cu
+    @(123.5000 mm, 166.1000 mm): Pad 2 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)
+    Local override; error
+    @(124.5000 mm, 166.1000 mm): Pad 4 [<no net>] of U2 on F.Cu
+    @(124.0000 mm, 166.1000 mm): Pad 3 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)
+    Local override; error
+    @(124.5000 mm, 166.1000 mm): Pad 4 [<no net>] of U2 on F.Cu
+    @(125.0000 mm, 166.1000 mm): Pad 5 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)
+    Local override; error
+    @(124.5000 mm, 161.9000 mm): Pad 7 [<no net>] of U2 on F.Cu
+    @(125.0000 mm, 161.9000 mm): Pad 6 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)
+    Local override; error
+    @(124.0000 mm, 161.9000 mm): Pad 8 [<no net>] of U2 on F.Cu
+    @(124.5000 mm, 161.9000 mm): Pad 7 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)
+    Local override; error
+    @(123.5000 mm, 161.9000 mm): Pad 9 [<no net>] of U2 on F.Cu
+    @(124.0000 mm, 161.9000 mm): Pad 8 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation ( clearance 0.2000 mm; actual 0.1500 mm)
+    Local override; error
+    @(123.0000 mm, 161.9000 mm): Pad 10 [<no net>] of U2 on F.Cu
+    @(123.5000 mm, 161.9000 mm): Pad 9 [<no net>] of U2 on F.Cu
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

@@ -1,0 +1,714 @@
+{
+  "design_id": "B1-2026-11-16-B2-PRESSURE-SENSOR-RESEARCH",
+  "units": "mm",
+  "native_FreeCAD": "1.1.4",
+  "part_count": 116,
+  "parts": [
+    {
+      "name": "01_Polycarbonate_enclosure_surrogate",
+      "mesh": "meshes/01_Polycarbonate_enclosure_surrogate.stl",
+      "material": "case",
+      "transparency_percent": 0
+    },
+    {
+      "name": "02_Clear_polycarbonate_lid",
+      "mesh": "meshes/02_Clear_polycarbonate_lid.stl",
+      "material": "clear",
+      "transparency_percent": 72
+    },
+    {
+      "name": "03_Lid_seal_visual_marker",
+      "mesh": "meshes/03_Lid_seal_visual_marker.stl",
+      "material": "gasket",
+      "transparency_percent": 0
+    },
+    {
+      "name": "04_Lid_screw_m52_m81",
+      "mesh": "meshes/04_Lid_screw_m52_m81.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "04_Lid_screw_m52_81",
+      "mesh": "meshes/04_Lid_screw_m52_81.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "04_Lid_screw_52_m81",
+      "mesh": "meshes/04_Lid_screw_52_m81.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "04_Lid_screw_52_81",
+      "mesh": "meshes/04_Lid_screw_52_81.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "10_Standoff_m44_m70",
+      "mesh": "meshes/10_Standoff_m44_m70.stl",
+      "material": "case",
+      "transparency_percent": 0
+    },
+    {
+      "name": "10_Standoff_m44_70",
+      "mesh": "meshes/10_Standoff_m44_70.stl",
+      "material": "case",
+      "transparency_percent": 0
+    },
+    {
+      "name": "10_Standoff_44_m70",
+      "mesh": "meshes/10_Standoff_44_m70.stl",
+      "material": "case",
+      "transparency_percent": 0
+    },
+    {
+      "name": "10_Standoff_44_70",
+      "mesh": "meshes/10_Standoff_44_70.stl",
+      "material": "case",
+      "transparency_percent": 0
+    },
+    {
+      "name": "20_Main_B1_carrier_PCB_NOT_ROUTED",
+      "mesh": "meshes/20_Main_B1_carrier_PCB_NOT_ROUTED.stl",
+      "material": "pcb",
+      "transparency_percent": 0
+    },
+    {
+      "name": "21_Testpad_m35_m64",
+      "mesh": "meshes/21_Testpad_m35_m64.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "21_Testpad_m22_m64",
+      "mesh": "meshes/21_Testpad_m22_m64.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "21_Testpad_m6_63",
+      "mesh": "meshes/21_Testpad_m6_63.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "21_Testpad_16_63",
+      "mesh": "meshes/21_Testpad_16_63.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "21_Testpad_32_63",
+      "mesh": "meshes/21_Testpad_32_63.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "21_Testpad_42_m10",
+      "mesh": "meshes/21_Testpad_42_m10.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "21_Testpad_40_7",
+      "mesh": "meshes/21_Testpad_40_7.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "22_M3_PCB_fastener_m44_m70",
+      "mesh": "meshes/22_M3_PCB_fastener_m44_m70.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "22_M3_PCB_fastener_m44_70",
+      "mesh": "meshes/22_M3_PCB_fastener_m44_70.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "22_M3_PCB_fastener_44_m70",
+      "mesh": "meshes/22_M3_PCB_fastener_44_m70.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "22_M3_PCB_fastener_44_70",
+      "mesh": "meshes/22_M3_PCB_fastener_44_70.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "30_Waveshare_ESP32_S3_ETH_surrogate",
+      "mesh": "meshes/30_Waveshare_ESP32_S3_ETH_surrogate.stl",
+      "material": "controller",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_00",
+      "mesh": "meshes/31_Controller_header_pin_L_00.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_01",
+      "mesh": "meshes/31_Controller_header_pin_L_01.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_02",
+      "mesh": "meshes/31_Controller_header_pin_L_02.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_03",
+      "mesh": "meshes/31_Controller_header_pin_L_03.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_04",
+      "mesh": "meshes/31_Controller_header_pin_L_04.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_05",
+      "mesh": "meshes/31_Controller_header_pin_L_05.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_06",
+      "mesh": "meshes/31_Controller_header_pin_L_06.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_07",
+      "mesh": "meshes/31_Controller_header_pin_L_07.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_08",
+      "mesh": "meshes/31_Controller_header_pin_L_08.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_09",
+      "mesh": "meshes/31_Controller_header_pin_L_09.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_10",
+      "mesh": "meshes/31_Controller_header_pin_L_10.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_11",
+      "mesh": "meshes/31_Controller_header_pin_L_11.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_12",
+      "mesh": "meshes/31_Controller_header_pin_L_12.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_13",
+      "mesh": "meshes/31_Controller_header_pin_L_13.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_14",
+      "mesh": "meshes/31_Controller_header_pin_L_14.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_15",
+      "mesh": "meshes/31_Controller_header_pin_L_15.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_16",
+      "mesh": "meshes/31_Controller_header_pin_L_16.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_17",
+      "mesh": "meshes/31_Controller_header_pin_L_17.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_18",
+      "mesh": "meshes/31_Controller_header_pin_L_18.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_L_19",
+      "mesh": "meshes/31_Controller_header_pin_L_19.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_00",
+      "mesh": "meshes/31_Controller_header_pin_R_00.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_01",
+      "mesh": "meshes/31_Controller_header_pin_R_01.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_02",
+      "mesh": "meshes/31_Controller_header_pin_R_02.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_03",
+      "mesh": "meshes/31_Controller_header_pin_R_03.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_04",
+      "mesh": "meshes/31_Controller_header_pin_R_04.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_05",
+      "mesh": "meshes/31_Controller_header_pin_R_05.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_06",
+      "mesh": "meshes/31_Controller_header_pin_R_06.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_07",
+      "mesh": "meshes/31_Controller_header_pin_R_07.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_08",
+      "mesh": "meshes/31_Controller_header_pin_R_08.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_09",
+      "mesh": "meshes/31_Controller_header_pin_R_09.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_10",
+      "mesh": "meshes/31_Controller_header_pin_R_10.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_11",
+      "mesh": "meshes/31_Controller_header_pin_R_11.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_12",
+      "mesh": "meshes/31_Controller_header_pin_R_12.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_13",
+      "mesh": "meshes/31_Controller_header_pin_R_13.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_14",
+      "mesh": "meshes/31_Controller_header_pin_R_14.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_15",
+      "mesh": "meshes/31_Controller_header_pin_R_15.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_16",
+      "mesh": "meshes/31_Controller_header_pin_R_16.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_17",
+      "mesh": "meshes/31_Controller_header_pin_R_17.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_18",
+      "mesh": "meshes/31_Controller_header_pin_R_18.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "31_Controller_header_pin_R_19",
+      "mesh": "meshes/31_Controller_header_pin_R_19.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "32_ESP32_RF_chip",
+      "mesh": "meshes/32_ESP32_RF_chip.stl",
+      "material": "chip",
+      "transparency_percent": 0
+    },
+    {
+      "name": "33_RJ45_socket",
+      "mesh": "meshes/33_RJ45_socket.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "34_USBC_socket",
+      "mesh": "meshes/34_USBC_socket.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "40_PoE_factory_module_PCB_surrogate",
+      "mesh": "meshes/40_PoE_factory_module_PCB_surrogate.stl",
+      "material": "poe",
+      "transparency_percent": 0
+    },
+    {
+      "name": "41_PoE_magnetics",
+      "mesh": "meshes/41_PoE_magnetics.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "42_PoE_cap_L",
+      "mesh": "meshes/42_PoE_cap_L.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "42_PoE_cap_R",
+      "mesh": "meshes/42_PoE_cap_R.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "50_ADS1115_IC_body",
+      "mesh": "meshes/50_ADS1115_IC_body.stl",
+      "material": "chip",
+      "transparency_percent": 0
+    },
+    {
+      "name": "51_ADS_pad_m3.5_m2",
+      "mesh": "meshes/51_ADS_pad_m3.5_m2.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "51_ADS_pad_m2.1_m2",
+      "mesh": "meshes/51_ADS_pad_m2.1_m2.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "51_ADS_pad_m0.7_m2",
+      "mesh": "meshes/51_ADS_pad_m0.7_m2.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "51_ADS_pad_0.7_m2",
+      "mesh": "meshes/51_ADS_pad_0.7_m2.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "51_ADS_pad_2.1_m2",
+      "mesh": "meshes/51_ADS_pad_2.1_m2.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "51_ADS_pad_3.5_m2",
+      "mesh": "meshes/51_ADS_pad_3.5_m2.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "51_ADS_pad_m3.5_2",
+      "mesh": "meshes/51_ADS_pad_m3.5_2.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "51_ADS_pad_m2.1_2",
+      "mesh": "meshes/51_ADS_pad_m2.1_2.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "51_ADS_pad_m0.7_2",
+      "mesh": "meshes/51_ADS_pad_m0.7_2.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "51_ADS_pad_0.7_2",
+      "mesh": "meshes/51_ADS_pad_0.7_2.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "51_ADS_pad_2.1_2",
+      "mesh": "meshes/51_ADS_pad_2.1_2.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "51_ADS_pad_3.5_2",
+      "mesh": "meshes/51_ADS_pad_3.5_2.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "52_100ohm_precision_shunt",
+      "mesh": "meshes/52_100ohm_precision_shunt.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "53_LM4040_2V048_reference",
+      "mesh": "meshes/53_LM4040_2V048_reference.stl",
+      "material": "chip",
+      "transparency_percent": 0
+    },
+    {
+      "name": "54_Pololu_5588_24V_boost_surrogate",
+      "mesh": "meshes/54_Pololu_5588_24V_boost_surrogate.stl",
+      "material": "blue",
+      "transparency_percent": 0
+    },
+    {
+      "name": "55_Boost_coil",
+      "mesh": "meshes/55_Boost_coil.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "56_TPS2662_candidate_VSON",
+      "mesh": "meshes/56_TPS2662_candidate_VSON.stl",
+      "material": "chip",
+      "transparency_percent": 0
+    },
+    {
+      "name": "57_eFuse_programming_resistor",
+      "mesh": "meshes/57_eFuse_programming_resistor.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "60_J1_PRESSURE_LOOP_2PIN",
+      "mesh": "meshes/60_J1_PRESSURE_LOOP_2PIN.stl",
+      "material": "terminal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "61_J2_TEMPERATURE_3PIN",
+      "mesh": "meshes/61_J2_TEMPERATURE_3PIN.stl",
+      "material": "blue",
+      "transparency_percent": 0
+    },
+    {
+      "name": "70_POE_ETH_female_panel_socket",
+      "mesh": "meshes/70_POE_ETH_female_panel_socket.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "71_POE_ETH_sealing_gasket",
+      "mesh": "meshes/71_POE_ETH_sealing_gasket.stl",
+      "material": "gasket",
+      "transparency_percent": 0
+    },
+    {
+      "name": "72_POE_ETH_internal_locknut",
+      "mesh": "meshes/72_POE_ETH_internal_locknut.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "73_POE_ETH_panel_rear_barrel",
+      "mesh": "meshes/73_POE_ETH_panel_rear_barrel.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "74_POE_ETH_external_male_cord",
+      "mesh": "meshes/74_POE_ETH_external_male_cord.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "75_POE_ETH_threaded_lock_ring",
+      "mesh": "meshes/75_POE_ETH_threaded_lock_ring.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "70_TEMP_female_panel_socket",
+      "mesh": "meshes/70_TEMP_female_panel_socket.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "71_TEMP_sealing_gasket",
+      "mesh": "meshes/71_TEMP_sealing_gasket.stl",
+      "material": "gasket",
+      "transparency_percent": 0
+    },
+    {
+      "name": "72_TEMP_internal_locknut",
+      "mesh": "meshes/72_TEMP_internal_locknut.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "73_TEMP_panel_rear_barrel",
+      "mesh": "meshes/73_TEMP_panel_rear_barrel.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "74_TEMP_external_male_cord",
+      "mesh": "meshes/74_TEMP_external_male_cord.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "75_TEMP_threaded_lock_ring",
+      "mesh": "meshes/75_TEMP_threaded_lock_ring.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "70_LOOP_4_20MA_female_panel_socket",
+      "mesh": "meshes/70_LOOP_4_20MA_female_panel_socket.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "71_LOOP_4_20MA_sealing_gasket",
+      "mesh": "meshes/71_LOOP_4_20MA_sealing_gasket.stl",
+      "material": "gasket",
+      "transparency_percent": 0
+    },
+    {
+      "name": "72_LOOP_4_20MA_internal_locknut",
+      "mesh": "meshes/72_LOOP_4_20MA_internal_locknut.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "73_LOOP_4_20MA_panel_rear_barrel",
+      "mesh": "meshes/73_LOOP_4_20MA_panel_rear_barrel.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "74_LOOP_4_20MA_external_male_cord",
+      "mesh": "meshes/74_LOOP_4_20MA_external_male_cord.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "75_LOOP_4_20MA_threaded_lock_ring",
+      "mesh": "meshes/75_LOOP_4_20MA_threaded_lock_ring.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "76_AUX_RESERVED_UNDRILLED_WALL_MARKER",
+      "mesh": "meshes/76_AUX_RESERVED_UNDRILLED_WALL_MARKER.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "80_Pressure_transmitter_body_illustrative",
+      "mesh": "meshes/80_Pressure_transmitter_body_illustrative.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "81_Pressure_transmitter_M12_cap",
+      "mesh": "meshes/81_Pressure_transmitter_M12_cap.stl",
+      "material": "dark",
+      "transparency_percent": 0
+    },
+    {
+      "name": "82_Pressure_process_thread_illustrative",
+      "mesh": "meshes/82_Pressure_process_thread_illustrative.stl",
+      "material": "gold",
+      "transparency_percent": 0
+    },
+    {
+      "name": "83_DS18B20_probe_stainless",
+      "mesh": "meshes/83_DS18B20_probe_stainless.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    },
+    {
+      "name": "84_Pressure_transmitter_hex_illustrative",
+      "mesh": "meshes/84_Pressure_transmitter_hex_illustrative.stl",
+      "material": "metal",
+      "transparency_percent": 0
+    }
+  ],
+  "notes": [
+    "Nominal enclosure envelope surrogate, not actual Hammond OEM solid STEP; lid/gasket/corner bosses dimensioned for appearance only",
+    "Module/connector and cable clearances not bench measured",
+    "Soldered analog front end not drawn as ERC-validated schematic",
+    "No loop current limiter or field ESD design validated; 24V boost requires separate short-safe protection",
+    "No sprinkler system connection or pressure threshold authorized",
+    "All three external connector geometries illustrative. Manufacturer-accurate mating shells, panel thickness tolerance and short-wall clearance require prototype fit testing",
+    "AUX marked on enclosure side is a zero-penetration visual placeholder; not a working connector",
+    "Pressure sender length/diameter based on SPTD25-20-0100H published 2D dimensional envelope; approximated geometry, not imported OEM STEP"
+  ]
+}

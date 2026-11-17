@@ -1,5 +1,8 @@
 # B1 engineering continuation / release gates
 
+> **LATEST REVIEWED ENGINEERING STAGE (2026-11-17):** The project progressed beyond the early “no KiCad schematic” baseline below: a **limited, native KiCad 10 field-power/4–20mA-loop electrical subset** exists and has recorded **zero errors/warnings in its own ERC**, with a verified 13-net export and 87 host/schematic tests previously reported. It is **not a complete B1 schematic**, and the separate unrouted PCB placement has **eight DRC clearance defects**. PoE-to-24V worst-case current, indefinitely short-safe loop protection, ADC/miswire/ESD paths, exact enclosure/connector geometry, real sensor availability and supervised bench validation remain unresolved. The existing R6 monitor is operational independently in SFOS and is electrically **incompatible with B1's 2-wire 4–20mA pressure interface**. No orders, fabrication, field installation, or firmware replacement have been authorized. Later dated sections are source of record; earlier “no schematic” statements are historical stage notes.
+
+
 **Checkpoint:** 2026-11-16 · Design branch `design/claude-b1-engineering-20261116`
 **Owner:** Jamie. **Authority:** Repo `JamieT1701/SprinklerSystemMonitor`; experiment [Issue #3](https://github.com/JamieT1701/SprinklerSystemMonitor/issues/3) and [Round 1 decision](../independent-designs/COMPARISON.md). Physical R6 and Rev A carrier remain governed by [Issue #2](https://github.com/JamieT1701/SprinklerSystemMonitor/issues/2). Do not assume `main` is canonical for the current Device Lab hardware.
 

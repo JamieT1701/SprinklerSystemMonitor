@@ -201,16 +201,32 @@ for port in front_ports:
 # The modeled front wall (approx 3.9mm) can exceed some protected RJ45
 # connector-panel maximums (e.g. 3.0 mm when capped).
 # NO spotface is drawn here, pending exact Hammond wall/boss STEP and gland seal review.
-# Remote illustrative, not mechanically part of the enclosure: pressure sender and DS18B20.
+# Remote sensor: mechanical envelope based on SPTD25-20-0100H official 2D
+# published overall 66.9mm, OD 18.9mm, 1/4 MNPT, M12 x1.
+# Exaggerated thread/cap and simplified body; NOT genuine OEM STEP.
 sx,sy=151,-13
+sensor=P["pressure_sensor_candidate"]
+overall=sensor["total_length_mm"]
+thread=sensor["model_process_thread_length_mm_surrogate"]
+top=sensor["model_M12_top_length_mm_surrogate"]
+body_len=overall-thread-top
+sensor_dia=sensor["body_outside_diameter_mm"]
 add("80_Pressure_transmitter_body_illustrative",
-    cyl(9.4,47,sx,sy,22),"J_External_sensors","metal")
+    cyl(sensor_dia/2,body_len,sx,sy,9+thread),"J_External_sensors","metal")
 add("81_Pressure_transmitter_M12_cap",
-    cyl(10,13,sx,sy,69),"J_External_sensors","dark")
+    cyl(6.5,top,sx,sy,9+thread+body_len),"J_External_sensors","dark")
 add("82_Pressure_process_thread_illustrative",
-    cyl(4.8,13,sx,sy,9),"J_External_sensors","gold")
+    cyl(4.8,thread,sx,sy,9),"J_External_sensors","gold")
 add("83_DS18B20_probe_stainless",
     cyl(3.0,47,-154,0,10),"J_External_sensors","metal")
+# Real enclosure envelope model includes SPTD's hexagonal wrench section;
+# 22.2mm across flats assumed from manufacturer SPTD family drawing.
+hex_radius=22.2/(math.sqrt(3))
+hex_pts=[V(sx+hex_radius*math.cos(i*math.pi/3),
+           sy+hex_radius*math.sin(i*math.pi/3),9+thread) for i in range(6)]
+hex_face=Part.Face(Part.Wire(Part.makePolygon(hex_pts+[hex_pts[0]]).Edges))
+add("84_Pressure_transmitter_hex_illustrative",
+    hex_face.extrude(V(0,0,8)),"J_External_sensors","metal")
 # Model provenance metadata for documentation.
 DOC.recompute()
 invalid=[]

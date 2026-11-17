@@ -1,5 +1,5 @@
 {
-  "design_id": "B1-2026-11-16-B-CONNECTOR",
+  "design_id": "B1-2026-11-16-B2-PRESSURE-SENSOR-RESEARCH",
   "units": "mm",
   "purpose": "manufacturable concept visualization; not a validated or approved fire-protection device",
   "enclosure": {
@@ -127,7 +127,8 @@
     "No loop current limiter or field ESD design validated; 24V boost requires separate short-safe protection",
     "No sprinkler system connection or pressure threshold authorized",
     "All three external connector geometries illustrative. Manufacturer-accurate mating shells, panel thickness tolerance and short-wall clearance require prototype fit testing",
-    "AUX marked on enclosure side is a zero-penetration visual placeholder; not a working connector"
+    "AUX marked on enclosure side is a zero-penetration visual placeholder; not a working connector",
+    "Pressure sender length/diameter based on SPTD25-20-0100H published 2D dimensional envelope; approximated geometry, not imported OEM STEP"
   ],
   "source_links": {
     "enclosure": "https://www.hammfg.com/part/1554T2GYCL",
@@ -138,7 +139,10 @@
     "adc": "https://www.ti.com/product/ADS1115",
     "rj45_bulkhead": "https://www.digikey.com/en/products/detail/amphenol-ltw/RCP-5SPFFH-SCM7002/7619820",
     "pressure_connector": "https://www.binder-usa.com/us-en/products/automation-technology/m12-a/76-4332-0011-00004-0200-m12-a-female-panel-mount-connector-4-unshielded-single-wires-ip67-ul-m16x15",
-    "temperature_connector": "https://www.binder-connector.com/en/products/automation-technology/m8/76-6518-1111-00003-0200-m8-female-panel-mount-connector-contacts-3-unshielded-single-wires-ip67-ip69k-ul-m12x10-front-fastened"
+    "temperature_connector": "https://www.binder-connector.com/en/products/automation-technology/m8/76-6518-1111-00003-0200-m8-female-panel-mount-connector-contacts-3-unshielded-single-wires-ip67-ip69k-ul-m12x10-front-fastened",
+    "pressure_sender": "https://cdn.automationdirect.com/static/specs/prosensesptd25transmitters.pdf",
+    "pressure_3m_cable": "https://www.automationdirect.com/adc/shopping/catalog/cables_%28terminated%29/circular_connection_cables/cdp12-0b-030-aa",
+    "efuse_exact": "https://www.ti.com/product/TPS2662"
   },
   "reserved_aux": {
     "wall": "right_long_side",
@@ -149,5 +153,37 @@
     "mounting_area_z_mm": 19,
     "panel_hole_drilled": false,
     "electronic_capability": "none; future second temperature candidate"
+  },
+  "pressure_sensor_candidate": {
+    "manufacturer": "AutomationDirect ProSense",
+    "model": "SPTD25-20-0100H",
+    "measurement_range_psig": [
+      0,
+      100
+    ],
+    "accuracy_pct_full_scale": 0.5,
+    "pressure_proof_psig": 250,
+    "pressure_burst_psig": 2900,
+    "supply_range_vdc": [
+      8.5,
+      36.0
+    ],
+    "output_current_ma": [
+      4,
+      20
+    ],
+    "documented_overrange_ma": [
+      20,
+      25
+    ],
+    "process_port": "1/4 in MNPT",
+    "body_outside_diameter_mm": 18.9,
+    "total_length_mm": 66.9,
+    "model_process_thread_length_mm_surrogate": 13.0,
+    "model_M12_top_length_mm_surrogate": 13.0,
+    "connector": "M12 A-coded male, 4 positions; 1:+, 2:loop return, 3/4:NC",
+    "lead_candidate": "CDP12-0B-030-AA, M12 axial female-to-male 3m",
+    "status": "BENCH_CANDIDATE_ONLY_NOT_QUALIFIED",
+    "model_geometry_note": "OEM envelope from AutomationDirect 2D drawing, but simplified body/cap/hex/thread; not exact manufacturing or supplier STEP"
   }
 }

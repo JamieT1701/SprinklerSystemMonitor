@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1760" height="1040" viewBox="0 0 1760 1040">
+<rect width="1760" height="1040" fill="#0B1321"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7.2" refY="4.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L9,4.5 L0,9z" fill="#66DAC2"/></marker></defs>
+<text x="54" y="67" font-family="Inter,Arial,sans-serif" font-size="35" fill="#E6F1F4" font-weight="700" text-anchor="start">B1 • PRESSURE SENSOR PIN CONTRACT</text>
+<text x="54" y="107" font-family="Inter,Arial,sans-serif" font-size="17" fill="#96ADBE" font-weight="400" text-anchor="start">Manufacturer SPTD25-20-0100H • 0–100psig • 2-wire 4–20mA • P3 M12 4-position</text>
+<path d="M 54 130 L 1706 130" stroke="#96ADBE" stroke-width="1" fill="none" opacity="0.23"/>
+<rect x="70" y="235" width="462" height="248" rx="17" fill="#121E2E" stroke="#66DAC2" stroke-width="2"/>
+<rect x="70" y="235" width="7" height="248" rx="3.5" fill="#66DAC2"/>
+<text x="93" y="271" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">Sensor: SPTD25-20-0100H</text>
+<text x="93" y="301" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">M12 male; 1/4in MNPT process fitting</text>
+<text x="93" y="326" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Contact 1 = LOOP+ (8.5–36V)</text>
+<text x="93" y="351" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Contact 2 = CURRENT RETURN (-)</text>
+<text x="93" y="376" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Contacts 3 / 4 = NOT CONNECTED</text>
+<text x="93" y="401" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Vendor contact-face drawing authoritative</text>
+<rect x="651" y="235" width="462" height="248" rx="17" fill="#121E2E" stroke="#70A9FF" stroke-width="2"/>
+<rect x="651" y="235" width="7" height="248" rx="3.5" fill="#70A9FF"/>
+<text x="674" y="271" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">Extension: CDP12-0B-030-AA</text>
+<text x="674" y="301" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">3m M12 4-pole female-to-male</text>
+<text x="674" y="326" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Female mates to sensor male</text>
+<text x="674" y="351" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Male mates to B1 female P3</text>
+<text x="674" y="376" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Confirm all four contact continuity</text>
+<text x="674" y="401" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">No LED or active sensor conditioning</text>
+<rect x="1232" y="235" width="462" height="248" rx="17" fill="#121E2E" stroke="#F6C768" stroke-width="2"/>
+<rect x="1232" y="235" width="7" height="248" rx="3.5" fill="#F6C768"/>
+<text x="1255" y="271" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">Cabinet P3: M12 female</text>
+<text x="1255" y="301" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Contact 1 = protected +24V source</text>
+<text x="1255" y="326" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Contact 2 = sensed 4–20mA return</text>
+<text x="1255" y="351" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Contacts 3 / 4 = INSULATED / NC</text>
+<text x="1255" y="376" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">24V limiter and ADC clamps unverified</text>
+<text x="1255" y="401" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">No connection to three-wire R6 sensor</text>
+<path d="M532 348 H648" stroke="#70A9FF" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M1113 348 H1229" stroke="#70A9FF" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<rect x="70" y="555" width="1624" height="235" rx="18" fill="#251D28" stroke="#975962" stroke-width="2"/>
+<text x="101" y="596" font-family="Inter,Arial,sans-serif" font-size="22" fill="#FA8C89" font-weight="700" text-anchor="start">CRITICAL: AN M12-4 PLUG FITTING DOES NOT GUARANTEE ELECTRICAL COMPATIBILITY</text>
+<text x="101" y="642" font-family="Inter,Arial,sans-serif" font-size="19" fill="#E6F1F4" font-weight="400" text-anchor="start">SPTD25: pin 1 = power, pin 2 = loop return, pins 3/4 NC.</text>
+<text x="101" y="678" font-family="Inter,Arial,sans-serif" font-size="19" fill="#E6F1F4" font-weight="400" text-anchor="start">AchieVe LPPT25: pin 1 = power, pin 2 = chassis ground, pin 3 OR 4 = return (different!).</text>
+<text x="101" y="716" font-family="Inter,Arial,sans-serif" font-size="18" fill="#E6F1F4" font-weight="400" text-anchor="start">Do not substitute sensors or mirror the back-of-panel pin view. Verify male/female contact numbers with a meter.</text>
+<text x="102" y="755" font-family="Inter,Arial,sans-serif" font-size="17" fill="#96ADBE" font-weight="400" text-anchor="start">This is a review diagram, NOT a released wiring harness, IP rating or qualified short-safe current source.</text>
+<path d="M 54 967 L 1706 967" stroke="#96ADBE" stroke-width="1" fill="none" opacity="0.3"/>
+<text x="54" y="998" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Source: AutomationDirect SPTD25 / LPPT25 manuals • no external cabling powered or installed</text>
+<text x="1705" y="998" font-family="Inter,Arial,sans-serif" font-size="14" fill="#F6C768" font-weight="600" text-anchor="end">B1 / CONCEPT RELEASE — NOT FOR FABRICATION</text>
+</svg>

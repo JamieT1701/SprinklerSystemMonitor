@@ -27,13 +27,13 @@
 <rect x="397" y="470" width="325" height="125" rx="17" fill="#121E2E" stroke="#F6C768" stroke-width="2"/>
 <rect x="397" y="470" width="7" height="125" rx="3.5" fill="#F6C768"/>
 <text x="420" y="506" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">24V field eFuse</text>
-<text x="420" y="536" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">TPS2662 family candidate</text>
-<text x="420" y="561" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Short/miswire TEST REQUIRED</text>
+<text x="420" y="536" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">TPS26625DRCR candidate</text>
+<text x="420" y="561" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">165kOhm ILIM ~40mA: TEST</text>
 <rect x="810" y="470" width="435" height="125" rx="17" fill="#121E2E" stroke="#F6C768" stroke-width="2"/>
 <rect x="810" y="470" width="7" height="125" rx="3.5" fill="#F6C768"/>
 <text x="833" y="506" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">4–20 mA pressure sender</text>
-<text x="833" y="536" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Qualified 2-wire industrial MPN</text>
-<text x="833" y="561" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Tap / range approved by contractor</text>
+<text x="833" y="536" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">SPTD25-20-0100H 0-100psig</text>
+<text x="833" y="561" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">M12: pin1+ / pin2 return</text>
 <rect x="397" y="690" width="325" height="125" rx="17" fill="#121E2E" stroke="#66DAC2" stroke-width="2"/>
 <rect x="397" y="690" width="7" height="125" rx="3.5" fill="#66DAC2"/>
 <text x="420" y="726" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">ADS1115 @ 3.3V</text>

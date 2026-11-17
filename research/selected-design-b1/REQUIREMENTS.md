@@ -14,7 +14,7 @@
 | ID | Priority | Proposed behavior | Evidence needed before acceptance |
 |---|---|---|---|
 | P-01 | P0 | Pressure is measured in the **actual dry system-side air domain** with an approved tap and manufacturer pressure band | Sprinkler professional's valve/AMD/tap determination |
-| P-02 | P0 | 2-wire 4–20 mA pressure transmitter; **provisional** 0–150 psig; exact range set by qualified review | Match transmitter MPN/proof/burst/port/environment; pneumatic calibration |
+| P-02 | P0 | 2-wire 4–20 mA pressure transmitter; **SPTD25-20-0100H 0–100psig preferred development MPN, site range/tap still requires qualified approval** | Match transmitter MPN/proof/burst/port/environment; pneumatic calibration |
 | P-03 | P0 | Target total pressure accuracy ≤±1.5 psig in declared operating temperature band (not yet validated) | Transducer total-error specification, calibration/test manifold, cold soak |
 | P-04 | P0 | Missing/invalid sensor or ADC is **PRESSURE UNKNOWN**, not valid 0 psi, a green indicator or inferred valve state | Fault-injection and UI/backend tests |
 | P-05 | P0 | Open, short to ground, overrange, low compliance/supply, and backfeed classified **to the granularity supported by measured channels** | Individually rated/verified front-end and recorded simulated + real faults |
@@ -59,3 +59,7 @@ Add P0 site acceptance requirement **P-06:** For each required protected system,
 ### B1 Rev B service-connector acceptance
 
 X-01 (P0): All three field cables can be replaced from outside closed enclosure. X-02 (P0): Distinct key/size prevents erroneous cross-plug. X-03 (P0): Correct per-connector manufacturer cutouts, mating/anti-corrosion caps, internal patch and harness strain relief validated physically. X-04 (P0): assembled enclosure IP54 target **unverified**; no rating claim until tested. X-05 (P0): 24 V loop remains current-limited/fault protected, safe sensor disconnect/miswire/power-off, real M8/M12 contact numbers verified. X-06 (P1): AUX is undrilled and unpowered, no fourth sensor channel promised. Full plan HARDWARE/CONNECTOR-REDESIGN.md.
+
+### B1 vendor-specific pressure transmitter candidate, 2026-11-16
+
+The commercial electronics **development** target is ProSense `SPTD25-20-0100H` 0-100 psig / 4-20mA 2-wire / M12 4-contact / 1/4 MNPT / 8.5-36V. Use only with qualifying sensor-specific cabling and **pin1 + / pin2 return / pins3-4 NC**. Mating 3m male-to-female extension `CDP12-0B-030-AA` is a supplier candidate. Cheaper LPPT25 part has a **different M12 pinout** and is not drop-in interchangeable. The upper range, proof and process tapping must be contractor verified for any real installation. Circuit source/protection remains unqualified; exact sensor selection is for offline engineering, not purchasing, certification or threshold approval. Full evidence [PRESSURE-SENSOR-SELECTION.md](HARDWARE/PRESSURE-SENSOR-SELECTION.md).

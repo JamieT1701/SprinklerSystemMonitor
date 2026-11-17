@@ -16,14 +16,14 @@
 <text x="443" y="341" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">NO output-short protection</text>
 <rect x="805" y="250" width="360" height="135" rx="17" fill="#121E2E" stroke="#F6C768" stroke-width="2"/>
 <rect x="805" y="250" width="7" height="135" rx="3.5" fill="#F6C768"/>
-<text x="828" y="286" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">TPS2662 eFuse</text>
-<text x="828" y="316" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">25mA minimum limit family</text>
-<text x="828" y="341" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Exact variant + limit TBD</text>
+<text x="828" y="286" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">TPS26625 eFuse</text>
+<text x="828" y="316" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Auto-retry reverse protected</text>
+<text x="828" y="341" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">165kOhm 40mA NOT TESTED</text>
 <rect x="1235" y="250" width="440" height="135" rx="17" fill="#121E2E" stroke="#F6C768" stroke-width="2"/>
 <rect x="1235" y="250" width="7" height="135" rx="3.5" fill="#F6C768"/>
 <text x="1258" y="286" font-family="Inter,Arial,sans-serif" font-size="20" fill="#E6F1F4" font-weight="700" text-anchor="start">2-wire pressure transmitter</text>
-<text x="1258" y="316" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Provisional 0–150 psig ONLY</text>
-<text x="1258" y="341" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">No live tap approved</text>
+<text x="1258" y="316" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">ProSense SPTD25 0–100psig</text>
+<text x="1258" y="341" font-family="Inter,Arial,sans-serif" font-size="15" fill="#96ADBE" font-weight="400" text-anchor="start">Candidate MPN / tap not approved</text>
 <path d="M340 319 H417" stroke="#70A9FF" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M720 319 H802" stroke="#F6C768" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M1165 319 H1232" stroke="#F6C768" stroke-width="3" fill="none" opacity="1" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>

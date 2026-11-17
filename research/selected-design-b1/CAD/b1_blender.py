@@ -139,7 +139,7 @@ def cable(name,pts,radius,material):
  return o
 CABLES=[
  cable("Presentation pressure sensor cord (not scale cable length)",
-       [(35,-125,35),(70,-160,32),(136,-95,60),(151,-14,82)],1.7,
+       [(35,-125,35),(70,-160,32),(136,-95,60),(151,-14,75.9)],1.7,
        mat("Pressure cable industrial black",(.036,.043,.05))),
  cable("Presentation DS18B20 cable (not scale cable length)",
        [(0,-125,35),(-40,-145,28),(-111,-108,45),(-154,0,58)],1.55,

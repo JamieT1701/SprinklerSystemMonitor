@@ -44,7 +44,7 @@
 <text x="755" y="670" font-family="Inter,Arial,sans-serif" font-size="17" fill="#96ADBE" font-weight="600" text-anchor="start">Assembly height</text>
 <text x="755" y="697" font-family="Inter,Arial,sans-serif" font-size="17" fill="#E6F1F4" font-weight="400" text-anchor="start">Controller/PoE stack plus lid clearance must be measured</text>
 <text x="755" y="733" font-family="Inter,Arial,sans-serif" font-size="17" fill="#96ADBE" font-weight="600" text-anchor="start">CAD integrity</text>
-<text x="755" y="760" font-family="Inter,Arial,sans-serif" font-size="17" fill="#E6F1F4" font-weight="400" text-anchor="start">102-part FreeCAD assembly + native STEP exports</text>
+<text x="755" y="760" font-family="Inter,Arial,sans-serif" font-size="17" fill="#E6F1F4" font-weight="400" text-anchor="start">116-part FreeCAD assembly + native STEP exports</text>
 <text x="755" y="796" font-family="Inter,Arial,sans-serif" font-size="17" fill="#96ADBE" font-weight="600" text-anchor="start">PCB drawing</text>
 <text x="755" y="823" font-family="Inter,Arial,sans-serif" font-size="17" fill="#E6F1F4" font-weight="400" text-anchor="start">21 KiCad footprints • placement only • NOT ROUTED</text>
 <text x="235" y="851" font-family="Inter,Arial,sans-serif" font-size="16" fill="#96ADBE" font-weight="600" text-anchor="start">DRAWING TOP VIEW  /  NOMINAL SCALE 3 px / mm</text>

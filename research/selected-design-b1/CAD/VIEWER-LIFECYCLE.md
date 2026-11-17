@@ -64,3 +64,7 @@ A rendering that looks electrically complete is **never** evidence of a complete
 ### Rev B connection changes: visual review policy
 
 Connector redesign lives in source-controlled FreeCAD \`b1_freecad.py\` and \`B1_dimensions.json\`; all four GLBs must be regenerated and published together after review. Confirm the user sees **plug-in PoE / TEMP M8 / PRESS M12** in Closed + Lid Off, physical bulkheads remain attached to case in Exploded, and Electronics Only hides external sockets. AUX marker is a **solid wall**, not a new field connector. Reproduce the connector port geometry test, inspect \`05_b1_field_ports.png\`, then record residual fit/ingress/PoE gates; preview is **not** an approved installation.
+
+### Pressure sender CAD source and identity
+
+The model candidate is **SPTD25-20-0100H** and envelope diameter 18.9mm / total length 66.9mm from its supplier drawing, with approximate caps/hex/threads. As model and supplier MPN change, update `B1_dimensions.json`, FreeCAD source and all four viewer exports **together**. DFM must independently obtain true manufacturer STEP and physical vendor part before fabrication. Pressure output remains 2-wire 4-20mA at P3 pin1 + / pin2 return, other contacts NC.

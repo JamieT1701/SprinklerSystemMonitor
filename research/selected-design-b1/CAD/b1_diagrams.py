@@ -55,8 +55,8 @@ a.rect(1330,165,448,805,"#101B2D","#426494",24);a.text(1352,209,"OFFSITE SERVICE
 a.box(90,260,230,125,"IEEE 802.3af",("RJ45 / factory PoE","W5500 Ethernet"),BLUE)
 a.box(397,250,325,156,"Waveshare ESP32-S3",("Authenticated outbound TLS","Watchdog / OTA rollback","Source + quality diagnostics"),TEAL)
 a.box(90,470,230,125,"5V → 24V boost",("Pololu U3V9F24","Bench candidate only"),GOLD)
-a.box(397,470,325,125,"24V field eFuse",("TPS2662 family candidate","Short/miswire TEST REQUIRED"),GOLD)
-a.box(810,470,435,125,"4–20 mA pressure sender",("Qualified 2-wire industrial MPN","Tap / range approved by contractor"),GOLD)
+a.box(397,470,325,125,"24V field eFuse",("TPS26625DRCR candidate","165kOhm ILIM ~40mA: TEST"),GOLD)
+a.box(810,470,435,125,"4–20 mA pressure sender",("SPTD25-20-0100H 0-100psig","M12: pin1+ / pin2 return"),GOLD)
 a.box(397,690,325,125,"ADS1115 @ 3.3V",("100Ω current shunt + diagnostics","Terminal / rail / reference"),TEAL)
 a.box(90,690,230,125,"DS18B20 probe",("Remote room temperature","CRC + cable failure"),BLUE)
 a.box(810,690,435,125,"LOCAL VALIDATION",("Pressure UNKNOWN on bad inputs","Freshness + approved thresholds"),TEAL)
@@ -77,8 +77,8 @@ a.save("B1_system_architecture.svg")
 b=SVG(1750,1020,"B1 • ANALOG CHAIN / CIRCUIT REVIEW","Functionally correct measurement intent; the field protection stage has not passed schematic review or fault tests")
 b.box(65,250,275,135,"PoE + 5V rail",("Factory PD & MCU module","PoE rail measured separately"),BLUE)
 b.box(420,250,300,135,"24V booster",("Pololu U3V9F24","NO output-short protection"),GOLD)
-b.box(805,250,360,135,"TPS2662 eFuse",("25mA minimum limit family","Exact variant + limit TBD"),GOLD)
-b.box(1235,250,440,135,"2-wire pressure transmitter",("Provisional 0–150 psig ONLY","No live tap approved"),GOLD)
+b.box(805,250,360,135,"TPS26625 eFuse",("Auto-retry reverse protected","165kOhm 40mA NOT TESTED"),GOLD)
+b.box(1235,250,440,135,"2-wire pressure transmitter",("ProSense SPTD25 0–100psig","Candidate MPN / tap not approved"),GOLD)
 b.path("M340 319 H417",BLUE);b.path("M720 319 H802",GOLD);b.path("M1165 319 H1232",GOLD)
 b.rect(1145,470,530,160,PANEL,TEAL);b.text(1171,507,"Return current measured at shunt",22,TEAL,700)
 b.text(1170,548,"100 Ω ±0.1%, ≥0.25 W",20,TEXT)
@@ -96,6 +96,38 @@ b.text(93,787,"No approved reverse/short/miswire, TVS thermal, backfeed, power-o
 b.text(93,818,"This sheet is NOT an installable schematic, code-compliant design, tested limiter or order-ready Gerber.",18,TEXT)
 b.foot("KiCad contains a 21-footprint mechanical placement PCB; copper routing intentionally absent.")
 b.save("B1_electrical_review.svg")
+
+# Exact vendor-specific electrical contact contract, not a physical mating-face drill view.
+n=SVG(1760,1040,"B1 • PRESSURE SENSOR PIN CONTRACT",
+      "Manufacturer SPTD25-20-0100H • 0–100psig • 2-wire 4–20mA • P3 M12 4-position")
+n.box(70,235,462,248,"Sensor: SPTD25-20-0100H",(
+    "M12 male; 1/4in MNPT process fitting",
+    "Contact 1 = LOOP+ (8.5–36V)",
+    "Contact 2 = CURRENT RETURN (-)",
+    "Contacts 3 / 4 = NOT CONNECTED",
+    "Vendor contact-face drawing authoritative"),TEAL)
+n.box(651,235,462,248,"Extension: CDP12-0B-030-AA",(
+    "3m M12 4-pole female-to-male",
+    "Female mates to sensor male",
+    "Male mates to B1 female P3",
+    "Confirm all four contact continuity",
+    "No LED or active sensor conditioning"),BLUE)
+n.box(1232,235,462,248,"Cabinet P3: M12 female",(
+    "Contact 1 = protected +24V source",
+    "Contact 2 = sensed 4–20mA return",
+    "Contacts 3 / 4 = INSULATED / NC",
+    "24V limiter and ADC clamps unverified",
+    "No connection to three-wire R6 sensor"),GOLD)
+n.path("M532 348 H648",BLUE)
+n.path("M1113 348 H1229",BLUE)
+n.rect(70,555,1624,235,"#251D28","#975962",18)
+n.text(101,596,"CRITICAL: AN M12-4 PLUG FITTING DOES NOT GUARANTEE ELECTRICAL COMPATIBILITY",22,RED,700)
+n.text(101,642,"SPTD25: pin 1 = power, pin 2 = loop return, pins 3/4 NC.",19,TEXT)
+n.text(101,678,"AchieVe LPPT25: pin 1 = power, pin 2 = chassis ground, pin 3 OR 4 = return (different!).",19,TEXT)
+n.text(101,716,"Do not substitute sensors or mirror the back-of-panel pin view. Verify male/female contact numbers with a meter.",18,TEXT)
+n.text(102,755,"This is a review diagram, NOT a released wiring harness, IP rating or qualified short-safe current source.",17,MUTE)
+n.foot("Source: AutomationDirect SPTD25 / LPPT25 manuals • no external cabling powered or installed")
+n.save("B1_vendor_sensor_pinout.svg")
 
 # Mechanical nominal orthographic layout and labeling.
 c=SVG(1760,1180,"B1 • ENCLOSURE & CARRIER DIMENSIONS","Hammond 1554T2GYCL nominal outside envelope; actual OEM bosses and cable clearance require factory STEP/physical fit check")
@@ -136,7 +168,7 @@ for i,(head,detail) in enumerate([
  ("Controller board","Waveshare ESP32-S3-POE-ETH, approximate 72.8 × 21 mm"),
  ("Cable entry","3 external sockets: RJ45 PoE / M8 TEMP / M12 PRESS"),
  ("Assembly height","Controller/PoE stack plus lid clearance must be measured"),
- ("CAD integrity","102-part FreeCAD assembly + native STEP exports"),
+ ("CAD integrity","116-part FreeCAD assembly + native STEP exports"),
  ("PCB drawing","21 KiCad footprints • placement only • NOT ROUTED")]):
   yy=355+i*63
   c.text(755,yy,head,17,MUTE,600)

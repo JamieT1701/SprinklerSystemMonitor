@@ -38,7 +38,7 @@ Ethernet + 802.3af --> [Waveshare ESP32-S3-POE-ETH 28771] -----> [TLS/HTTPS upli
 |---|---|---|
 | P1 PoE / Ethernet | External female RJ45 panel bulkhead to existing factory Waveshare RJ45 via short interior patch lead | Amphenol LTW RCP-5SPFFH-SCM7002 candidate, actual PoE/EMC/ground/strain/cap testing required |
 | P2 TEMP | External female M8 A-coded 3-pin to internal J2, 3.3 V protected / DS18B20 DQ / GND | Binder 76 6518 1111 00003-0200 candidate, male cordset contact numbers TBD |
-| P3 PRESS | External female M12 A-coded 4-pin to internal J1 with protected current-limited 24 V source and sensed return | Binder 76 4332 0011 00004-0200 candidate, 2 NC pins, transducer contact mapping and fault limits TBD |
+| P3 PRESS | External female M12 A-coded 4-pin: **P3 contact1 protected +24V, contact2 IRETURN to 100ohm shunt, contacts3/4 NC** for ProSense SPTD25 | Binder 76 4332 0011 00004-0200 candidate; confirm connector cavity orientation/3m cordset pin-to-pin; eFuse/miswire protection NOT qualified |
 | No other outputs | **No dry valve, compressor, heater, FACP or supervised fire-alarm connections** | Mandatory boundary |
 
 The original live R6 system has a **different** three-wire pressure terminal and ADC divider; this B1 design is not interchangeable.
@@ -115,3 +115,11 @@ TI's **TPS2662** family is an active **4.5–60V, 25mA–880mA adjustable** eFus
 The owner chose plug-in external service rather than feeding cables through glands into the case: **P1 RJ45 PoE, P2 M8 A-coded 3-pin room sensor, P3 M12 A-coded 4-pin industrial current-loop pressure sensor**. Distinct fittings prevent accidental pressure (+24 V current-limited loop) to 3.3 V digital temperature misconnection. Internal J1/J2 screw terminals remain factory/service only; never need to open the lid for normal sensor swap. The future **AUX** is an undrilled reserve on the right wall without power/wiring. See [CONNECTOR-REDESIGN.md](CONNECTOR-REDESIGN.md).
 
 Mating cable male ends, manufacturer contact numbers, RJ45 full PoE and shield behavior, IP mated/cap details, actual Hammond OEM wall thickness/spotface, cable bend radius, surge/ESD/power-off backfeed and current-loop output short protection are **NOT electrically or physically accepted**. Do not hot-unplug sensors under load until the connector vendor's instructions and fault testing allow it. Target overall IP54 only **after** complete assembly test. NPT process fittings apply to the remote pressure transducer/tap; no plumbing fittings are proposed on the B1 electronic enclosure.
+
+## 10. Preferred manufacturer-qualified **sensor identity** — not installed
+
+Preferred design sensor model: **ProSense SPTD25-20-0100H**, 0-100psig 4-20mA 2-wire 8.5-36V, 1/4 MNPT, M12 male; external 3m M12 female-to-male patch cord **CDP12-0B-030-AA** and proposed B1 P3 female. For this particular SPTD25 model, verified **pin1+ / pin2 current-return / pin3 NC / pin4 NC** (NOT generic 1+/3-). Other 4-pin M12 devices have different pin assignments even when they fit; notably LPPT25 has pin2 ground, pin3 or pin4 V-. **NO substitution without full separate harness qualification.**
+
+SPTD manufacturer permits **3-4mA non-linear under-range** and **20-25mA non-linear over-range**: these currents cannot automatically be labeled NE43 sensor fault. Host-only profile in `../FIRMWARE/sensor_profiles.py` handles these as pressure UNKNOWN without inventing PSI or false healthy states. Verified bench-only interface minimum supply is 8.5V and max rated pressure 100psig (proof 250psig), but a qualified sprinkler installer must still approve site's range/tap.
+
+Power-stage candidate refined: TI **TPS26625DRCR** 24V high-side eFuse (auto-retry and output reverse blocking) with **165kΩ nominal R_ILIM (~40.22mA theory)**; its quoted ±5% limit specification is at 880mA, not at 40mA. Does **not** establish safe indefinite-short operation or PoE boost protection. Need real exact schematic/pinout, derating, thermal/fault instrumentation and ADS power-off protection before fab. [Source evidence](PRESSURE-SENSOR-SELECTION.md).

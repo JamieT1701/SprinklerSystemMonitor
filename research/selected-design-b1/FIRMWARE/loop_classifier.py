@@ -4,7 +4,7 @@ Model assumptions:
 * 2-wire loop with measured shunt current, L+ terminal voltage and 24V loop rail.
 * Process measurements use a 100-ohm shunt and independently powered ADC.
 * Transmitter minimum voltage 8V is a *candidate*, NOT a universal rule.
-* 0..150 psig is illustrative ONLY. The final range depends on the valve/site.
+* Generic 0..150 psig default is synthetic ONLY. Selected SPTD profile is 0..100psig (site approval still required).
 * No valve actuation, safety alarm, live PLC interface, or life-safety control.
 """
 from __future__ import annotations
@@ -39,6 +39,7 @@ class Settings:
     open_circuit_current_ma: float = 0.5
     short_to_ground_lplus_v: float = 2.0
     open_terminal_ratio: float = 0.80
+    sensor_profile: Literal["GENERIC_NE43_UNVERIFIED", "SPTD25-20-0100H"] = "GENERIC_NE43_UNVERIFIED"
 
 @dataclass(frozen=True)
 class Result:
@@ -76,15 +77,21 @@ def classify(sample: Sample, cfg: Settings = Settings()) -> Result:
     if sample.terminal_lplus_v - return_v < cfg.transmitter_min_v + cfg.compliance_margin_v:
         return invalid("LOOP_COMPLIANCE_LOW", "Transmitter differential voltage insufficient")
     if sample.current_ma < 3.6:
-        return invalid("SENSOR_FAULT_LOW", "Loop under 3.6mA: possible transmitter fault")
+        if cfg.sensor_profile == "SPTD25-20-0100H" and sample.current_ma >= 3.0:
+            return invalid("UNDER_RANGE", "SPTD manufacturer documents 3-4mA nonlinear under-range; cannot disambiguate pressure/failure")
+        return invalid("SENSOR_FAULT_LOW", "Current below device-calibrated band: open/fault suspected")
     if sample.current_ma < 4.0:
         return invalid("UNDER_RANGE", "Near-zero under-range; not a certified valid pressure")
     if sample.current_ma <= 20.0:
         pressure = (sample.current_ma - 4.0) / 16.0 * cfg.pressure_range_psig
         return Result("VALID", "VALID", pressure, "Only measurement quality; not site NORMAL")
+    if cfg.sensor_profile == "SPTD25-20-0100H":
+        if sample.current_ma <= 25.0:
+            return invalid("OVER_RANGE", "SPTD manufacturer documents 20-25mA nonlinear over-range; never extrapolate PSI")
+        return invalid("SENSOR_FAULT_HIGH", "SPTD beyond documented 25mA over-range; possible fault, not proof of a short")
     if sample.current_ma < 21.0:
-        return invalid("OVER_RANGE", "Over 20mA; unqualified out-of-range condition")
-    return invalid("SENSOR_FAULT_HIGH", "Loop >=21mA; fault or miswire, not proof of a short")
+        return invalid("OVER_RANGE", "Over 20mA; generic unqualified out-of-range condition")
+    return invalid("SENSOR_FAULT_HIGH", "Generic loop >=21mA; fault or miswire, not proof of a short")
 
 def shunt_voltage_v(current_ma: float, shunt_ohm: float = 100.0) -> float:
     return current_ma / 1000.0 * shunt_ohm

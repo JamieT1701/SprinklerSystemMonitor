@@ -6,7 +6,7 @@ This report distinguishes **verified engineering artifacts** from *unverified sa
 
 | Verification | Result | Coverage limits |
 |---|---|---|
-| FreeCAD 1.1.4 solid-generation run | **PASS** — `FREECAD_OK 115 parts` | The enclosure and sensor bodies are dimensioned **surrogates**, not exact OEM geometry |
+| FreeCAD 1.1.4 solid-generation run | **PASS** — `FREECAD_OK 116 parts` | The enclosure and sensor bodies are dimensioned **surrogates**, not exact OEM geometry |
 | Part solid integrity | **PASS** — `Shape.isValid()` for each modeled part | Mathematical solidity is not an assembly collision, thermal or IP seal test |
 | FreeCAD native models | **SAVED** — assembled and exploded `.FCStd` | Parametric generator script is the actual reproducible source |
 | STEP exchange | **SAVED** — complete and exploded `.step` | STEP contains appearance/clearance surrogate parts |
@@ -43,7 +43,7 @@ This report distinguishes **verified engineering artifacts** from *unverified sa
 
 ## Reproduction record
 
-- `b1_freecad.py`: reconstruct native CAD, 115 solids and export FCStd/STEP/meshes.
+- `b1_freecad.py`: reconstruct native CAD, 116 solids and export FCStd/STEP/meshes.
 - `b1_kicad_placement.py`: reconstruct **UNROUTED** KiCad10 study; run DRC again after schematic and mechanical refinement.
 - `b1_blender.py`: import FreeCAD STLs, render six physical views and save editable Blender scene.
 - `b1_export_glb.py`: write portable interactive GLB.
@@ -55,4 +55,8 @@ This report distinguishes **verified engineering artifacts** from *unverified sa
 
 ## Rev B connector status
 
-CAD model now represents 115 valid FreeCAD solids with three exterior removable mating connectors (RJ45/M8/M12) and a solid, undrilled AUX side-wall marker. Ten additional host-only geometry/port-contract tests verify nominal face gap and enclosure edge margins, distinct keyed types, candidate hole diameters and non-drilled AUX. **Neither IP54, actual manufacturer fit, PoE continuity, safe hot-plug nor a working M12 pressure/current-loop electrical interface has been physically verified.** The original KiCad board study is unchanged and unrouted. The connector redesign does not repair its existing 8 DRC issues.
+CAD model now represents 116 valid FreeCAD solids with three exterior removable mating connectors (RJ45/M8/M12) and a solid, undrilled AUX side-wall marker. Ten additional host-only geometry/port-contract tests verify nominal face gap and enclosure edge margins, distinct keyed types, candidate hole diameters and non-drilled AUX. **Neither IP54, actual manufacturer fit, PoE continuity, safe hot-plug nor a working M12 pressure/current-loop electrical interface has been physically verified.** The original KiCad board study is unchanged and unrouted. The connector redesign does not repair its existing 8 DRC issues.
+
+### B1 remote transmitter CAD update
+
+The remote illustrative pressure sender geometry follows ProSense SPTD25-20-0100H **manufacturer dimensional envelope**: OD 18.9mm, total length 66.9mm, 1/4 MNPT and M12 electrical connector. Geometric depiction is approximate (not OEM original STEP). The new sensor identity, pin1/pin2 M12 functions and 0-100psig gain are captured as a provisional bench configuration. Existing sensor-count tests and new vendor-specific current-loop fault tests are synthetic only; no real pressure, PoE, or cable bench testing occurred.

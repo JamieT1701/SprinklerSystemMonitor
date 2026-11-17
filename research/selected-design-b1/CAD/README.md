@@ -35,7 +35,7 @@ The permanent [interactive B1 review page](https://jamiet1701.github.io/Sprinkle
 - `outputs/renders/B1_design_review_contact_sheet.png` — six-view review spread.
 
 ### To edit the physical design
-- `outputs/B1_assembled.FCStd` — native editable FreeCAD assembly, 115 solid components.
+- `outputs/B1_assembled.FCStd` — native editable FreeCAD assembly, 116 solid components.
 - `outputs/B1_exploded.FCStd` — exploded/native FreeCAD scene.
 - `outputs/B1_complete_reference_assembly.step` — neutral solid exchange format for many CAD packages.
 - `outputs/B1_exploded_reference_assembly.step` — exploded neutral STEP.
@@ -48,7 +48,7 @@ The permanent [interactive B1 review page](https://jamiet1701.github.io/Sprinkle
 - `b1_export_assembly_variants.py` — reproducibly exports all three alternate geometry-based GLBs from the native Blender scene.
 - `outputs/B1_dashboard_demo.html` — standalone **interactive UI demonstration** (no backend, no network traffic, synthetic data and scenarios ONLY). Open locally in a browser.
 - `electronics/B1_placement_NOT_ROUTED.kicad_pcb` — **KiCad PCB layout study**, not a board design.
-- `outputs/meshes/` — FreeCAD-generated STL geometry for all 115 individual model pieces (provided in the packaged ZIP, not necessarily committed individually).
+- `outputs/meshes/` — FreeCAD-generated STL geometry for all 116 individual model pieces (provided in the packaged ZIP, not necessarily committed individually).
 - `outputs/drawings/*.svg` — dimensioned mechanical view, block architecture, electrical review and multiple-device topology; editable vector illustrations.
 
 ### Source/reproducibility
@@ -56,7 +56,7 @@ The permanent [interactive B1 review page](https://jamiet1701.github.io/Sprinkle
 - `b1_freecad.py` — native solid generation.
 - `b1_blender.py` — material/camera/render generation.
 - `b1_kicad_placement.py` — **actual KiCad 10 pcbnew** footprint placement + 2-layer outline; no netlist/routing.
-- `b1_diagrams.py` — technical presentation SVGs.
+- `b1_diagrams.py` — technical presentation SVGs including the SPTD25 vendor-specific M12 pin 1+/pin 2-return warning.
 - `b1_export_glb.py` — GLB export from Blender's native scene.
 - `b1_contact_sheet.py` — printable visual summary generator.
 - `outputs/B1_placement_DRC_UNQUALIFIED.txt` — real KiCad DRC report proving schematic/parity and clearance gates remain open.
@@ -82,7 +82,7 @@ The rendered pressure transducer, DS18B20 tip, connectors, PoE board, resistor a
 ## Selected electrical direction (not an approved netlist)
 
 - One process-isolated two-wire **4–20 mA** current loop per B1; **no** direct fire-alarm, sprinkler valve, compressor or heating outputs.
-- Industrial transmitter range provisionally **0–150 psig** purely for sizing; actual range, rated process exposure, connection, and port location are subject to qualified sprinkler review.
+- Preferred manufacturer-based **ProSense SPTD25-20-0100H 0–100 psig** 4-20mA/2-wire/8.5-36V M12 candidate; qualified site max range and pressure tap **not** approved. Physical housing model approximates manufacturer 18.9mm diameter × 66.9mm total length; not OEM imported STEP.
 - **100 Ω 0.1%** shunt into protected 3.3 V **ADS1115**: 4 mA→0.400 V, 20 mA→2.000 V, 26 mA→2.600 V. ±4.096 V PGA **does not** allow analog input above 3.3 V supply.
 - Three remaining ADS channels provisionally measure protected field L+, loop rail and 2.048 V reference-check source. Divider concept 270 kΩ / 22 kΩ; external miswire/ESD/backfeed clamp and loading not designed.
 - Remote protected **DS18B20**, 3-wire, 4.7 kΩ pull-up to 3.3 V, with CRC and invalid/sentinel checks.
@@ -135,3 +135,7 @@ The FreeCAD script checks solid-shape validity and prints `FREECAD_OK`, KiCad sc
 ## B1 Rev B plug-in I/O (2026-11-16)
 
 Three distinct external user service ports: **PoE Ethernet P1 (shielded RJ45 bulkhead)**, **remote temperature P2 (M8 A-coded 3)**, and **industrial two-wire 4-20mA pressure P3 (M12 A-coded 4)**. Open the lid only for true factory electronics service, not routine sensor/cable swaps. **AUX FUTURE** on right side wall is a non-drilled, non-connected marking, not a fourth powered sensor port. Connector shells in FreeCAD/Blender are approximate MPN-based envelopes and **not approved drill geometry**. The case's original manufactured wall must accept sealed panel sockets and strain relief; actual RJ45 with cap can require panel thickness below the nominal 3.94mm local CAD wall, so physical OEM STEP/spotface design is a release blocker. See [CONNECTOR-REDESIGN](../HARDWARE/CONNECTOR-REDESIGN.md) for exact candidate parts, NC pins, PoE and environmental gates. IP54 is an unverified *whole-product target* only.
+
+### B1 selected pressure-sensor revision: manufacturer-based remote model
+
+Source design now names **SPTD25-20-0100H**, 0-100psig, 1/4in MNPT, two-wire 4-20mA, 8.5-36V. The illustrated remote sender has a **66.9mm overall envelope and 18.9mm outer diameter** based on the AutomationDirect vendor 2D drawing, with approximate M12 top cap and hexagonal tool flats. This is **not genuine supplier 3D CAD**, a production dimensional drawing, or an approved process tap. The cabinet P3 M12 4-contact uses **sensor pin1 +, sensor pin2 return, contacts3/4 NC**. The proposed cable is `CDP12-0B-030-AA` 3m female-to-male M12, with pin continuity and fit to verify. Check [full sensor decision](../HARDWARE/PRESSURE-SENSOR-SELECTION.md).

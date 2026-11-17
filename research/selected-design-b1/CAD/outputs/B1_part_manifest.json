@@ -1,8 +1,8 @@
 {
-  "design_id": "B1-2026-11-16-B-CONNECTOR",
+  "design_id": "B1-2026-11-16-B2-PRESSURE-SENSOR-RESEARCH",
   "units": "mm",
   "native_FreeCAD": "1.1.4",
-  "part_count": 115,
+  "part_count": 116,
   "parts": [
     {
       "name": "01_Polycarbonate_enclosure_surrogate",
@@ -693,6 +693,12 @@
       "mesh": "meshes/83_DS18B20_probe_stainless.stl",
       "material": "metal",
       "transparency_percent": 0
+    },
+    {
+      "name": "84_Pressure_transmitter_hex_illustrative",
+      "mesh": "meshes/84_Pressure_transmitter_hex_illustrative.stl",
+      "material": "metal",
+      "transparency_percent": 0
     }
   ],
   "notes": [
@@ -702,6 +708,7 @@
     "No loop current limiter or field ESD design validated; 24V boost requires separate short-safe protection",
     "No sprinkler system connection or pressure threshold authorized",
     "All three external connector geometries illustrative. Manufacturer-accurate mating shells, panel thickness tolerance and short-wall clearance require prototype fit testing",
-    "AUX marked on enclosure side is a zero-penetration visual placeholder; not a working connector"
+    "AUX marked on enclosure side is a zero-penetration visual placeholder; not a working connector",
+    "Pressure sender length/diameter based on SPTD25-20-0100H published 2D dimensional envelope; approximated geometry, not imported OEM STEP"
   ]
 }

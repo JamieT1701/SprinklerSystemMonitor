@@ -7,7 +7,7 @@
 
 - Separate draft engineering branch from the **coordinator's latest Round 1 comparison** (never overwrote Claude/Gemini submissions).
 - Source-only decisions, requirements, analog channel/field interface contract, sourced **candidate** BOM, reproducible shunt/power/divider computations, host-only 4–20mA fault and cloud anti-stale state models, multi-system bench test matrix, shop QA plan.
-- **53 Python standard-library synthetic tests passing** on Arthur (`jamie-home-dev`), with exact command in README; no secrets or outside services used.
+- **78 Python standard-library synthetic tests passing** on Arthur (`jamie-home-dev`), with exact command in README; no secrets or outside services used.
 - Manufacturer datasheet/official source evidence linked (Waveshare PoE board, TI ADS1115 limits, Pololu 24V booster, Beckhoff NE43, WIKA comparator part).
 
 ## Deliberately not claimed or done
@@ -31,3 +31,11 @@
 ## Privacy-safe new finding
 
 Private owner inspection (not committed) shows multiple individual dry-system trip tests. The preferred B1 product remains **single-channel per approved tap**; one site may require multiple B1 devices with common dashboard rollup. Newly added `HARDWARE/MULTI-SYSTEM-SCOPE.md`, `SOFTWARE/site_rollup.py` and its host-only tests preserve individual fault identity. Do not disclose the actual private report or valve/trip/deficiency details in public GitHub. A later invoice located in owner mail concerns the prior routine inspection, **not independently verified remediation**.
+
+## 2026-11-16 follow-on vendor selection and sensor-specific contract
+
+Exactly sourced **ProSense SPTD25-20-0100H 0-100psig** is now the preferred **bench-design** pressure transmitter, not ordered or site-approved. Supplier confirms **M12 pin 1 +, pin 2 return, pins3/4 unused** (invalidates earlier tentative pin3 return); `CDP12-0B-030-AA` non-LED 3m female-to-male cord is a low-cost qualified-to-test candidate. LPPT25-20-0100H is a non-interchangeable $80 alternative with a **different contact function**. The real rated proof 250psig, supply 8.5-36V and permitted 3-4/20-25mA nonlinear over/under range are encoded in sources; 100psig must be installer-approved for each application. TI TPS26625DRCR (auto-retry reverse-blocking) and E96 165kOhm ILIM ~40mA **arithmetic only**, NOT a verified output stage. [Sensor selection](HARDWARE/PRESSURE-SENSOR-SELECTION.md) is the source of truth. **78 synthetic host tests pass** (63 prior + 15). Still no KiCad released netlist, 24V short-safe circuit, qualified sensor/pressure tests, PO, or live system changes.
+
+### Stock update (2026-11-16)
+
+AutomationDirect now explicitly lists SPTD25-20-0100H **backordered, projected earliest 2026-12-30**, while alternative LPPT25-20-0100H is marked **295 available**, source links in HARDWARE/PRESSURE-SENSOR-SELECTION.md. This changes procurement timing, not the completed B1 host circuit verification. SPTD is a bench-design baseline only; do not assume quick availability or substitute LPPT without independent connector pinout and calibration approval.
